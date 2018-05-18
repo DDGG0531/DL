@@ -7,3 +7,19 @@
 .carousel-control-prev-icon {
   background-image: url('/static/icon/icon-09@4x.png');
 }
+
+.swiper-button-prev {
+  background-image: url('/static//icon//icon-09@4x.png');
+  background-size: 41px 110px;
+  height: 110px;
+  left: 120px;
+  width: 41px;
+}
+
+.swiper-button-next {
+  background-image: url('/static//icon//icon-10@4x.png');
+  background-size: 41px 110px;
+  height: 110px;
+  right: 120px;
+  width: 41px;
+}
