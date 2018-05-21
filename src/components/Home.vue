@@ -246,12 +246,12 @@ export default {
       }],
       // 分類
       categories: [
-        {src:'/static/pic/pic-02_1.png',icon:'/static/icon/icon-01@4x.png',title:'整建工程',text:'房間牆面或外牆的增建與改造'},
-        {src:'/static/pic/pic-03_1.png',icon:'/static/icon/icon-02@4x.png',title:'修繕工程',text:'房間牆面或外牆的增建與改造'},
+        {src:'/static/pic/pic-02_1.png',icon:'/static/icon/icon-01@4x.png',title:'整建',text:'房間牆面或外牆的增建與改造'},
+        {src:'/static/pic/pic-03_1.png',icon:'/static/icon/icon-02@4x.png',title:'修繕',text:'房間牆面或外牆的增建與改造'},
         {src:'/static/pic/pic-04_1.png',icon:'/static/icon/icon-03@4x.png',title:'石材',text:'房間牆面或外牆的增建與改造'},
         {src:'/static/pic/pic-05_1.png',icon:'/static/icon/icon-04@4x.png',title:'磁磚',text:'房間牆面或外牆的增建與改造'},
         {src:'/static/pic/pic-02_1.png',icon:'/static/icon/icon-01@4x.png',title:'電視牆/背景牆',text:'房間牆面或外牆的增建與改造'},
-        {src:'/static/pic/pic-03_1.png',icon:'/static/icon/icon-02@4x.png',title:'抿石',text:'房間牆面或外牆的增建與改造'},
+        {src:'/static/pic/pic-03_1.png',icon:'/static/icon/icon-02@4x.png',title:'防水',text:'房間牆面或外牆的增建與改造'},
       ],
     }
   },
