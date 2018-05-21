@@ -1,7 +1,7 @@
 <template>
 <div>
   <!-- 插入 component swiper1  -->
-  <Swiper1></Swiper1>
+  <Swiper1 :swiperImages="swiperImages" :swiperText="true"></Swiper1>
   <!-- Our service 區塊-->
   <section id="ourService" class="container">
     <!-- 標題 -->
@@ -9,57 +9,21 @@
     <!-- 圖片及hover效果 -->
     <div id="ourService-work" class="row">
       <!-- 每一格圖片 測試 -->
-      <div class="col element">
-        <img src="/static/pic/pic-02_1.png">
-        <div class="test-hover">
-          <!-- 初始文字 -->
-          <p class="before-side">Hover me</p>
-          <!-- 展開圖示 -->
-          <div class="after-side">
-            <img src="/static/icon/icon-01@4x.png" style="height:95px">
-            <p>Hello</p>
-          </div>
-        </div>
-      </div>
-      <div class="col element">
-        <img src="/static/pic/pic-03_1.png">
-        <div class="test-hover">
-          <!-- 初始文字 -->
-          <p class="before-side">Hover me</p>
-          <!-- 展開圖示 -->
-          <div class="after-side">
-            <img src="/static/icon/icon-02@4x.png" style="height:95px">
-            <p>Hello</p>
-          </div>
-        </div>
-      </div>
-      <div class="col element">
-        <img src="/static/pic/pic-04_1.png">
-        <div class="test-hover">
-          <!-- 初始文字 -->
-          <p class="before-side">Hover me</p>
-          <!-- 展開圖示 -->
-          <div class="after-side">
-            <img src="/static/icon/icon-03@4x.png" style="height:95px">
-            <p>Hello</p>
-          </div>
-        </div>
-      </div>
-      <div class="col element">
-        <img src="/static/pic/pic-05_1.png">
-        <div class="test-hover">
-          <!-- 初始文字 -->
-          <p class="before-side">Hover me</p>
-          <!-- 展開圖示 -->
-          <div class="after-side">
-            <img src="/static/icon/icon-04@4x.png" style="height:95px">
-            <p>Hello</p>
-          </div>
-        </div>
-      </div>
+      
       <!-- 每一格圖片 正式 -->
-      <!-- <div class="col" v-for="item in items" :key="item.id">
-        </div> -->
+      <div class="col-4 element" v-for="item in categories" :key="item.id">
+        <img :src="item.src" class="element-image">
+        <div class="text-hover">
+        <!-- 初始文字 -->
+        <p class="before-side">{{item.title}}</p>
+        <!-- 展開圖示 -->
+        <div class="after-side">
+          <img :src="item.icon" class="element-icon">
+          <h1>{{item.title}}</h1>
+          <p>{{item.text}}</p>
+        </div>
+        </div> 
+      </div>
     </div>
   </section>
   <!-- Our service 區塊 end -->
@@ -130,15 +94,15 @@
     text-align: center;
   }
   #ourService-work {
-    .element:nth-child(1){
+    .element:nth-child(3n+1){
       padding-left: 15px;
-      .test-hover{
+      .text-hover{
         left: 15px;
       }
     }
-    .element:nth-last-child(1){
+    .element:nth-child(3n){
       padding-right: 15px;
-      .test-hover{
+      .text-hover{
         right: 15px;
       }
     }
@@ -146,7 +110,15 @@
       position: relative;
       padding-left: 7.5px;
       padding-right: 7.5px;
-      .test-hover {
+      margin-bottom: 15px;
+      .element-image{
+        width: 100%;
+        height: 480px;
+      }
+      .element-icon{
+        width: 95px;
+      }
+      .text-hover {
         position: absolute;
         overflow: hidden;
         z-index: 1;
@@ -167,7 +139,7 @@
         }
       }
       &:hover {
-        .test-hover {
+        .text-hover {
           height: 100%;
           padding-top: 50%;
           .before-side {
@@ -262,17 +234,37 @@ import Swiper2 from './Swiper2'
 export default {
   data() {
     return {
-     
+      // 輪播圖
+      swiperImages: [{
+        src: '/static/pic/pic-01_1.png'
+      }, {
+        src: '/static/pic/pic-01_1.png'
+      }, {
+        src: '/static/pic/pic-01_1.png'
+      }, {
+        src: '/static/pic/pic-01_1.png'
+      }],
+      // 分類
+      categories: [
+        {src:'/static/pic/pic-02_1.png',icon:'/static/icon/icon-01@4x.png',title:'整建工程',text:'房間牆面或外牆的增建與改造'},
+        {src:'/static/pic/pic-03_1.png',icon:'/static/icon/icon-02@4x.png',title:'修繕工程',text:'房間牆面或外牆的增建與改造'},
+        {src:'/static/pic/pic-04_1.png',icon:'/static/icon/icon-03@4x.png',title:'石材',text:'房間牆面或外牆的增建與改造'},
+        {src:'/static/pic/pic-05_1.png',icon:'/static/icon/icon-04@4x.png',title:'磁磚',text:'房間牆面或外牆的增建與改造'},
+        {src:'/static/pic/pic-02_1.png',icon:'/static/icon/icon-01@4x.png',title:'電視牆/背景牆',text:'房間牆面或外牆的增建與改造'},
+        {src:'/static/pic/pic-03_1.png',icon:'/static/icon/icon-02@4x.png',title:'抿石',text:'房間牆面或外牆的增建與改造'},
+      ],
     }
   },
-  watch:{
+  watch: {
 
   },
   methods: {
-    
-  },
-  mounted() {
 
+  },
+
+  mounted() {
+    let vm = this;
+    vm.getCategories();
   },
   created() {
 
@@ -283,6 +275,7 @@ export default {
     Swiper1
   }
 }
+
 </script>
 
 

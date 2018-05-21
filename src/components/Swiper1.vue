@@ -1,18 +1,18 @@
+// swiper 包含navbar
 <template>
   <div>
     <div id="swiper">
       <swiper :options="swiperOption1" ref="mySwiper1" class="">
-        <swiper-slide v-for="(item,index) in swiperImages" :key="item.id" @click.native="pickImgToTop(index)" style="cursor:pointer"
-          class="swiper-slide">
+        <swiper-slide v-for="(item) in swiperImages" :key="item.id"  class="swiper-slide">
           <img :src="item.src" class="main-img">
-          <div class="append-text">
+          <div class="append-text" v-if="swiperText">
             <h1 class="topic">專業團隊防水抓漏、規劃、施工</h1>
             <p class="topic-second">30年以上泥作防漏經驗，一次搞定溼答答的煩惱</p>
           </div>
         </swiper-slide>
 
-        <div class="swiper-button-prev " slot="button-prev"></div>
-        <div class="swiper-button-next " slot="button-next"></div>
+        <div class="swiper-button-prev " slot="button-prev" v-show="hasArrow"></div>
+        <div class="swiper-button-next " slot="button-next" v-show="hasArrow"></div>
       </swiper>
       <Nav id="nav"></Nav>
     </div>
@@ -70,18 +70,20 @@ import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios)
 
 export default {
+  props:['swiperImages','swiperText'],
   data() {
     return {
-      swiperImages:[{src:'/static/pic/pic-01_1.png'},{src:'/static/pic/pic-01_1.png'},{src:'/static/pic/pic-01_1.png'},{src:'/static/pic/pic-01_1.png'}],
       swiperOption1:{
         slidesPerView: 1,
         spaceBetween: 0,
-        loop: true,
+        loop: false,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
         },
-      }
+      },
+      // 有無箭頭
+      hasArrow: true,
     }
   },
   watch:{
@@ -91,10 +93,19 @@ export default {
     
   },
   mounted() {
-
+    
   },
   created() {
-
+    let vm=this;
+    console.log(vm.swiperImages.length==1);
+    if(vm.swiperImages.length==1){
+      vm.swiperOption1.loop=false;
+      vm.hasArrow=false;
+    }
+    else{
+      vm.swiperOption1.loop=true;
+      vm.hasArrow=true;
+    }
   },
   components: {
     swiper,

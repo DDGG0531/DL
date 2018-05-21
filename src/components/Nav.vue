@@ -5,7 +5,7 @@
         <!-- bootstrap nav -->
         <nav class="navbar navbar-expand-lg navbar-light ">
           <!-- 主題字 -->
-          <a class="navbar-brand " href="#">東林工程行</a>
+          <router-link to="Home" class="navbar-brand pointer">東林工程行</router-link>
           <!-- 漢堡按鈕 -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" >
             <span class="navbar-toggler-icon"></span>
@@ -19,9 +19,7 @@
                 </a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link" href="#">
-                  服務項目
-                </a>
+                <router-link to="Service" class="nav-link">服務項目</router-link>
               </li>
               <li class="nav-item ">
                 <a class="nav-link" href="#">
