@@ -28,5 +28,9 @@ export default new Router({
       name: 'Product',
       component: Product
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    // return 期望滚动到哪个的位置
+    return { x: 0, y: 0 }
+  }
 })

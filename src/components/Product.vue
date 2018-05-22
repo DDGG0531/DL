@@ -67,7 +67,7 @@
     <!-- 內容 end -->
     <!-- 分頁 -->
     <div id="page-block">
-      <paginate :page-count="productsCount" :initial-page="thisPage-1" :click-handler="changeRouter" :prev-text="'Prev'" :next-text="'Next'"
+      <paginate :page-count="pageCount" :initial-page="thisPage-1" :click-handler="changeRouter" :prev-text="'Prev'" :next-text="'Next'"
         :container-class="'pagination'" :page-class="'page-item'" :page-link-class="'page-link'" :prev-class="'page-item'"
         :prev-link-class="'page-link'" :next-class="'page-item'" :next-link-class="'page-link'">
       </paginate>
@@ -214,6 +214,7 @@ export default {
       thisPage: 1,
       category:'',
       productsCount: 10,
+      pageCount:10,
       limit: 2,
       lastProducts:[],
 
@@ -259,6 +260,7 @@ export default {
         let realData=response.data.data;
         let productsCount=response.data['total'];
         vm.productsCount=productsCount;
+        vm.pageCount=Math.ceil(vm.productsCount/vm.limit);
         realData.forEach(element => {
           //+root
           element['cover_image']=root+element['cover_image'];
