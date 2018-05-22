@@ -43,7 +43,8 @@
           ABC
         </div>
       </div>
-      <img src="/static/pic/pic-07_1.png" class="img-block">  
+         <img :src="swiper2Image.src" class="img-block">  
+      
     </div>
     <!-- 下方NEXT按鈕 -->
     <div class="next-btn"><a href="">NEXT></a></div>
@@ -51,7 +52,7 @@
   </section>
   <!-- Project 區塊 end-->
   <!-- 插入 component swiper2 -->
-  <Swiper2></Swiper2>  
+  <Swiper2 v-on:swiper2Func="swiper2Func"></Swiper2>  
   <!-- 插入 component swiper2 end-->
   <!-- White divider 區塊 -->
   <div id="white-divider"></div>
@@ -204,6 +205,7 @@
       position: absolute;
       right: 0;
       width: 791px;
+      height: 542px;
       bottom: 0;
       top: 0;
       z-index: 1;
@@ -253,12 +255,17 @@ export default {
         {src:'/static/pic/pic-02_1.png',icon:'/static/icon/icon-01@4x.png',title:'電視牆/背景牆',text:'房間牆面或外牆的增建與改造'},
         {src:'/static/pic/pic-03_1.png',icon:'/static/icon/icon-02@4x.png',title:'防水',text:'房間牆面或外牆的增建與改造'},
       ],
+      swiper2Image:{}
     }
   },
   watch: {
 
   },
   methods: {
+    swiper2Func(item){
+      let vm= this;
+      vm.swiper2Image=item;
+    }
 
   },
 

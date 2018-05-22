@@ -3,17 +3,17 @@
     <div id="footer">
       <div class="container">
         <div class="row">
-          <div class="col-6 gmap-block">
+          <div class="col-xl-6 gmap-block">
             <!-- Google map -->
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3641.7961762998607!2d120.6493627149882!3d24.10866228441403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693c43a8e145ed%3A0x7802db2da37fd61!2zNDAy5Y-w5Lit5biC5Y2X5Y2A56aP55Sw5LqM6KGXMzY36Jmf!5e0!3m2!1szh-TW!2stw!4v1526616379199" width="540" height="257" frameborder="0" style="border:0" allowfullscreen></iframe>
             <!-- Google map end-->
           </div>
-          <div class="col-6 text-block">
+          <div class="col-xl-6 text-block">
             <!-- 聯絡資訊 -->
             <h1 class="topic">東林工程行</h1>
             <p class="topic-second">整修 | 翻修 | 各式磁磚買賣施工 | 抿石 | 防水 | 特殊建材</p>
             <hr class="hr">
-            <div class="row align-items-center">
+            <div class="row align-items-center" >
               <!-- 每一行資訊+圖 -->
               <div class="col-12 element">
                 <div class="img-wrapper">
@@ -68,6 +68,10 @@
   padding-top: 95px;
   padding-bottom: 87px;
   .gmap-block {
+    &>iframe{
+      max-width: 100%;
+      width: 100%;
+    }
     padding-left: 0;
     padding-right: 25px;
   }
@@ -75,6 +79,9 @@
     color: $font-brown;
     padding-left: 25px;
     padding-right: 0;
+    &>.row{
+      margin: 0;
+    }
     .topic {
       font-size: 29px;
       letter-spacing: calc(200/1000*29px);

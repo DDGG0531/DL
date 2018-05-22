@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Service from '@/components/Service'
 import Product from '@/components/Product'
+import ProductInner from '@/components/ProductInner'
 
 Vue.use(Router)
 
@@ -27,6 +28,11 @@ export default new Router({
       path: '/Product/:category/:page',
       name: 'Product',
       component: Product
+    },
+    {
+      path: '/ProductInner/:id',
+      name: 'ProductInner',
+      component: ProductInner
     }
   ],
   scrollBehavior (to, from, savedPosition) {

@@ -1,10 +1,9 @@
 <template>
   <div> 
      <swiper :options="swiperOption2" ref="mySwiper2" class="">
-              <swiper-slide v-for="(item,index) in swiperImages" :key="item.id" @click.native="pickImgToTop(index)" style="cursor:pointer">
+              <swiper-slide v-for="(item) in swiperImages" :key="item.id" @click.native="swiper2Func(item)" style="cursor:pointer">
                 <img :src="item.src">
               </swiper-slide>
-                
               <div class="swiper-button-prev " slot="button-prev"></div>
               <div class="swiper-button-next " slot="button-next"></div>
       </swiper>
@@ -34,7 +33,7 @@ export default {
       swiperOption2:{
         slidesPerView: 4,
         spaceBetween: 0,
-        loop: true,
+        loop: false,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
@@ -46,12 +45,20 @@ export default {
 
   },
   methods: {
+    swiper2Func: function (item) {
+    let vm=this;
+    vm.$emit('swiper2Func',item);
+    }
     
   },
   mounted() {
-
   },
   created() {
+    let vm =this;
+    let item = vm.swiperImages[0];
+    vm.swiper2Func(item);
+  },
+  beforeUpdate(){
 
   },
   components: {

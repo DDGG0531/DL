@@ -1,6 +1,6 @@
 <template>
-<div>
-  <!-- 插入 component Swiper1 -->
+  <div> 
+      <!-- 插入 component Swiper1 -->
   <Swiper1 :swiperImages="swiperImages" :swiperText="false"></Swiper1>
   <!-- 插入 component Swiper1 end -->
   <!-- 內容 -->
@@ -21,7 +21,7 @@
         <div class="col-xl-9">
           <div id="case">
             <!-- 每個範例 -->
-            <div class="each" v-for="(item,index) in products" :key="item.id">
+            <div class="each" v-for="(item,index) in product" :key="item.id">
               <!-- 上方文字+日期 -->
               <div class="each-title">
                 <h1 class="title">【實績案例】{{item.title}}</h1>
@@ -29,7 +29,7 @@
               </div>
               <!-- 中間圖片 -->
               <div class="each-image">
-                <img :src="item['cover_image']">
+                <img :src="item['main_image_path']">
               </div>
               <!-- 下方文字區塊 -->
               <div class="each-description">
@@ -56,16 +56,17 @@
                 <p class="mid-block">施作內容</p>
                 <!-- ul文字 -->
                 <div class="bottom-block">
-                  <p class="text">{{item.description}}</p>
-                </div>
-                <!-- more按鈕 -->
-                <div class="btn-block">
-                  <router-link :to="{ name: 'ProductInner', params: { id: item.id}}">More</router-link>
+                  <p class="text">{{item.detail}}</p>
                 </div>
               </div>
               <!-- hr gold -->
               <hr class="hr-gold" v-if="index!=limit-1">
             </div>
+            <!-- 內頁 圖庫 -->
+            <div v-for="(item) in product[0].gallary" :key="item.id" id="gallary">
+              <img :src="item['src']" class="image">
+            </div>
+            <!-- 內頁 圖庫 end  -->
           </div>
         </div>
       </div>
@@ -74,21 +75,8 @@
 
     </div>
     <!-- 內容 end -->
-    <!-- 分頁 -->
-    <div id="page-block">
-      <paginate :page-count="pageCount" :initial-page="thisPage-1" :click-handler="changeRouter" :prev-text="'Prev'" :next-text="'Next'"
-        :container-class="'pagination'" :page-class="'page-item'" :page-link-class="'page-link'" :prev-class="'page-item'"
-        :prev-link-class="'page-link'" :next-class="'page-item'" :next-link-class="'page-link'">
-      </paginate>
-    </div>
-    <!-- 分頁 end -->
   </div>
-
-</div>
-
-
-
-
+  </div>
 </template>
 
 
@@ -187,7 +175,7 @@
       .bottom-block {
         color: white;
         padding: 0 15px;
-        .text{
+        .text {
           font-size: 15px;
         }
       }
@@ -199,7 +187,7 @@
         height: 26px;
         color: $font-green;
         font-size: 28px;
-        &>a{
+        &>a {
           cursor: pointer;
         }
       }
@@ -207,11 +195,11 @@
   }
 }
 
-#page-block {
-  margin-top: 145px;
-  &>.pagination {
-    justify-content: center;
-    margin: 0;
+#gallary{
+  .image{
+    margin-bottom: 35px;
+    width: 825px;
+    height: 568px;
   }
 }
 
@@ -223,77 +211,37 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios)
 import Swiper1 from './Swiper1'
-import Paginate from 'vuejs-paginate'
 export default {
   data() {
     return {
+      id:1,
+      product:[],
       swiperImages: [{
         src: '/static/pic/pic-12_1.png'
       }],
-      products: [],
-      thisPage: 1,
-      category: '',
-      productsCount: 10,
-      pageCount: 10,
-      limit: 2,
-      lastProducts: [],
-
+      lastProducts: [], 
     }
   },
-  watch: {
-    '$route' (to, from) {
-      // 对路由变化作出响应...
-    }
+  watch:{
 
-  },
-  beforeRouteUpdate(to, from, next) {
-    let vm = this;
-    //頁數變換撈資料
-    vm.getData();
-    // console.log(to.params);
-
-    next()
   },
   methods: {
-    showPage: function (e) {
-      alert(e);
-    },
-    changeRouter: function (e) {
-      let vm = this;
-      vm.thisPage = e;
-      vm.$router.push({
-        name: 'Product',
-        params: {
-          category: 1,
-          page: e
-        }
-      });
-    },
-    getData: function () {
-      let vm = this;
+    getData(){
+      let vm= this ;
       axios({
           method: "post",
-          url: "http://ind.idea-infinite.com/api/v1/products",
-          params: {
-            limit: vm.limit,
-            offset: ((vm.thisPage - 1) * vm.limit),
-          }
+          url: "http://ind.idea-infinite.com/api/v1/product/"+vm.id,
         })
         .then(function (response) {
-          //清空products
-          vm.products = [];
+          console.log(response);
+          //清空product
+          vm.product = [];
           let root = 'http://' + response.data['image_domain'];
           let realData = response.data.data;
-          let productsCount = response.data['total'];
-          vm.productsCount = productsCount;
-          vm.pageCount = Math.ceil(vm.productsCount / vm.limit);
-          realData.forEach(element => {
-            //+root
-            element['cover_image'] = root + element['cover_image'];
-            vm.products.push(element);
-
-          });
-          console.log(response)
+          //+root
+          realData['main_image_path'] = root + realData['main_image_path'];
+          vm.product.push(realData);
+          vm.product[0].gallary=[{src:'/static/pic/pic-01_1.png'},{src:'/static/pic/pic-02_1.png'},{src:'/static/pic/pic-03_1.png'}];
         })
     },
     getLastData: function () {
@@ -319,27 +267,21 @@ export default {
           });
         })
     },
-
-
-
+    
   },
   mounted() {
-    let vm = this;
-    vm.getData();
-    vm.getLastData();
-    // console.log(vm.$route.params);
+
   },
   created() {
-    let vm = this;
-    vm.category = vm.$route.params['category'];
-    vm.thisPage = vm.$route.params['page'];
+    let vm=this;
+    vm.id = vm.$route.params['id'];
+    vm.getData();
+    vm.getLastData();
   },
   components: {
-    Swiper1,
-    paginate: Paginate,
+    Swiper1
   }
 }
-
 </script>
 
 
