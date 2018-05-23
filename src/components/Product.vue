@@ -5,7 +5,26 @@
   <!-- 插入 component Swiper1 end -->
   <!-- 內容 -->
   <div id="product">
-    <div class="container">
+  <div class="container">
+  <!-- filter -->
+  <div class="row mx-0 mb-4">
+    <div class="col-auto  text-center border border-info pointer rounded-right"  :class="{ active: category == 0 }" @click="cleanSearch();addFilter({id:0,name:'全部'});changeRouter(1);getData()">
+      全部
+    </div>
+    <div class="col-auto  text-center border border-left-0 border-info pointer rounded-right" v-for="item in totalCategories" :key="item.id" :class="{ active: item.id == category }" @click="cleanSearch();addFilter(item);changeRouter(1);getData()">
+      {{item.name}}
+    </div>
+  </div>
+  <!-- filter end -->
+  <!-- input -->
+  <div class="input-group mb-4">
+  <input type="text" class="form-control" v-model="search">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" @click="cleanSearch();changeRouter(1);getData()">Refresh</button>
+    <button class="btn btn-outline-secondary" @click="changeRouter(1);getData()">Search</button>
+  </div>
+  </div>
+  <!-- input end -->
       <div class="row">
         <!-- 左邊導覽 -->
         <div class="col-xl-3">
@@ -13,7 +32,7 @@
             <h1 class="title">More</h1>
             <hr class="hr-brown">
             <ul>
-              <router-link :to="{name:'Home'}" tag="li" v-for="item in lastProducts" :key="item.id">{{item.title}}</router-link>
+              <router-link :to="{name:'ProductInner',params: { id: item.id }}" tag="li" v-for="item in lastProducts" :key="item.id">{{item.title}}</router-link>
             </ul>
           </div>
         </div>
@@ -76,9 +95,9 @@
     <!-- 內容 end -->
     <!-- 分頁 -->
     <div id="page-block">
-      <paginate :page-count="pageCount" :initial-page="thisPage-1" :click-handler="changeRouter" :prev-text="'Prev'" :next-text="'Next'"
+      <paginate v-scroll-to="{el:'#product'}" :page-count="pageCount" :initial-page="thisPage-1"  :click-handler="changeRouter" :prev-text="'Prev'" :next-text="'Next'"
         :container-class="'pagination'" :page-class="'page-item'" :page-link-class="'page-link'" :prev-class="'page-item'"
-        :prev-link-class="'page-link'" :next-class="'page-item'" :next-link-class="'page-link'">
+        :prev-link-class="'page-link'" :next-class="'page-item'" :next-link-class="'page-link'" ref="paginate">
       </paginate>
     </div>
     <!-- 分頁 end -->
@@ -95,6 +114,9 @@
 <style lang="scss" scoped>
 @import "../assets/scss/all.scss";
 // @include media-breakpoint-up(xl)
+.active{
+  color: $gold;
+}
 #board {
   margin-top: 40px;
   background-color: $bg-gray;
@@ -113,6 +135,9 @@
     padding-left: 20px;
     &>li {
       cursor: pointer;
+      &:hover{
+        color: $gold;
+      }
     }
   }
 }
@@ -221,22 +246,27 @@
 import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-Vue.use(VueAxios, axios)
+import VueScrollTo  from 'vue-scrollto'
+Vue.use(VueScrollTo, VueAxios, axios)
 import Swiper1 from './Swiper1'
 import Paginate from 'vuejs-paginate'
+
 export default {
   data() {
     return {
       swiperImages: [{
-        src: '/static/pic/pic-12_1.png'
+        src: '/static/pic/pic-06_1.png'
       }],
       products: [],
       thisPage: 1,
+      // category只包含id 還不包含name
       category: '',
+      totalCategories:[],
       productsCount: 10,
       pageCount: 10,
       limit: 2,
       lastProducts: [],
+      search: '',
 
     }
   },
@@ -248,13 +278,25 @@ export default {
   },
   beforeRouteUpdate(to, from, next) {
     let vm = this;
+    vm.category = to.params['category'];
+    vm.thisPage = to.params['page'];
     //頁數變換撈資料
     vm.getData();
     // console.log(to.params);
+    vm.$refs.paginate.selected = vm.thisPage-1;
 
     next()
   },
   methods: {
+    addFilter(item){
+      // item = this category;
+      let vm=this;
+      vm.category=item.id;
+    },
+    cleanSearch(){
+      let vm =this;
+      vm.search='';
+    },
     showPage: function (e) {
       alert(e);
     },
@@ -264,10 +306,12 @@ export default {
       vm.$router.push({
         name: 'Product',
         params: {
-          category: 1,
+          category: vm.category,
           page: e
         }
       });
+      // router push 完之後觸發
+      // vm.$refs.paginate.selected = vm.thisPage-1;
     },
     getData: function () {
       let vm = this;
@@ -277,9 +321,12 @@ export default {
           params: {
             limit: vm.limit,
             offset: ((vm.thisPage - 1) * vm.limit),
+            search: vm.search,
+            categories: vm.category
           }
         })
         .then(function (response) {
+          console.log(response)
           //清空products
           vm.products = [];
           let root = 'http://' + response.data['image_domain'];
@@ -293,7 +340,7 @@ export default {
             vm.products.push(element);
 
           });
-          console.log(response)
+          
         })
     },
     getLastData: function () {
@@ -319,12 +366,29 @@ export default {
           });
         })
     },
+    getTotalCategories: function () {
+      let vm = this;
+      axios({
+          method: "post",
+          url: "http://ind.idea-infinite.com/api/v1/categories",
+        })
+        .then(function (response) {
+          console.log(response)
+          //清空totalCatgories
+          vm.totalCategories = [];
+          let realData = response.data.data;
+          realData.forEach(element => {
+            vm.totalCategories.push(element);
+          });
+        })
+    },
 
 
 
   },
   mounted() {
     let vm = this;
+    vm.getTotalCategories();
     vm.getData();
     vm.getLastData();
     // console.log(vm.$route.params);

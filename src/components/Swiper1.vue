@@ -36,6 +36,10 @@
   }
   .swiper-slide {
     position: relative;
+    .main-img{
+      max-height: 850px;
+      width: 100%;
+    }
     .append-text {
       position: absolute;
       color: rgb(254, 254, 254);

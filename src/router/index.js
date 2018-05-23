@@ -8,7 +8,6 @@ import ProductInner from '@/components/ProductInner'
 Vue.use(Router)
 
 export default new Router({
-  
   routes: [
     {
       path: '/',
@@ -35,8 +34,7 @@ export default new Router({
       component: ProductInner
     }
   ],
-  scrollBehavior (to, from, savedPosition) {
-    // return 期望滚动到哪个的位置
-    return { x: 0, y: 0 }
-  }
+  // scrollBehavior (to, from, savedPosition) {
+  //   return {x: 0, y: 0}
+  // }
 })

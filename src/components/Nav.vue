@@ -22,7 +22,7 @@
                 <router-link :to="{ name: 'Service'}" class="nav-link">服務項目</router-link>
               </li>
               <li class="nav-item ">
-                <router-link :to="{ name: 'Product', params: { category: 1, page: 1}}" class="nav-link">實績案例</router-link>
+                <router-link :to="{ name: 'Product', params: { category: 0, page: 1}}" class="nav-link"  >實績案例</router-link>
               </li>
               <li class="nav-item ">
                 <a class="nav-link" href="#">
@@ -82,6 +82,20 @@
     }
     &:hover::before {
 	    background-color: $dark-green;
+    }
+  }
+  .nav-link.router-link-active{
+    &::before {
+      z-index:-1;
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: $dark-green;
+      transform: skew(-30deg);
+      transition: all 0.4s;
     }
   }
 }

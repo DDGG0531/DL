@@ -271,7 +271,6 @@ export default {
 
   mounted() {
     let vm = this;
-    vm.getCategories();
   },
   created() {
 

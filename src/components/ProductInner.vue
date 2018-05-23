@@ -1,11 +1,20 @@
 <template>
-  <div> 
-      <!-- 插入 component Swiper1 -->
+<div>
+  <!-- 插入 component Swiper1 -->
   <Swiper1 :swiperImages="swiperImages" :swiperText="false"></Swiper1>
   <!-- 插入 component Swiper1 end -->
   <!-- 內容 -->
   <div id="product">
     <div class="container">
+      <!-- 麵包屑 -->
+      <nav>
+        <ol class="breadcrumb ">
+          <li class="breadcrumb-item ">
+            <router-link :to="{ name: 'Product', params: { category: 0, page: 1}}" class="pointer">實績案例</router-link>
+          </li>
+          <li class="breadcrumb-item active">{{product[0]['title']}}</li>
+        </ol>
+      </nav>
       <div class="row">
         <!-- 左邊導覽 -->
         <div class="col-xl-3">
@@ -13,7 +22,7 @@
             <h1 class="title">More</h1>
             <hr class="hr-brown">
             <ul>
-              <router-link :to="{name:'Home'}" tag="li" v-for="item in lastProducts" :key="item.id">{{item.title}}</router-link>
+              <router-link :to="{name:'ProductInner',params: { id: item.id }}" tag="li" v-for="item in lastProducts" :key="item.id">{{item.title}}</router-link>
             </ul>
           </div>
         </div>
@@ -21,7 +30,7 @@
         <div class="col-xl-9">
           <div id="case">
             <!-- 每個範例 -->
-            <div class="each" v-for="(item,index) in product" :key="item.id">
+            <div class="each" v-for="(item) in product" :key="item.id">
               <!-- 上方文字+日期 -->
               <div class="each-title">
                 <h1 class="title">【實績案例】{{item.title}}</h1>
@@ -60,12 +69,15 @@
                 </div>
               </div>
               <!-- hr gold -->
-              <hr class="hr-gold" v-if="index!=limit-1">
+              <hr class="hr-gold">
             </div>
             <!-- 內頁 圖庫 -->
-            <div v-for="(item) in product[0].gallary" :key="item.id" id="gallary">
-              <img :src="item['src']" class="image">
+            <div v-if="getDataDone">
+              <div v-for="(item) in product[0].gallary" :key="item.id" id="gallary">
+                <img :src="item['src']" class="image">
+              </div>
             </div>
+
             <!-- 內頁 圖庫 end  -->
           </div>
         </div>
@@ -76,7 +88,8 @@
     </div>
     <!-- 內容 end -->
   </div>
-  </div>
+</div>
+
 </template>
 
 
@@ -101,6 +114,9 @@
     padding-left: 20px;
     &>li {
       cursor: pointer;
+      &:hover{
+        color: $gold;
+      }
     }
   }
 }
@@ -216,14 +232,26 @@ export default {
     return {
       id:1,
       product:[],
+      limit:1,
+      getDataDone:false,
       swiperImages: [{
-        src: '/static/pic/pic-12_1.png'
+        src: '/static/pic/pic-06_1.png'
       }],
       lastProducts: [], 
     }
   },
   watch:{
 
+  },
+  beforeRouteUpdate(to, from, next) {
+    let vm = this;
+    // 這邊跟product邏輯不同，這邊routerchange會自動更改id
+    vm.id = to.params['id'];
+    //頁數變換撈資料
+    vm.getData();
+    // console.log(to.params);
+
+    next()
   },
   methods: {
     getData(){
@@ -242,6 +270,7 @@ export default {
           realData['main_image_path'] = root + realData['main_image_path'];
           vm.product.push(realData);
           vm.product[0].gallary=[{src:'/static/pic/pic-01_1.png'},{src:'/static/pic/pic-02_1.png'},{src:'/static/pic/pic-03_1.png'}];
+          vm.getDataDone=true;
         })
     },
     getLastData: function () {
