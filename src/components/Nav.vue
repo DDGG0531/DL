@@ -14,9 +14,7 @@
           <div class="collapse navbar-collapse " id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item ">
-                <a class="nav-link" href="#">
-                  公司簡介
-                </a>
+                <router-link :to="{ name: 'Intro'}" class="nav-link">公司簡介</router-link>
               </li>
               <li class="nav-item ">
                 <router-link :to="{ name: 'Service'}" class="nav-link">服務項目</router-link>
@@ -102,10 +100,7 @@
 </style>
 
 <script>
-import Vue from 'vue'
-import axios from 'axios'
-import VueAxios from 'vue-axios'
-Vue.use(VueAxios, axios)
+
 
 export default {
   data() {

@@ -1,6 +1,6 @@
 <template>
   <div> 
-    <div id="parallax" v-bind:style="{backgroundImage: 'url('+parallaxImage+')'}">
+    <div id="parallax" v-bind:style="{backgroundImage: 'url('+parallaxImage+')',height:parallaxHeight+'px'}">
     </div>
   </div>
 </template>
@@ -11,22 +11,24 @@
 // @include media-breakpoint-up(xl)
 #parallax{
   width: 100%;
-  height: 667px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+.parallax-Home{
+  height: 667px;
+}
+.parallax-Intro{
+  height: 667px;
+}
 </style>
 
 <script>
-import Vue from 'vue'
-import axios from 'axios'
-import VueAxios from 'vue-axios'
-Vue.use(VueAxios, axios)
+
 
 export default {
-  props: ['parallaxImage'],
+  props: ['parallaxImage','parallaxHeight'],
   data() {
     return {
       // parallaxImage: '/static/pic/pic-06_1.png',

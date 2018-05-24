@@ -25,10 +25,6 @@
 <script>
 import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
-import Vue from 'vue'
-import axios from 'axios'
-import VueAxios from 'vue-axios'
-Vue.use(VueAxios, axios)
 
 export default {
   props:['HomeCall'],
@@ -60,7 +56,7 @@ export default {
     },
     getSwiperData(){
       let vm = this;
-      axios({
+      vm.axios({
           method: "post",
           url: "http://ind.idea-infinite.com/api/v1/products",
           params: {

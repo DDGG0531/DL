@@ -245,10 +245,8 @@
 
 <script>
 import Vue from 'vue'
-import axios from 'axios'
-import VueAxios from 'vue-axios'
 import VueScrollTo  from 'vue-scrollto'
-Vue.use(VueScrollTo, VueAxios, axios)
+Vue.use(VueScrollTo)
 import Swiper1 from './Swiper1'
 import Paginate from 'vuejs-paginate'
 
@@ -316,7 +314,7 @@ export default {
     },
     getData: function () {
       let vm = this;
-      axios({
+      vm.axios({
           method: "post",
           url: "http://ind.idea-infinite.com/api/v1/products",
           params: {
@@ -346,7 +344,7 @@ export default {
     },
     getLastData: function () {
       let vm = this;
-      axios({
+      vm.axios({
           method: "post",
           url: "http://ind.idea-infinite.com/api/v1/products",
           params: {
@@ -369,7 +367,7 @@ export default {
     },
     getTotalCategories: function () {
       let vm = this;
-      axios({
+      vm.axios({
           method: "post",
           url: "http://ind.idea-infinite.com/api/v1/categories",
         })

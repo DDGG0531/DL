@@ -223,10 +223,6 @@
 </style>
 
 <script>
-import Vue from 'vue'
-import axios from 'axios'
-import VueAxios from 'vue-axios'
-Vue.use(VueAxios, axios)
 import Swiper1 from './Swiper1'
 export default {
   data() {
@@ -257,7 +253,7 @@ export default {
   methods: {
     getData(){
       let vm= this ;
-      axios({
+      vm.axios({
           method: "post",
           url: "http://ind.idea-infinite.com/api/v1/product/"+vm.id,
         })
@@ -276,7 +272,7 @@ export default {
     },
     getLastData: function () {
       let vm = this;
-      axios({
+      vm.axios({
           method: "post",
           url: "http://ind.idea-infinite.com/api/v1/products",
           params: {

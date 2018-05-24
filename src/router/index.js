@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 import Service from '@/components/Service'
 import Product from '@/components/Product'
 import ProductInner from '@/components/ProductInner'
+import Intro from '@/components/Intro'
 
 Vue.use(Router)
 
@@ -17,6 +18,11 @@ export default new Router({
       path: '/Home',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/Intro',
+      name: 'Intro',
+      component: Intro
     },
     {
       path: '/Service',

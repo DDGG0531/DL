@@ -5,7 +5,9 @@ import App from './App'
 import router from './router'
 import  'bootstrap'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-Vue.use(VueAwesomeSwiper);
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+Vue.use(VueAxios, axios, VueAwesomeSwiper);
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

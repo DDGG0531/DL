@@ -28,7 +28,7 @@
   </section>
   <!-- Our service 區塊 end -->
   <!-- 插入 component Parallax -->
-  <Parallax :parallaxImage="'/static/pic/pic-06_1.png'"></Parallax>
+  <Parallax :parallaxImage="'/static/pic/pic-06_1.png'" :parallaxHeight="667"></Parallax>
   <!-- 插入 component Parallax end-->
   <!-- Project 區塊 -->
   <section id="project" >
@@ -76,7 +76,7 @@
   <div id="white-divider"></div>
   <!-- White divider 區塊 end-->
   <!-- 插入 component Parallax -->
-  <Parallax :parallaxImage="'/static/pic/pic-12_1.png'"></Parallax>
+  <Parallax :parallaxImage="'/static/pic/pic-12_1.png'" :parallaxHeight="667"></Parallax>
   <!-- 插入 component Parallax end-->
 </div>
 
@@ -298,9 +298,6 @@
 
 <script>
 import Vue from 'vue'
-import axios from 'axios'
-import VueAxios from 'vue-axios'
-Vue.use(VueAxios, axios)
 import Parallax from './Parallax'
 import Swiper1 from './Swiper1'
 import Swiper2 from './Swiper2'
