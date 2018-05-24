@@ -1,8 +1,8 @@
 <template>
   <div> 
      <swiper :options="swiperOption2" ref="mySwiper2" class="">
-              <swiper-slide v-for="(item) in swiperImages" :key="item.id" @click.native="swiper2Func(item)" style="cursor:pointer">
-                <img :src="item.src">
+              <swiper-slide v-for="(item) in swiperData" :key="item.id" @click.native="swiper2Func(item)" style="cursor:pointer">
+                <img :src="item['cover_image']" class="swiper-image">
               </swiper-slide>
               <div class="swiper-button-prev " slot="button-prev"></div>
               <div class="swiper-button-next " slot="button-next"></div>
@@ -16,6 +16,10 @@
 
 @import "../assets/scss/all.scss";
 // @include media-breakpoint-up(xl)
+.swiper-image{
+  width: 100%;
+  height: 367px;
+}
 </style>
 
 <script>
@@ -27,6 +31,7 @@ import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios)
 
 export default {
+  props:['HomeCall'],
   data() {
     return {
       swiperImages:[{src:'/static/pic/pic-08_1.png'},{src:'/static/pic/pic-09_1.png'},{src:'/static/pic/pic-10_1.png'},{src:'/static/pic/pic-11_1.png'}],
@@ -38,27 +43,56 @@ export default {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
         },
-      }
+      },
+      swiperData:[],
     }
   },
   watch:{
-
+    HomeCall:function(){
+      // 待續
+     
+    }
   },
   methods: {
     swiper2Func: function (item) {
     let vm=this;
     vm.$emit('swiper2Func',item);
+    },
+    getSwiperData(){
+      let vm = this;
+      axios({
+          method: "post",
+          url: "http://ind.idea-infinite.com/api/v1/products",
+          params: {
+            limit: 6,
+            offset: 0,
+            slider: 1,
+          }
+        })
+        .then(function (response) {
+          //清空products
+          vm.swiperData = [];
+          let root = 'http://' + response.data['image_domain'];
+          let realData = response.data.data;
+          realData.forEach(element => {
+            //+root
+            element['cover_image'] = root + element['cover_image'];
+            vm.swiperData.push(element);
+          });
+          console.log(vm.swiperData);
+          let item = vm.swiperData[0];
+          vm.swiper2Func(item);
+        })
+        
     }
     
   },
   mounted() {
+
   },
   created() {
     let vm =this;
-    let item = vm.swiperImages[0];
-    vm.swiper2Func(item);
-  },
-  beforeUpdate(){
+    vm.getSwiperData();
 
   },
   components: {

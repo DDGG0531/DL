@@ -38,16 +38,34 @@
     <!-- (左)文字+(右)圖片 -->
     <div id="project-wrapper">
       <div class="text-block">
-        <h2 class="text-block-topic">蘇先生2層透天屋整體修繕完工</h2>
+        <h2 class="text-block-topic">{{swiper2Item['title']}}</h2>
         <div class="text-block-dark">
-          ABC
+          <div class="row mx-0 top-block">
+            <div class="col-xl-auto pr-0"><img src="/static/icon/icon-05@4x.png" class="icon-1"><p class="text">{{swiper2Item['place']}}</p></div>
+            <div class="col-xl-auto pr-0"><img src="/static/icon/icon-06@4x.png" class="icon-2"><p class="text">{{swiper2Item['price']}}</p></div>
+            <div class="col-xl-auto pr-0"><img src="/static/icon/icon-07@4x.png" class="icon-3"><p class="text">{{swiper2Item['pattern']}}</p></div>
+            <div class="col-xl-auto pr-0"><img src="/static/icon/icon-08@4x.png" class="icon-4"><p class="text">{{swiper2Item['sqft']}}</p></div>
+          </div>
+          <!-- 中間"施作內容" -->
+                <p class="mid-block">施作內容</p>
+                <!-- ul文字 -->
+                <div class="bottom-block">
+                  <p class="text">{{swiper2Item.description}}</p>
+                </div>
+                <!-- more按鈕 -->
+                <div class="btn-block">
+                  <router-link :to="{ name: 'ProductInner', params: { id: swiper2Item.id}}">More</router-link>
+                </div>
         </div>
       </div>
-         <img :src="swiper2Image.src" class="img-block">  
+         <img :src="swiper2Item['cover_image']" class="img-block">  
       
     </div>
     <!-- 下方NEXT按鈕 -->
-    <div class="next-btn"><a href="">NEXT></a></div>
+    <!-- <div class="next-btn">
+      <router-link  :to="{ name: 'ProductInner', params: { id: swiper2Item['id'] }}" class="pointer">NEXT></router-link>
+    </div> -->
+    <!-- <div class="next-btn" @click="sendToSwiper2"></div> -->
     </div>
   </section>
   <!-- Project 區塊 end-->
@@ -197,8 +215,62 @@
         padding-left: 15px;
       }
       .text-block-dark{
+        position: relative;
         background-color: rgba(91, 85, 83, .9);
+        padding: 25px;
         height: 100%;
+        .top-block{
+        margin-bottom: 27px;
+        .icon-1 {
+          width: 21px;
+          height: 29px;
+        }
+        .icon-2 {
+          width: 13px;
+          height: 26px;
+        }
+        .icon-3 {
+          width: 27px;
+          height: 27px;
+        }
+        .icon-4 {
+          width: 30px;
+          height: 28px;
+        }
+        .text {
+          display: inline-block;
+          color: white;
+          font-size: 16px;
+          margin-bottom: 0;
+          padding-left: 10px;
+        }
+      }
+      .mid-block {
+        margin-bottom: 15px;
+        font-size: 18px;
+        color: white;
+        padding: 0 15px;
+      }
+      .bottom-block {
+        color: white;
+        padding: 0 15px;
+        .text{
+          font-size: 15px;
+          white-space: pre-line;
+        }
+      }
+      .btn-block {
+        position: absolute;
+        right: 0;
+        bottom: 20px;
+        width: 90px;
+        height: 26px;
+        color: $font-green;
+        font-size: 28px;
+        &>a{
+          cursor: pointer;
+        }
+      }
       }
     }
     .img-block{
@@ -255,7 +327,8 @@ export default {
         {src:'/static/pic/pic-02_1.png',icon:'/static/icon/icon-01@4x.png',title:'電視牆/背景牆',text:'房間牆面或外牆的增建與改造'},
         {src:'/static/pic/pic-03_1.png',icon:'/static/icon/icon-02@4x.png',title:'防水',text:'房間牆面或外牆的增建與改造'},
       ],
-      swiper2Image:{}
+      swiper2Item:{},
+      HomeCall:0,
     }
   },
   watch: {
@@ -264,7 +337,11 @@ export default {
   methods: {
     swiper2Func(item){
       let vm= this;
-      vm.swiper2Image=item;
+      vm.swiper2Item=item;
+    },
+    sendToSwiper2(){
+      let vm= this;
+      vm.HomeCall= vm.HomeCall+1;
     }
 
   },

@@ -193,6 +193,7 @@
         padding: 0 15px;
         .text {
           font-size: 15px;
+          white-space: pre-line;
         }
       }
       .btn-block {
