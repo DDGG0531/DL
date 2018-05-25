@@ -8,20 +8,20 @@
   <div class="container">
   <!-- filter -->
   <div class="row mx-0 mb-4">
-    <div class="col-auto  text-center border border-info pointer rounded-right"  :class="{ active: category == 0 }" @click="cleanSearch();addFilter({id:0,name:'全部'});changeRouter(1);getData()">
+    <div class="col-auto  text-center border  pointer rounded border-category"  :class="{ active: category == 0 }" @click="cleanSearch();addFilter({id:0,name:'全部'});changeRouter(1);getData()">
       全部
     </div>
-    <div class="col-auto  text-center border border-left-0 border-info pointer rounded-right" v-for="item in totalCategories" :key="item.id" :class="{ active: item.id == category }" @click="cleanSearch();addFilter(item);changeRouter(1);getData()">
+    <div class="col-auto  text-center border border-left-0  pointer rounded-right border-category" v-for="item in totalCategories" :key="item.id" :class="{ active: item.id == category }" @click="cleanSearch();addFilter(item);changeRouter(1);getData()">
       {{item.name}}
     </div>
   </div>
   <!-- filter end -->
   <!-- input -->
-  <div class="input-group mb-4">
+  <div class="input-group input-group-sm mb-4">
   <input type="text" class="form-control" v-model="search">
   <div class="input-group-append">
-    <button class="btn btn-outline-secondary" @click="cleanSearch();changeRouter(1);getData()">Refresh</button>
-    <button class="btn btn-outline-secondary" @click="changeRouter(1);getData()">Search</button>
+    <button class="btn btn-outline-secondary btn-green" @click="cleanSearch();changeRouter(1);getData()">Refresh</button>
+    <button class="btn btn-outline-secondary btn-green" @click="changeRouter(1);getData()">Search</button>
   </div>
   </div>
   <!-- input end -->
@@ -32,7 +32,7 @@
             <h1 class="title">More</h1>
             <hr class="hr-brown">
             <ul>
-              <router-link :to="{name:'ProductInner',params: { id: item.id }}" tag="li" v-for="item in lastProducts" :key="item.id">{{item.title}}</router-link>
+              <router-link :to="{name:'ProductInner',params: { id: item.id }}" tag="li" v-for="item in lastProducts" :key="item.id" class="text">{{item.title}}</router-link>
             </ul>
           </div>
         </div>
@@ -112,11 +112,37 @@
 
 
 <style lang="scss" scoped>
+@import "~bootstrap/scss/bootstrap";
 @import "../assets/scss/all.scss";
-// @include media-breakpoint-up(xl)
+// 分類欄
 .active{
-  color: $gold;
+  @include media-breakpoint-up(xs){
+    color: $gold;
+  }
+  @include media-breakpoint-up(xl){
+    color: $gold;
+  }
 }
+.border-category{
+  border-color: $main-color !important;
+}
+// 分類欄 end
+// 搜尋框
+.btn-green{
+  color: $main-color;
+  background-color: transparent;
+  background-image: none;
+  border-color: $main-color;
+  &:hover{
+    color: #fff;
+    background-color: $main-color;
+    border-color: $main-color;
+  }
+}
+.form-control{
+  border-color: $main-color;
+}
+// 搜尋框 end
 #board {
   margin-top: 40px;
   background-color: $bg-gray;
@@ -131,8 +157,14 @@
   .hr-brown {
     border-top: 2px solid $bg-brown;
   }
+  .text{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   ul {
-    padding-left: 20px;
+    padding-left: 0;
+    list-style-position: inside; 
     &>li {
       cursor: pointer;
       &:hover{
@@ -249,6 +281,8 @@ import VueScrollTo  from 'vue-scrollto'
 Vue.use(VueScrollTo)
 import Swiper1 from './Swiper1'
 import Paginate from 'vuejs-paginate'
+import 'bootstrap/dist/css/bootstrap.css'
+import '../assets/scss/page.css'
 
 export default {
   data() {

@@ -19,7 +19,7 @@ export default {
 
  <style lang="scss" >
 @import url('https://fonts.googleapis.com/css?family=Varela');
-@import "~bootstrap/scss/bootstrap";
+// @import "~bootstrap/scss/bootstrap";
 
 body {
   margin: 0;
@@ -29,21 +29,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
-  color: #2c3e50;
+  color: rgb(44, 62, 80);
 }
 img{
   max-width: 100%;
-}
-a:link {
-  text-decoration: inherit;
-  color: inherit;
-  cursor: auto;
-}
-
-a:visited {
-  text-decoration: inherit;
-  color: inherit;
-  cursor: auto;
 }
 // animation
 @keyframes fadeInDown {

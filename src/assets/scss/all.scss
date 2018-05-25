@@ -43,3 +43,23 @@
     outline: none;
   }
 }
+
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  &:visited {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+}
+

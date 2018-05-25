@@ -26,8 +26,8 @@
 
 
 <style lang="scss" scoped>
+@import "~bootstrap/scss/bootstrap";
 @import "../assets/scss/all.scss";
-// @include media-breakpoint-up(xl)
 #intro {
   padding-top: 105px;
   padding-bottom: 190px;

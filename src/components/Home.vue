@@ -83,23 +83,9 @@
 </template>
 
 <style lang="scss" scoped>
-// $grid-breakpoints: (
-//         xs: 0,
-//         sm: 576px,
-//         md: 768px,
-//         lg: 992px,
-//         xl: 1440px,
-// );
-// $container-max-widths: (
-//         sm: 540px,
-//         md: 720px,
-//         lg: 960px,
-//         xl: 1366px,
-// );
-
-// @include media-breakpoint-up(xl)
-// 可以吃到sass variable
+@import "~bootstrap/scss/bootstrap";
 @import "../assets/scss/all.scss";
+
 // ourService欄位
 #ourService {
   padding-top: 145px;
@@ -265,10 +251,10 @@
         bottom: 20px;
         width: 90px;
         height: 26px;
-        color: $font-green;
-        font-size: 28px;
         &>a{
           cursor: pointer;
+          color: $font-green;
+          font-size: 28px;
         }
       }
       }

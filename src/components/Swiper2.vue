@@ -12,9 +12,9 @@
 
 
 <style lang="scss" scoped>
-
-
+@import "~bootstrap/scss/bootstrap";
 @import "../assets/scss/all.scss";
+
 // @include media-breakpoint-up(xl)
 .swiper-image{
   width: 100%;

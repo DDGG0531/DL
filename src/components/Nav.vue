@@ -23,9 +23,7 @@
                 <router-link :to="{ name: 'Product', params: { category: 0, page: 1}}" class="nav-link"  >實績案例</router-link>
               </li>
               <li class="nav-item ">
-                <a class="nav-link" href="#">
-                  接案流程
-                </a>
+                <router-link :to="{ name: 'Pipe'}" class="nav-link">接案流程</router-link>
               </li>
               <li class="nav-item ">
                 <a class="nav-link" href="/asdasd">
@@ -43,7 +41,9 @@
 
 
 <style lang="scss" scoped>
+@import "~bootstrap/scss/bootstrap";
 @import "../assets/scss/all.scss";
+
 // @include media-breakpoint-up(xl)
 #nav{
   background-color: $light-green;

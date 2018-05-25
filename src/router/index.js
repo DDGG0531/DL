@@ -5,6 +5,7 @@ import Service from '@/components/Service'
 import Product from '@/components/Product'
 import ProductInner from '@/components/ProductInner'
 import Intro from '@/components/Intro'
+import Pipe from '@/components/Pipe'
 
 Vue.use(Router)
 
@@ -38,6 +39,11 @@ export default new Router({
       path: '/ProductInner/:id',
       name: 'ProductInner',
       component: ProductInner
+    },
+    {
+      path: '/Pipe',
+      name: 'Pipe',
+      component: Pipe
     }
   ],
   // scrollBehavior (to, from, savedPosition) {

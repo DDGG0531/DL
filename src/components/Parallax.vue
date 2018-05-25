@@ -7,7 +7,9 @@
 
 
 <style lang="scss" scoped>
+@import "~bootstrap/scss/bootstrap";
 @import "../assets/scss/all.scss";
+
 // @include media-breakpoint-up(xl)
 #parallax{
   width: 100%;

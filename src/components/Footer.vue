@@ -11,7 +11,7 @@
           <div class="col-xl-6 text-block">
             <!-- 聯絡資訊 -->
             <h1 class="topic">東林工程行</h1>
-            <p class="topic-second">整修 | 翻修 | 各式磁磚買賣施工 | 抿石 | 防水 | 特殊建材</p>
+            <p class="topic-second">整修工程 | 翻修工程 | 石材 | 電視牆 | 背景牆 | 防水</p>
             <hr class="hr">
             <div class="row align-items-center" >
               <!-- 每一行資訊+圖 -->
@@ -56,8 +56,10 @@
 
 
 <style lang="scss" scoped>
+@import "~bootstrap/scss/bootstrap";
 @import "../assets/scss/all.scss";
-// @include media-breakpoint-up(xl)
+
+
 #brown {
   background-color: rgb(91, 85, 83);
   height: 41px;

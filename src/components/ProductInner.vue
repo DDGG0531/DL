@@ -22,7 +22,7 @@
             <h1 class="title">More</h1>
             <hr class="hr-brown">
             <ul>
-              <router-link :to="{name:'ProductInner',params: { id: item.id }}" tag="li" v-for="item in lastProducts" :key="item.id">{{item.title}}</router-link>
+              <router-link :to="{name:'ProductInner',params: { id: item.id }}" tag="li" v-for="item in lastProducts" :key="item.id" class="text">{{item.title}}</router-link>
             </ul>
           </div>
         </div>
@@ -94,7 +94,9 @@
 
 
 <style lang="scss" scoped>
+@import "~bootstrap/scss/bootstrap";
 @import "../assets/scss/all.scss";
+
 // @include media-breakpoint-up(xl)
 #board {
   margin-top: 40px;
@@ -110,8 +112,14 @@
   .hr-brown {
     border-top: 2px solid $bg-brown;
   }
+  .text{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   ul {
-    padding-left: 20px;
+    padding-left: 0;
+    list-style-position: inside; 
     &>li {
       cursor: pointer;
       &:hover{
