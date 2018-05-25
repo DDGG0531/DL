@@ -26,9 +26,7 @@
                 <router-link :to="{ name: 'Pipe'}" class="nav-link">接案流程</router-link>
               </li>
               <li class="nav-item ">
-                <a class="nav-link" href="/asdasd">
-                  聯絡我們
-                </a>
+                <router-link :to="{ name: 'Contact'}" class="nav-link">聯絡我們</router-link>
               </li>
             </ul>
           </div>

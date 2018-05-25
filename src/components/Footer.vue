@@ -19,28 +19,28 @@
                 <div class="img-wrapper">
                   <img src="/static/icon/icon-11@4x.png" class="icon align-middle">
                 </div>
-                <span class="text text-cn">台中市南區福田二街367號2樓</span>
+                <span class="text text-cn"><a href="https://www.google.com/maps?ll=24.108662,120.651551&z=16&t=m&hl=zh-TW&gl=TW&mapclient=embed&q=402%E5%8F%B0%E4%B8%AD%E5%B8%82%E5%8D%97%E5%8D%80%E7%A6%8F%E7%94%B0%E4%BA%8C%E8%A1%97367%E8%99%9F" class="">台中市南區福田二街367號2樓</a></span>
               </div>
             </div>
             <div class="row align-items-center">
               <!-- 每一行資訊+圖 -->
               <div class="col-12 element">
                 <div class="img-wrapper"><img src="/static/icon/icon-12@4x.png" class="icon align-middle"></div>
-                <span class="text ">hong.81512@gmail.com</span>
+                <span class="text "><a href="mailto:hong81512@gmail.com" class="">hong81512@gmail.com</a></span>
               </div>
             </div>
             <div class="row align-items-center">
               <!-- 每一行資訊+圖 -->
               <div class="col-12 element">
                 <div class="img-wrapper"><img src="/static/icon/icon-13@4x.png" class="icon align-middle"></div>
-                <span class="text ">04-22607982</span>
+                <span class="text "><a href="tel:0422607982" class="">04-22607982</a></span>
               </div>
             </div>
             <div class="row align-items-center">
               <!-- 每一行資訊+圖 -->
               <div class="col-12 element">
                 <div class="img-wrapper"><img src="/static/icon/icon-14@4x.png" class="icon align-middle"></div>
-                <span class="text ">0928-412128</span>
+                <span class="text "><a href="tel:0928412128" class="">0928-412128</a></span>
               </div>
             </div>
             <!-- 聯絡資訊 end-->
