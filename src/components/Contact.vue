@@ -73,7 +73,10 @@
                   <label for="name">姓&emsp;&emsp;名</label>
                 </li>
                 <div class="col-sm-9">
-                  <input class="form-control" id="name" placeholder="">
+                  <input class="form-control" :class="{invalid: invalidShow[0]['isvalid']}" id="name" v-model="sendObj.user_name" placeholder="">
+                  <div class="invalid-feedback d-block" v-if="invalidShow[0]['text']!=''">
+                    {{invalidShow[0]['text']}}
+                  </div>
                 </div>
               </div>
               <div class="form-group row">
@@ -81,7 +84,7 @@
                   <label for="address">服務地址</label>
                 </li>
                 <div class="col-sm-9">
-                  <input class="form-control" id="address" placeholder="">
+                  <input class="form-control"  id="address" v-model="sendObj.address" placeholder="">
                 </div>
               </div>
               <div class="form-group row">
@@ -89,57 +92,73 @@
                   <label for="phone">電&emsp;&emsp;話</label>
                 </li>
                 <div class="col-sm-9">
-                  <input class="form-control" id="phone" placeholder="">
+                  <input class="form-control" id="phone" :class="{invalid: invalidShow[1]['isvalid']}" v-model="sendObj.phone" placeholder="">
+                  <div class="invalid-feedback d-block" v-if="invalidShow[1]['text']!=''">
+                    {{invalidShow[1]['text']}}
+                  </div>
                 </div>
               </div>
               <div class="form-group row">
                 <li class="col-sm-3 col-form-label">
-                  <label for="mail">電子郵件</label>
+                  <label for="email">電子郵件</label>
                 </li>
                 <div class="col-sm-9">
-                  <input class="form-control" id="mail" placeholder="">
+                  <input class="form-control" id="email" :class="{invalid: invalidShow[2]['isvalid']}" v-model="sendObj.email" placeholder="">
+                  <div class="invalid-feedback d-block" v-if="invalidShow[2]['text']!=''">
+                    {{invalidShow[2]['text']}}
+                  </div>
                 </div>
               </div>
               <!-- radios -->
-               <fieldset class="form-group">
-    <div class="row">
-      <li class="col-form-label col-sm-3 pt-0"><label >詢問項目</label></li>  
-      <div class="col-sm-9">
-        <div class="custom-control custom-radio">
-          <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="option1">
-          <label class="custom-control-label" for="customRadio1">室內、室外防水抓漏工程</label>
-        </div>
-        <div class="custom-control custom-radio">
-          <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="option2">
-          <label class="custom-control-label" for="customRadio2">房屋增建、改造</label>
-        </div>
-        <div class="custom-control custom-radio">
-          <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input" value="option3">
-          <label class="custom-control-label" for="customRadio3">廚房、衛浴翻修、改造</label>
-        </div>
-        <div class="custom-control custom-radio">
-          <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input" value="option4">
-          <label class="custom-control-label" for="customRadio4">房屋、大樓、公寓外牆整修</label>
-        </div>
-        <div class="custom-control custom-radio">
-          <input type="radio" id="customRadio5" name="customRadio" class="custom-control-input" value="option4">
-          <label class="custom-control-label" for="customRadio5">對於我們的建議</label>
-        </div>
+              <fieldset class="form-group">
+                <div class="row">
+                  <li class="col-form-label col-sm-3 pt-0">
+                    <label>詢問項目</label>
+                  </li>
+                  <div class="col-sm-9">
+                    <div class="custom-control custom-radio">
+                      <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="室內、室外防水抓漏工程"  v-model="sendObj.title">
+                      <label class="custom-control-label" for="customRadio1">室內、室外防水抓漏工程</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                      <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="房屋增建、改造" v-model="sendObj.title">
+                      <label class="custom-control-label" for="customRadio2">房屋增建、改造</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                      <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input" value="廚房、衛浴翻修、改造" v-model="sendObj.title">
+                      <label class="custom-control-label" for="customRadio3">廚房、衛浴翻修、改造</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                      <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input" value="房屋、大樓、公寓外牆整修" v-model="sendObj.title">
+                      <label class="custom-control-label" for="customRadio4">房屋、大樓、公寓外牆整修</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                      <input type="radio" id="customRadio5" name="customRadio" class="custom-control-input" value="對於我們的建議" v-model="sendObj.title">
+                      <label class="custom-control-label" for="customRadio5">對於我們的建議</label>
+                    </div>
 
-      </div>
-    </div>
-  </fieldset>
-  <!-- redios end -->
-  <div class="form-group row">
+                  </div>
+                </div>
+              </fieldset>
+              <!-- redios end -->
+              <div class="form-group row">
                 <li class="col-sm-3 col-form-label">
                   <label for="address">詢問說明</label>
                 </li>
                 <div class="col-sm-9">
-                  <textarea class="form-control" id="textarea" rows="5"></textarea>
+                  <textarea class="form-control" :class="{invalid: invalidShow[3]['isvalid']}" id="textarea" rows="5" v-model="sendObj.content"></textarea>
+                  <div class="invalid-feedback d-block" v-if="invalidShow[3]['text']!=''">
+                    {{invalidShow[3]['text']}}
+                  </div>
                 </div>
               </div>
               <div class="row justify-content-end">
-                <div class="col-auto"><button ><span>提</span><span>交</span></button></div>
+                <div class="col-auto">
+                  <button @click.prevent="sendData()">
+                    <span>提</span>
+                    <span>交</span>
+                  </button>
+                </div>
               </div>
             </form>
             <!-- form end-->
@@ -147,9 +166,9 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>
+
 
 
 
@@ -159,6 +178,9 @@
 <style lang="scss" scoped>
 @import "~bootstrap/scss/bootstrap";
 @import "../assets/scss/all.scss";
+.invalid{
+  border-color: red !important;
+}
 #Contact {
   padding-top: 105px;
   padding-bottom: 275px;
@@ -275,6 +297,9 @@
       text-align: justify ;
       background: $font-brown;
       cursor: pointer;
+      &:focus{
+        outline: none;
+      }
     }
 
   }
@@ -292,16 +317,60 @@ export default {
     swiperImages: [{
         src: '/static/pic/東林內頁2/東林-接案流程-01.png'
       }],
+    sendObj:{title : "室內、室外防水抓漏工程"},
+    valid:{},
+    invalidShow:[],
     }
   },
   watch:{
 
   },
   methods: {
+    sendData(){
+      let vm=this;
+      vm.axios({
+          method: "post",
+          url: "http://ind.idea-infinite.com/api/v1/contact",
+          params: vm.sendObj,
+        })
+        .then(function (response) {
+          console.log(response);
+          vm.valid=response.data;
+          vm.setValid();         
+        })
+    },
+    initValid(){
+      let vm=this;
+      vm.invalidShow=[];
+      for(let i=0;i<4;i++){
+        let obj={text:'',isvalid:false};
+        vm.invalidShow.push(obj);
+        
+      }
+    },
+    setValid(){
+      let vm=this;
+      vm.initValid();
+      if(vm.valid.status==false){
+        vm.valid.error.forEach(element => {
+          // 填入每個輸入區塊的invalid文字與class;invalidShow
+          if(element.field=='user_name' && vm.invalidShow[0]['text']==''){ vm.invalidShow[0]['text']=element.message;vm.invalidShow[0]['isvalid']=true}
+          else if(element.field=='phone' && vm.invalidShow[1]['text']==''){ vm.invalidShow[1]['text']=element.message;vm.invalidShow[1]['isvalid']=true}
+          else if(element.field=='email' && vm.invalidShow[2]['text']==''){ vm.invalidShow[2]['text']=element.message;vm.invalidShow[2]['isvalid']=true}
+          else if(element.field=='content' && vm.invalidShow[3]['text']==''){ vm.invalidShow[3]['text']=element.message;vm.invalidShow[3]['isvalid']=true}
+        });
+      }
+      else{
+        alert(vm.valid.message);
+        vm.sendObj={title : "室內、室外防水抓漏工程"};
+        
+      }
+    }
     
   },
   mounted() {
-
+    let vm=this;
+    vm.initValid();
   },
   created() {
 
