@@ -361,8 +361,8 @@ export default {
         });
       }
       else{
-        alert(vm.valid.message);
         vm.sendObj={title : "室內、室外防水抓漏工程"};
+        alert(vm.valid.message);
         
       }
     }

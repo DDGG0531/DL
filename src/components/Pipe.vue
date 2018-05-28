@@ -9,12 +9,18 @@
       <div id="gold-title">接案流程</div>
       <!-- 橫式圖串 -->
       <div class="pic-X">
-        <img src="/static/pic/東林內頁2/東林-接案流程-02.png">
+        <picture>
+        <source media="(min-width: 1200px)" srcset="/static/pic/東林內頁2/東林-接案流程-02.png">
+        <img src="/static/pic/東林手機版/東林手機版接案流程-02@4x.png">
+      </picture>
       </div>
       <hr class="gold-hr">
       <!-- 時間直圖 -->
       <div class="pic-Y text-center">
-        <img src="/static/pic/東林內頁2/東林-接案流程-03.png">
+      <picture>
+        <source media="(min-width: 1200px)" srcset="/static/pic/東林內頁2/東林-接案流程-03.png">
+        <img src="/static/pic/東林手機版/東林手機版接案流程-03@4x.png">
+      </picture>
       </div>
       
     </div>
@@ -28,39 +34,62 @@
 @import "~bootstrap/scss/bootstrap";
 @import "../assets/scss/all.scss";
 #Pipe {
-  padding-top: 105px;
-  padding-bottom: 190px;
-  #gold-title{
+  padding-top: 66px;
+  padding-bottom: 153px;
+  @include media-breakpoint-up(xl) {
+    padding-top: 105px;
+    padding-bottom: 190px;
+  }
+  #gold-title {
     position: relative;
     color: $gold;
     text-align: center;
-    margin-bottom: 100px;
-    font-size: 28px;
-    letter-spacing: calc(200/1000*28px);
-    &::before{
+    margin-bottom: 60px;
+    font-size: 21px;
+    letter-spacing: calc(200 / 1000 * 21px);
+    @include media-breakpoint-up(xl) {
+      font-size: 28px;
+      letter-spacing: calc(200/1000*28px);
+      margin-bottom: 100px;
+    }
+    &::before {
       content: '';
       border: .5px solid $gold;
       position: absolute;
-      width: 450px;
+      width: calc(50% - 60px);
       top: 50%;
       left: 0;
+      @include media-breakpoint-up(xl) {
+        transform: translate(0, 0);
+        width: 450px;
+        left: 0;
+      }
     }
-    &::after{
+    &::after {
       content: '';
       border: .5px solid $gold;
       position: absolute;
-      width: 450px;
+      width: calc(50% - 60px);
       top: 50%;
       right: 0;
+      @include media-breakpoint-up(xl) {
+        transform: translate(0, 0);
+        right: 0;
+        width: 450px;
+      }
     }
   }
-  .gold-hr{
-    margin-top: 65px;
-    margin-bottom: 126px;
+  .gold-hr {
+    margin-top: 46px;
+    margin-bottom: 65px;
+    @include media-breakpoint-up(xl) {
+      margin-top: 65px;
+      margin-bottom: 126px;
+    }
     border: .5px solid $gold;
   }
-  
 }
+
 
 </style>
 

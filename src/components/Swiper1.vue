@@ -34,7 +34,10 @@
     z-index: 5;
     left: 0;
     right: 0;
-    top: 30px;
+    top: 0;
+    @include media-breakpoint-up(md){
+      top: 30px;
+    }
   }
   .swiper-slide {
     position: relative;

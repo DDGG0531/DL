@@ -3,7 +3,7 @@
     <div id="nav">
       <div class="container">
         <!-- bootstrap nav -->
-        <nav class="navbar navbar-expand-lg navbar-light ">
+        <nav class="navbar navbar-expand-md navbar-light ">
           <!-- 主題字 -->
           <router-link :to="{ name: 'Home'}" class="navbar-brand pointer">東林工程行</router-link>
           <!-- 漢堡按鈕 -->
@@ -53,7 +53,14 @@
     font-weight: bold;
   }
   .navbar{
-    padding: 0;
+    padding: 10px;
+    @include media-breakpoint-up(md){
+      padding: 0;
+    }
+    
+  }
+  .nav-item{
+    text-align: center;
   }
   .nav-link{
     cursor: pointer;

@@ -1,6 +1,8 @@
 <template>
   <div> 
-    <div id="parallax" v-bind:style="{backgroundImage: 'url('+parallaxImage+')',height:parallaxHeight+'px'}">
+    <div id="parallax-1" v-if="type1" v-bind:style="{backgroundImage: 'url('+parallaxImage+')'}">
+    </div>
+    <div id="parallax-2" v-if="type2" v-bind:style="{backgroundImage: 'url('+parallaxImage+')'}">
     </div>
   </div>
 </template>
@@ -11,12 +13,27 @@
 @import "../assets/scss/all.scss";
 
 // @include media-breakpoint-up(xl)
-#parallax{
-  width: 100%;
+#parallax-1{
+  max-width: 100%;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 186px;
+  @include media-breakpoint-up(xl){
+    height: 670px;
+  }
+}
+#parallax-2{
+  max-width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 186px;
+  @include media-breakpoint-up(xl){
+    height: 750px;
+  }
 }
 .parallax-Home{
   height: 667px;
@@ -30,7 +47,7 @@
 
 
 export default {
-  props: ['parallaxImage','parallaxHeight'],
+  props: ['parallaxImage','type1','type2'],
   data() {
     return {
       // parallaxImage: '/static/pic/pic-06_1.png',

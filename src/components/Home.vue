@@ -28,7 +28,7 @@
   </section>
   <!-- Our service 區塊 end -->
   <!-- 插入 component Parallax -->
-  <Parallax :parallaxImage="'/static/pic/pic-06_1.png'" :parallaxHeight="667"></Parallax>
+  <Parallax :parallaxImage="'/static/pic/pic-06_1.png'" :type1="true"></Parallax>
   <!-- 插入 component Parallax end-->
   <!-- Project 區塊 -->
   <section id="project" >
