@@ -10,51 +10,56 @@
       <div class="sub-title">整修工程 | 翻修工程 | 石材 | 電視牆 | 背景牆 | 防水</div>
       <div class="narrow-div">
         <div class="row ">
-          <div class="col-6 block-1">
+          <div class="col-12 col-xl-6 block-1 d-none d-xl-block order-xl-1">
             <img src="/static/pic/東林內頁2/東林-公司簡介-02.png">
           </div>
-          <div class="col-6 block-2">
+          <div class="col-12 col-xl-6 block-2 order-2 order-xl-2">
             <!-- 複製footer -->
-            <div class="row h-100 align-content-center ">
+            <div class="row   justify-content-start">
               <!-- 每一行資訊+圖 -->
-              <div class="col-12 element ">
+              <div class="col-auto col-xl-12 element ">
                 <div class="img-wrapper">
-                  <img src="/static/icon/icon-11@4x.png" class="icon align-middle">
+                  <img src="/static/pic/東林修改/東林icon-01_1@4x.png" class="icon align-middle">
                 </div>
                 <span class="text text-cn">
                   <a href="https://www.google.com/maps?ll=24.108662,120.651551&z=16&t=m&hl=zh-TW&gl=TW&mapclient=embed&q=402%E5%8F%B0%E4%B8%AD%E5%B8%82%E5%8D%97%E5%8D%80%E7%A6%8F%E7%94%B0%E4%BA%8C%E8%A1%97367%E8%99%9F"
                     class="">台中市南區福田二街367號2樓</a>
                 </span>
               </div>
-              <div class="col-12 element">
+              </div>
+               <div class="row   justify-content-start">
+              <div class="col-auto col-xl-12 element">
                 <div class="img-wrapper">
-                  <img src="/static/icon/icon-12@4x.png" class="icon align-middle">
+                  <img src="/static/pic/東林修改/東林icon-02@4x.png" class="icon align-middle">
                 </div>
                 <span class="text ">
                   <a href="mailto:hong81512@gmail.com" class="">hong81512@gmail.com</a>
                 </span>
               </div>
-              <div class="col-12 element">
+              </div>
+               <div class="row   justify-content-start">
+              <div class="col-auto col-xl-12 element">
                 <div class="img-wrapper">
-                  <img src="/static/icon/icon-13@4x.png" class="icon align-middle">
+                  <img src="/static/pic/東林修改/東林icon-03@4x.png" class="icon align-middle">
                 </div>
                 <span class="text ">
                   <a href="tel:0422607982" class="">04-22607982</a>
                 </span>
               </div>
-              <div class="col-12 element">
+              </div>
+               <div class="row  justify-content-start">
+              <div class="col-auto col-xl-12 element">
                 <div class="img-wrapper">
-                  <img src="/static/icon/icon-14@4x.png" class="icon align-middle">
+                  <img src="/static/pic/東林修改/東林icon-04@4x.png" class="icon align-middle">
                 </div>
                 <span class="text ">
                   <a href="tel:0928412128" class="">0928-412128</a>
                 </span>
               </div>
-
-            </div>
+              </div>
             <!-- 複製footer end -->
           </div>
-          <div class="col-xl-12 gmap-block">
+          <div class="col-xl-12 gmap-block order-1 order-xl-3">
             <!-- Google map -->
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3641.7961762998607!2d120.6493627149882!3d24.10866228441403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693c43a8e145ed%3A0x7802db2da37fd61!2zNDAy5Y-w5Lit5biC5Y2X5Y2A56aP55Sw5LqM6KGXMzY36Jmf!5e0!3m2!1szh-TW!2stw!4v1526616379199"
               width="200" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -178,34 +183,55 @@
 <style lang="scss" scoped>
 @import "~bootstrap/scss/bootstrap";
 @import "../assets/scss/all.scss";
+
+
 .invalid{
   border-color: red !important;
 }
 #Contact {
-  padding-top: 105px;
-  padding-bottom: 275px;
+  padding-top: 61px;
+  padding-bottom: 122px;
+      @include media-breakpoint-up(xl) {
+        padding-top: 105px;
+      padding-bottom: 275px;
+    }
   #gold-title {
     position: relative;
     color: $gold;
     text-align: center;
     margin-bottom: 60px;
-    font-size: 28px;
-    letter-spacing: calc(200/1000*28px);
+    font-size: 21px;
+    letter-spacing: calc(200 / 1000 * 21px);
+    @include media-breakpoint-up(xl) {
+      font-size: 28px;
+      letter-spacing: calc(200/1000*28px);
+      margin-bottom: 100px;
+    }
     &::before {
       content: '';
       border: .5px solid $gold;
       position: absolute;
-      width: 450px;
+      width: calc(50% - 60px);
       top: 50%;
       left: 0;
+      @include media-breakpoint-up(xl) {
+        transform: translate(0, 0);
+        width: 450px;
+        left: 0;
+      }
     }
     &::after {
       content: '';
       border: .5px solid $gold;
       position: absolute;
-      width: 450px;
+      width: calc(50% - 60px);
       top: 50%;
       right: 0;
+      @include media-breakpoint-up(xl) {
+        transform: translate(0, 0);
+        right: 0;
+        width: 450px;
+      }
     }
   }
   .sub-title {
@@ -213,36 +239,51 @@
     letter-spacing: calc(100/1000*20px);
     margin-bottom: 66px;
     text-align: center;
+    font-weight: bold;
   }
   .gold-hr {
+    margin-top: 68px;
+    margin-bottom: 20px;
+    border: .5px solid $gold;
+     @include media-breakpoint-up(xl) {
     margin-top: 65px;
     margin-bottom: 126px;
-    border: .5px solid $gold;
+      }
   }
   .narrow-div {
+    padding-left: 0;
+    padding-right: 0;
+          @include media-breakpoint-up(xl) {
     padding-left: 160px;
     padding-right: 160px;
+      }
     .block-1 {
       margin-bottom: 66px;
     }
     .block-2 {
-      margin-bottom: 66px;
+      margin-bottom: 0;
+              overflow: hidden;
+      @include media-breakpoint-up(xl) {
+    margin-bottom: 66px;
+      }
       .element {
+        min-width: 350px;
         margin-bottom: 10px;
         .icon {
-          height: 20px;
-          max-width: 22px;
-        }
-        .text {
-          height: 30px;
+        height: 30px;
+      }
+      .text {
+        height: 30px;
+        font-size: 20px;
+        letter-spacing: calc(100/1000*20px);
+        line-height: 30px;
+        vertical-align: middle;
+        @include media-breakpoint-up(xl) {
           font-size: 20px;
           letter-spacing: calc(100/1000*20px);
-          line-height: 30px;
-          vertical-align: middle;
         }
-        .text-cn {
-          vertical-align: sub;
-        }
+      }
+
         .img-wrapper {
           width: 27px;
           display: inline-block;
@@ -252,7 +293,10 @@
       }
     }
     .gmap-block {
-      margin-bottom: 90px;
+      margin-bottom: 30px;
+       @include media-breakpoint-up(xl) {
+            margin-bottom: 90px;
+      }
       &>iframe {
         max-width: 100%;
         width: 100%;
@@ -260,11 +304,19 @@
     }
   }
   .narrower-div{
-    padding: 0 230px;
+    padding: 0;
+            @include media-breakpoint-up(xl) {
+           padding: 0 230px;
+      }
     label , legend {
-      font-size: 21px;
+      font-size: 15px;
+      letter-spacing: calc(100/1000*15px);
       color: black;
-      letter-spacing: calc(100/1000*21px);
+       @include media-breakpoint-up(xl) {
+           font-size: 21px;
+           letter-spacing: calc(100/1000*21px);
+      }
+      
     }
     li{
       list-style-position: inside;
@@ -273,7 +325,10 @@
 
 
     .form-group{
-      margin-bottom: 40px;
+      margin-bottom: 10px;
+      @include media-breakpoint-up(xl) {
+           margin-bottom: 40px;
+      }
     }
     .form-control{
       background-color: $bg-gold;

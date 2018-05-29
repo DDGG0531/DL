@@ -10,7 +10,7 @@
       <!-- 橫式圖串 -->
       <div class="pic-X">
         <picture>
-        <source media="(min-width: 1200px)" srcset="/static/pic/東林內頁2/東林-接案流程-02.png">
+        <source media="(min-width: 1200px)" srcset="/static/pic/東林修改/東林接案流程-01@4x.png">
         <img src="/static/pic/東林手機版/東林手機版接案流程-02@4x.png">
       </picture>
       </div>

@@ -35,7 +35,7 @@
     left: 0;
     right: 0;
     top: 0;
-    @include media-breakpoint-up(md){
+    @include media-breakpoint-up(lg){
       top: 30px;
     }
   }

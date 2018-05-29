@@ -3,7 +3,7 @@
     <div id="nav">
       <div class="container">
         <!-- bootstrap nav -->
-        <nav class="navbar navbar-expand-md navbar-light ">
+        <nav class="navbar navbar-expand-lg navbar-light ">
           <!-- 主題字 -->
           <router-link :to="{ name: 'Home'}" class="navbar-brand pointer">東林工程行</router-link>
           <!-- 漢堡按鈕 -->
@@ -54,7 +54,7 @@
   }
   .navbar{
     padding: 10px;
-    @include media-breakpoint-up(md){
+    @include media-breakpoint-up(lg){
       padding: 0;
     }
     
@@ -66,6 +66,9 @@
     cursor: pointer;
     font-size: 21px;
     letter-spacing: calc(200/1000*21px);
+        @include media-breakpoint-up(lg){
+    font-size: 20px;
+    letter-spacing: calc(200/1000*20px);    }
     text-decoration: none;
     color: #fff;
     margin-left: 0px;
@@ -84,7 +87,10 @@
       transition: all 0.4s;
     }
     &:hover::before {
+	    background-color: transparent;
+        @include media-breakpoint-up(lg) {
 	    background-color: $dark-green;
+  }
     }
   }
   .nav-link.router-link-active{
@@ -96,9 +102,12 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background-color: $dark-green;
       transform: skew(-30deg);
       transition: all 0.4s;
+      background-color: transparent;
+        @include media-breakpoint-up(lg) {
+	    background-color: $dark-green;
+  }
     }
   }
 }
