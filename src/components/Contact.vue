@@ -160,8 +160,7 @@
               <div class="row justify-content-end">
                 <div class="col-auto">
                   <button @click.prevent="sendData()">
-                    <span>提</span>
-                    <span>交</span>
+                    提&nbsp;&nbsp;交
                   </button>
                 </div>
               </div>
@@ -294,12 +293,14 @@
     }
     .gmap-block {
       margin-bottom: 30px;
-       @include media-breakpoint-up(xl) {
-            margin-bottom: 90px;
-      }
+
       &>iframe {
         max-width: 100%;
         width: 100%;
+        height: 260px;
+        @include media-breakpoint-up(xl) {
+            height: 320px;
+      }
       }
     }
   }
@@ -344,14 +345,16 @@
       }
     }
     button{
-      font-size: 21px;
+      font-size: 14px;
       color: white;
-      padding: 5px 0 5px 35px;
-      border-radius: 15px;
-      letter-spacing: 35px;
-      text-align: justify ;
+      padding: 5px 35px;
+      border-radius: 10px;
+      text-align: center ;
       background: $font-brown;
       cursor: pointer;
+      @include media-breakpoint-up(xl) {
+           font-size: 21px;
+      }
       &:focus{
         outline: none;
       }
