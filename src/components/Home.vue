@@ -41,10 +41,10 @@
         <h2 class="text-block-topic d-none d-xl-block">{{swiper2Item['title']}}</h2>
         <div class="text-block-dark">
           <div class="row mx-0 top-block">
-            <div class="col-6 col-xl-auto pr-0 pb-3"><img src="/static/pic/東林修改2/東林icon-06@4x.png" class=" icon"><p class="text">{{swiper2Item['place']}}</p></div>
-            <div class="col-6 col-xl-auto pr-0 pb-3"><img src="/static/pic/東林修改2/東林icon-07@4x.png" class=" icon"><p class="text">{{swiper2Item['price']}}</p></div>
-            <div class="col-6 col-xl-auto pr-0 pb-3"><img src="/static/pic/東林修改2/東林icon-08@4x.png" class=" icon"><p class="text">{{swiper2Item['pattern']}}</p></div>
-            <div class="col-6 col-xl-auto pr-0 pb-3"><img src="/static/pic/東林修改2/東林icon-09@4x.png" class=" icon"><p class="text">{{swiper2Item['sqft']}}</p></div>
+            <div class="col-6 col-xl-auto pr-0 pb-1 pb-xl-3"><img src="/static/pic/東林修改2/東林icon-06@4x.png" class=" icon"><p class="text">{{swiper2Item['place']}}</p></div>
+            <div class="col-6 col-xl-auto pr-0 pb-1 pb-xl-3"><img src="/static/pic/東林修改2/東林icon-07@4x.png" class=" icon"><p class="text">{{swiper2Item['price']}}</p></div>
+            <div class="col-6 col-xl-auto pr-0 pb-1 pb-xl-3"><img src="/static/pic/東林修改2/東林icon-08@4x.png" class=" icon"><p class="text">{{swiper2Item['pattern']}}</p></div>
+            <div class="col-6 col-xl-auto pr-0 pb-1 pb-xl-3"><img src="/static/pic/東林修改2/東林icon-09@4x.png" class=" icon"><p class="text">{{swiper2Item['sqft']}}</p></div>
           </div>
           <!-- 中間"施作內容" -->
                 <p class="mid-block">施作內容</p>
@@ -53,8 +53,10 @@
                   <p class="text">{{swiper2Item.description}}</p>
                 </div>
                 <!-- more按鈕 -->
-                <div class="btn-block">
-                  <router-link :to="{ name: 'ProductInner', params: { id: swiper2Item.id}}">More</router-link>
+                <div class="btn-block d-flex justify-content-between">
+                  
+                  <router-link class="col-auto font" :to="{ name: 'ProductInner', params: { id: swiper2Item.id}}">More</router-link>
+                  <div class=" col-auto  font" @click="sendToSwiper2">Next</div>
                 </div>
         </div>
       </div>
@@ -67,7 +69,7 @@
     </div> -->
     <div class="next-btn d-none d-xl-block" @click="sendToSwiper2">Next</div>
     </div>
-    <div class="next-btn d-block d-xl-none text-center mt-4" @click="sendToSwiper2">Next</div>
+    <!-- <div class="next-btn d-block d-xl-none text-center mt-4" @click="sendToSwiper2">Next</div> -->
   </section>
    
   <!-- Project 區塊 end-->
@@ -246,8 +248,8 @@ margin-bottom: 0;
         overflow: hidden;
         position: relative;
         background-color: rgba(91, 85, 83, .9);
-        max-height: 355px;
-        padding: 5px;
+        max-height: 263px;
+        padding: 10px 10px 30px;
               @include media-breakpoint-up(xl){
              padding: 25px;
              max-height: 100%;
@@ -283,19 +285,18 @@ margin-bottom: 0;
           font-size: 14px;
           white-space: pre-line;
           margin-bottom: 0;
-          height: 150px;
+          height: 105px;
         }
       }
       .btn-block {
-        text-align: end;
+        // text-align: end;
         padding: 0 15px;
-        &>a{
-          display: inline-block;
+        &>.font{
           cursor: pointer;
-          width: 90px;
-        height: 26px;
           color: $font-green;
-          font-size: 28px;
+          font-size: 20px;
+          @include media-breakpoint-up(xl){
+            font-size: 28px;}
         }
       }
       }
