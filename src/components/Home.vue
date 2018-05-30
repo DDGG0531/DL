@@ -38,13 +38,13 @@
     <!-- (左)文字+(右)圖片 -->
     <div id="project-wrapper">
       <div class="text-block">
-        <h2 class="text-block-topic">{{swiper2Item['title']}}</h2>
+        <h2 class="text-block-topic d-none d-xl-block">{{swiper2Item['title']}}</h2>
         <div class="text-block-dark">
           <div class="row mx-0 top-block">
-            <div class="col-xl-auto pr-0"><img src="/static/icon/icon-05@4x.png" class="icon-1"><p class="text">{{swiper2Item['place']}}</p></div>
-            <div class="col-xl-auto pr-0"><img src="/static/icon/icon-06@4x.png" class="icon-2"><p class="text">{{swiper2Item['price']}}</p></div>
-            <div class="col-xl-auto pr-0"><img src="/static/icon/icon-07@4x.png" class="icon-3"><p class="text">{{swiper2Item['pattern']}}</p></div>
-            <div class="col-xl-auto pr-0"><img src="/static/icon/icon-08@4x.png" class="icon-4"><p class="text">{{swiper2Item['sqft']}}</p></div>
+            <div class="col-6 col-xl-auto pr-0 pb-3"><img src="/static/icon/icon-05@4x.png" class="icon-1"><p class="text">{{swiper2Item['place']}}</p></div>
+            <div class="col-6 col-xl-auto pr-0 pb-3"><img src="/static/icon/icon-06@4x.png" class="icon-2"><p class="text">{{swiper2Item['price']}}</p></div>
+            <div class="col-6 col-xl-auto pr-0 pb-3"><img src="/static/icon/icon-07@4x.png" class="icon-3"><p class="text">{{swiper2Item['pattern']}}</p></div>
+            <div class="col-6 col-xl-auto pr-0 pb-3"><img src="/static/icon/icon-08@4x.png" class="icon-4"><p class="text">{{swiper2Item['sqft']}}</p></div>
           </div>
           <!-- 中間"施作內容" -->
                 <p class="mid-block">施作內容</p>
@@ -107,16 +107,22 @@
   }
   #ourService-work {
     .element:nth-child(3n+1){
-      padding-left: 15px;
+       @include media-breakpoint-up(xl){
+               padding-left: 15px;
       .text-hover{
         left: 15px;
       }
+ }
+
     }
     .element:nth-child(3n){
-      padding-right: 15px;
+       @include media-breakpoint-up(xl){
+               padding-right: 15px;
       .text-hover{
         right: 15px;
       }
+ }
+
     }
     .element {
       position: relative;
@@ -174,15 +180,29 @@
 // project 欄位
 #project{
   background-color: $bg-green;
-  padding-top: 200px;
-  padding-bottom: 96px;
+  padding-top: 75px;
+  padding-bottom: 90px;
+  @include media-breakpoint-up(xl){
+    padding-top: 200px;
+  padding-bottom: 96px; }
+  .container{
+    padding: 0;
+    @include media-breakpoint-up(xl){
+     padding: 0 15px ;
+     }
+  }
   .topic {
-    margin-bottom: 200px;
-    letter-spacing: calc(200/1000*28px);
-    font-size: 28px;
+    margin-bottom: 60px;
+    letter-spacing: calc(200/1000*21px);
+    font-size: 21px;
     font-weight: bold;
     color: $gold;
     text-align: center;
+    @include media-breakpoint-up(xl){
+     margin-bottom: 200px;
+     letter-spacing: calc(200/1000*28px);
+    font-size: 28px;
+     }
   }
   .next-btn{
     font-size: 30px;
@@ -195,18 +215,27 @@
   }
   #project-wrapper{
     position: relative;
-    height: 542px;
-    margin-bottom: 40px;
+    height: 520px;
+margin-bottom: 0;
+      @include media-breakpoint-up(xl){
+        height: 542px;
+    margin-bottom: 40px; }
     .text-block{
       position: absolute;
-      left: 0;
-      width: 454px;
-      bottom: 0;
-      top: 0;
-      height: 100%;
-      padding-top: 135px;
-      padding-bottom: 66px;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 200px;
+      width: 85%;
+      // height: 263px;
       z-index: 2;
+      @include media-breakpoint-up(xl){
+              padding-top: 135px;
+      padding-bottom: 66px;
+        transform: translateX(-100%);
+              bottom: 0;
+                    height: 100%;
+      top: 0;
+    width: 454px; }
       .text-block-topic{
         color: black;
         font-weight: bold;
@@ -214,12 +243,20 @@
         padding-left: 15px;
       }
       .text-block-dark{
+        overflow: hidden;
         position: relative;
         background-color: rgba(91, 85, 83, .9);
-        padding: 25px;
-        height: 100%;
+        max-height: 355px;
+        padding: 5px;
+              @include media-breakpoint-up(xl){
+             padding: 25px;
+             max-height: 100%;
+            height: 100%;}
+
         .top-block{
-        margin-bottom: 27px;
+        margin-bottom: 0;
+        @include media-breakpoint-up(xl){
+            margin-bottom: 27px;}
         .icon-1 {
           width: 21px;
           height: 29px;
@@ -254,18 +291,21 @@
         color: white;
         padding: 0 15px;
         .text{
-          font-size: 15px;
+          overflow: hidden;
+          font-size: 14px;
           white-space: pre-line;
+          margin-bottom: 0;
+          height: 150px;
         }
       }
       .btn-block {
-        position: absolute;
-        right: 0;
-        bottom: 20px;
-        width: 90px;
-        height: 26px;
+        text-align: end;
+        padding: 0 15px;
         &>a{
+          display: inline-block;
           cursor: pointer;
+          width: 90px;
+        height: 26px;
           color: $font-green;
           font-size: 28px;
         }
@@ -275,11 +315,17 @@
     .img-block{
       position: absolute;
       right: 0;
-      width: 791px;
-      height: 542px;
+      width: 100%;
+      overflow: hidden;
+      // height: 246px;
+      max-height: 400px;
       bottom: 0;
       top: 0;
       z-index: 1;
+       @include media-breakpoint-up(xl){
+    width: 791px;
+     height: 542px; 
+     max-height: 542px;   }
     }
   }
 }
