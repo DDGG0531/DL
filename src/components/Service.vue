@@ -207,8 +207,8 @@ export default {
   data() {
     return {
       swiperImages: [{
-        src: '/static/封面/聯絡我們.png',
-        src_mobile:'/static/封面/mobile/聯絡我們.png'
+        src: '/static/封面/服務項目.png',
+        src_mobile:'/static/封面/mobile/服務項目.png'
       }],
       windowWidth: 10,
       categories: [

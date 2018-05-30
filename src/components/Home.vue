@@ -41,10 +41,10 @@
         <h2 class="text-block-topic d-none d-xl-block">{{swiper2Item['title']}}</h2>
         <div class="text-block-dark">
           <div class="row mx-0 top-block">
-            <div class="col-6 col-xl-auto pr-0 pb-3"><img src="/static/icon/icon-05@4x.png" class="icon-1"><p class="text">{{swiper2Item['place']}}</p></div>
-            <div class="col-6 col-xl-auto pr-0 pb-3"><img src="/static/icon/icon-06@4x.png" class="icon-2"><p class="text">{{swiper2Item['price']}}</p></div>
-            <div class="col-6 col-xl-auto pr-0 pb-3"><img src="/static/icon/icon-07@4x.png" class="icon-3"><p class="text">{{swiper2Item['pattern']}}</p></div>
-            <div class="col-6 col-xl-auto pr-0 pb-3"><img src="/static/icon/icon-08@4x.png" class="icon-4"><p class="text">{{swiper2Item['sqft']}}</p></div>
+            <div class="col-6 col-xl-auto pr-0 pb-3"><img src="/static/pic/東林修改2/東林icon-06@4x.png" class=" icon"><p class="text">{{swiper2Item['place']}}</p></div>
+            <div class="col-6 col-xl-auto pr-0 pb-3"><img src="/static/pic/東林修改2/東林icon-07@4x.png" class=" icon"><p class="text">{{swiper2Item['price']}}</p></div>
+            <div class="col-6 col-xl-auto pr-0 pb-3"><img src="/static/pic/東林修改2/東林icon-08@4x.png" class=" icon"><p class="text">{{swiper2Item['pattern']}}</p></div>
+            <div class="col-6 col-xl-auto pr-0 pb-3"><img src="/static/pic/東林修改2/東林icon-09@4x.png" class=" icon"><p class="text">{{swiper2Item['sqft']}}</p></div>
           </div>
           <!-- 中間"施作內容" -->
                 <p class="mid-block">施作內容</p>
@@ -65,12 +65,14 @@
     <!-- <div class="next-btn">
       <router-link  :to="{ name: 'ProductInner', params: { id: swiper2Item['id'] }}" class="pointer">NEXT></router-link>
     </div> -->
-    <!-- <div class="next-btn" @click="sendToSwiper2"></div> -->
+    <div class="next-btn d-none d-xl-block" @click="sendToSwiper2">Next</div>
     </div>
+    <div class="next-btn d-block d-xl-none text-center mt-4" @click="sendToSwiper2">Next</div>
   </section>
+   
   <!-- Project 區塊 end-->
   <!-- 插入 component swiper2 -->
-  <Swiper2 v-on:swiper2Func="swiper2Func"></Swiper2>  
+  <Swiper2 v-on:swiper2Func="swiper2Func" :HomeCall="HomeCall"></Swiper2>  
   <!-- 插入 component swiper2 end-->
   <!-- White divider 區塊 -->
   <div id="white-divider"></div>
@@ -181,7 +183,7 @@
 #project{
   background-color: $bg-green;
   padding-top: 75px;
-  padding-bottom: 90px;
+  padding-bottom: 20px;
   @include media-breakpoint-up(xl){
     padding-top: 200px;
   padding-bottom: 96px; }
@@ -209,9 +211,7 @@
     color: rgb(91, 85, 83);
     font-style: italic;
     text-align: end;
-    a{
-      cursor: pointer;
-    }
+    cursor: pointer;
   }
   #project-wrapper{
     position: relative;
@@ -257,21 +257,8 @@ margin-bottom: 0;
         margin-bottom: 0;
         @include media-breakpoint-up(xl){
             margin-bottom: 27px;}
-        .icon-1 {
-          width: 21px;
-          height: 29px;
-        }
-        .icon-2 {
-          width: 13px;
-          height: 26px;
-        }
-        .icon-3 {
-          width: 27px;
-          height: 27px;
-        }
-        .icon-4 {
-          width: 30px;
-          height: 28px;
+        .icon{
+          width: 22px;
         }
         .text {
           display: inline-block;
@@ -279,6 +266,7 @@ margin-bottom: 0;
           font-size: 16px;
           margin-bottom: 0;
           padding-left: 10px;
+          vertical-align: middle;
         }
       }
       .mid-block {
@@ -384,7 +372,10 @@ export default {
     },
     sendToSwiper2(){
       let vm= this;
-      vm.HomeCall= vm.HomeCall+1;
+      // 最多六筆 0-5
+      if(vm.HomeCall==5){vm.HomeCall=0}
+      else{vm.HomeCall= vm.HomeCall+1}
+
     }
 
   },

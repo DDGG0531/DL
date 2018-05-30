@@ -18,7 +18,10 @@
 // @include media-breakpoint-up(xl)
 .swiper-image{
   width: 100%;
-  height: 367px;
+  height: 140px; 
+  @include media-breakpoint-up(xl){
+  height: 367px; }
+
 }
 </style>
 
@@ -52,7 +55,9 @@ export default {
   },
   watch:{
     HomeCall:function(){
-      // 待續
+      
+      // alert(this.HomeCall);
+      this.swiper2Func(this.swiperData[this.HomeCall]);
      
     }
   },

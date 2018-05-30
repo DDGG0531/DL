@@ -55,19 +55,19 @@
                 <!-- 上方圖片+字 -->
                 <div class="row top-block">
                   <div class="col-auto">
-                    <img src="/static/icon/icon-05@4x.png" class="icon-1">
+                    <img src="/static/pic/東林修改2/東林icon-06@4x.png" class=" icon">
                     <p class="text">{{item.place}}</p>
                   </div>
                   <div class="col-auto">
-                    <img src="/static/icon/icon-06@4x.png" class="icon-2">
+                    <img src="/static/pic/東林修改2/東林icon-07@4x.png" class=" icon">
                     <p class="text">{{item.price}}</p>
                   </div>
                   <div class="col-auto">
-                    <img src="/static/icon/icon-07@4x.png" class="icon-3">
+                    <img src="/static/pic/東林修改2/東林icon-08@4x.png" class=" icon">
                     <p class="text">{{item.pattern}}</p>
                   </div>
                   <div class="col-auto">
-                    <img src="/static/icon/icon-08@4x.png" class="icon-4">
+                    <img src="/static/pic/東林修改2/東林icon-09@4x.png" class=" icon">
                     <p class="text">{{item.sqft}}</p>
                   </div>
                 </div>
@@ -211,21 +211,8 @@
       padding: 25px;
       .top-block {
         margin-bottom: 27px;
-        .icon-1 {
-          width: 21px;
-          height: 29px;
-        }
-        .icon-2 {
-          width: 13px;
-          height: 26px;
-        }
-        .icon-3 {
-          width: 27px;
-          height: 27px;
-        }
-        .icon-4 {
-          width: 30px;
-          height: 28px;
+        .icon {
+          width: 22px;
         }
         .text {
           display: inline-block;
@@ -233,6 +220,7 @@
           font-size: 21px;
           margin-bottom: 0;
           padding-left: 10px;
+          vertical-align: middle;
         }
       }
       .mid-block {
@@ -288,8 +276,8 @@ export default {
   data() {
     return {
       swiperImages: [{
-        src: '/static/封面/聯絡我們.png',
-        src_mobile:'/static/封面/mobile/聯絡我們.png'
+        src: '/static/封面/實績案例.png',
+        src_mobile:'/static/封面/mobile/實績案例.png',
       }],
       products: [],
       thisPage: 1,
