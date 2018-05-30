@@ -53,23 +53,23 @@
                   <p class="text">{{swiper2Item.description}}</p>
                 </div>
                 <!-- more按鈕 -->
-                <div class="btn-block d-flex justify-content-between">
+                <div class="btn-block d-flex justify-content-end">
                   
                   <router-link class="col-auto font" :to="{ name: 'ProductInner', params: { id: swiper2Item.id}}">More</router-link>
-                  <div class=" col-auto  font" @click="sendToSwiper2">Next</div>
+                 
                 </div>
         </div>
       </div>
          <img :src="swiper2Item['cover_image']" class="img-block">  
-      
+          <div class="next-btn-mb d-block d-xl-none text-right" @click="sendToSwiper2"><p>Next</p></div>
+
     </div>
     <!-- 下方NEXT按鈕 -->
     <!-- <div class="next-btn">
       <router-link  :to="{ name: 'ProductInner', params: { id: swiper2Item['id'] }}" class="pointer">NEXT></router-link>
     </div> -->
-    <div class="next-btn d-none d-xl-block" @click="sendToSwiper2">Next</div>
+    <div class="next-btn text-right d-none d-xl-block" @click="sendToSwiper2">Next</div>
     </div>
-    <!-- <div class="next-btn d-block d-xl-none text-center mt-4" @click="sendToSwiper2">Next</div> -->
   </section>
    
   <!-- Project 區塊 end-->
@@ -209,12 +209,16 @@
      }
   }
   .next-btn{
-    font-size: 30px;
     color: rgb(91, 85, 83);
     font-style: italic;
-    text-align: end;
     cursor: pointer;
+    font-size: 20px;
+    text-align: end;
+   @include media-breakpoint-up(xl){
+            font-size: 28px;}
+    
   }
+
   #project-wrapper{
     position: relative;
     height: 520px;
@@ -222,6 +226,16 @@ margin-bottom: 0;
       @include media-breakpoint-up(xl){
         height: 542px;
     margin-bottom: 40px; }
+      .next-btn-mb{
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+    color: rgb(91, 85, 83);
+    font-style: italic;
+    cursor: pointer;
+    font-size: 20px;
+    text-align: end;
+  }
     .text-block{
       position: absolute;
       left: 50%;
@@ -286,6 +300,9 @@ margin-bottom: 0;
           white-space: pre-line;
           margin-bottom: 0;
           height: 105px;
+           @include media-breakpoint-up(xl){
+            height: 125px;
+        }
         }
       }
       .btn-block {
