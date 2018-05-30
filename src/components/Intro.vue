@@ -128,7 +128,8 @@ export default {
   data() {
     return {
     swiperImages: [{
-        src: '/static/pic/pic-06_1.png'
+        src: '/static/封面/公司簡介.png',
+        src_mobile:'/static/封面/mobile/公司簡介.png'
       }],
     }
   },

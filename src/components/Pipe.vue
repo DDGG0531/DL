@@ -100,7 +100,8 @@ export default {
   data() {
     return {
     swiperImages: [{
-        src: '/static/pic/東林內頁2/東林-接案流程-01.png'
+        src: '/static/封面/接案流程.png',
+        src_mobile:'/static/封面/mobile/接案流程.png'
       }],
     }
   },

@@ -11,7 +11,7 @@
       <!-- 每一格圖片 測試 -->
       
       <!-- 每一格圖片 正式 -->
-      <div class="col-4 element" v-for="item in categories" :key="item.id">
+      <div class="col-6 col-xl-4 element" v-for="item in categories" :key="item.id">
         <img :src="item.src" class="element-image">
         <div class="text-hover">
         <!-- 初始文字 -->
@@ -20,7 +20,7 @@
         <div class="after-side">
           <img :src="item.icon" class="element-icon">
           <h1>{{item.title}}</h1>
-          <p>{{item.text}}</p>
+          <p class="d-none d-xl-block">{{item.text}}</p>
         </div>
         </div> 
       </div>
@@ -88,15 +88,22 @@
 
 // ourService欄位
 #ourService {
-  padding-top: 145px;
-  padding-bottom: 300px;
+  padding-top: 77px;
+  padding-bottom: 71px;
+    @include media-breakpoint-up(xl){
+       padding-top: 145px;
+  padding-bottom: 300px;   }
   .topic {
-    margin-bottom: 150px;
-    font-size: 28px;
-    letter-spacing: calc(200/1000*28px);
+    margin-bottom: 67px;
+    font-size: 21px;
+    letter-spacing: calc(200/1000*21px);
     font-weight: bold;
     color: $gold;
     text-align: center;
+            @include media-breakpoint-up(xl){
+       margin-bottom: 150px;
+           font-size: 28px;
+    letter-spacing: calc(200/1000*28px); }
   }
   #ourService-work {
     .element:nth-child(3n+1){
@@ -118,10 +125,11 @@
       margin-bottom: 15px;
       .element-image{
         width: 100%;
-        height: 480px;
+        max-height: 480px;
       }
       .element-icon{
-        width: 95px;
+        max-width: 95px;
+        margin-bottom: 15px;
       }
       .text-hover {
         position: absolute;
@@ -141,6 +149,11 @@
         }
         .after-side {
           display: none;
+          h1{
+            font-size: 23px;
+                          @include media-breakpoint-up(xl){
+     font-size: 28px; }
+          }  
         }
       }
       &:hover {
@@ -272,8 +285,10 @@
 }
 // 白色間隔
 #white-divider{
-  height: 368px;
+  height: 274px;
   background-color: white;
+    @include media-breakpoint-up(xl){
+     height: 368px;    }
 }
 
 
@@ -292,14 +307,13 @@ export default {
   data() {
     return {
       // 輪播圖
-      swiperImages: [{
-        src: '/static/pic/pic-01_1.png'
-      }, {
-        src: '/static/pic/pic-01_1.png'
-      }, {
-        src: '/static/pic/pic-01_1.png'
-      }, {
-        src: '/static/pic/pic-01_1.png'
+          swiperImages: [{
+        src: '/static/封面/首頁.png',
+        src_mobile:'/static/封面/mobile/首頁.png'
+      },
+      {
+        src: '/static/封面/首頁.png',
+        src_mobile:'/static/封面/mobile/首頁.png'
       }],
       // 分類
       categories: [

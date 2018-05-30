@@ -206,7 +206,10 @@ import Swiper1 from './Swiper1'
 export default {
   data() {
     return {
-      swiperImages:[{src:'/static/pic/pic-12_1.png'}],
+      swiperImages: [{
+        src: '/static/封面/聯絡我們.png',
+        src_mobile:'/static/封面/mobile/聯絡我們.png'
+      }],
       windowWidth: 10,
       categories: [
         {src:'/static/pic/pic-02_1.png',icon:'/static/icon/icon-01@4x.png',title:'整建工程',text:'房間牆面或外牆的增建與改造',s_src:'/static/pic/東林內頁/服務項目pic-02.png',s_icon:'/static/pic/東林內頁/服務項目icon-01@4x.png'},

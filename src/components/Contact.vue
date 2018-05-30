@@ -182,18 +182,17 @@
 <style lang="scss" scoped>
 @import "~bootstrap/scss/bootstrap";
 @import "../assets/scss/all.scss";
-
-
-.invalid{
+.invalid {
   border-color: red !important;
 }
+
 #Contact {
   padding-top: 61px;
   padding-bottom: 122px;
-      @include media-breakpoint-up(xl) {
-        padding-top: 105px;
-      padding-bottom: 275px;
-    }
+  @include media-breakpoint-up(xl) {
+    padding-top: 105px;
+    padding-bottom: 275px;
+  }
   #gold-title {
     position: relative;
     color: $gold;
@@ -244,45 +243,44 @@
     margin-top: 68px;
     margin-bottom: 20px;
     border: .5px solid $gold;
-     @include media-breakpoint-up(xl) {
-    margin-top: 65px;
-    margin-bottom: 126px;
-      }
+    @include media-breakpoint-up(xl) {
+      margin-top: 65px;
+      margin-bottom: 126px;
+    }
   }
   .narrow-div {
     padding-left: 0;
     padding-right: 0;
-          @include media-breakpoint-up(xl) {
-    padding-left: 160px;
-    padding-right: 160px;
-      }
+    @include media-breakpoint-up(xl) {
+      padding-left: 160px;
+      padding-right: 160px;
+    }
     .block-1 {
       margin-bottom: 66px;
     }
     .block-2 {
       margin-bottom: 0;
-              overflow: hidden;
+      overflow: hidden;
       @include media-breakpoint-up(xl) {
-    margin-bottom: 66px;
+        margin-bottom: 66px;
       }
       .element {
         min-width: 350px;
         margin-bottom: 10px;
         .icon {
-        height: 30px;
-      }
-      .text {
-        height: 30px;
-        font-size: 20px;
-        letter-spacing: calc(100/1000*20px);
-        line-height: 30px;
-        vertical-align: middle;
-        @include media-breakpoint-up(xl) {
+          height: 30px;
+        }
+        .text {
+          height: 30px;
           font-size: 20px;
           letter-spacing: calc(100/1000*20px);
+          line-height: 30px;
+          vertical-align: middle;
+          @include media-breakpoint-up(xl) {
+            font-size: 20px;
+            letter-spacing: calc(100/1000*20px);
+          }
         }
-      }
-
         .img-wrapper {
           width: 27px;
           display: inline-block;
@@ -293,75 +291,72 @@
     }
     .gmap-block {
       margin-bottom: 30px;
-
       &>iframe {
         max-width: 100%;
         width: 100%;
         height: 260px;
         @include media-breakpoint-up(xl) {
-            height: 320px;
-      }
+          height: 320px;
+        }
       }
     }
   }
-  .narrower-div{
+  .narrower-div {
     padding: 0;
-            @include media-breakpoint-up(xl) {
-           padding: 0 230px;
-      }
-    label , legend {
+    @include media-breakpoint-up(xl) {
+      padding: 0 230px;
+    }
+    label,
+    legend {
       font-size: 15px;
       letter-spacing: calc(100/1000*15px);
       color: black;
-       @include media-breakpoint-up(xl) {
-           font-size: 21px;
-           letter-spacing: calc(100/1000*21px);
+      @include media-breakpoint-up(xl) {
+        font-size: 21px;
+        letter-spacing: calc(100/1000*21px);
       }
-      
     }
-    li{
+    li {
       list-style-position: inside;
       color: $gold;
     }
-
-
-    .form-group{
+    .form-group {
       margin-bottom: 10px;
       @include media-breakpoint-up(xl) {
-           margin-bottom: 40px;
+        margin-bottom: 40px;
       }
     }
-    .form-control{
+    .form-control {
       background-color: $bg-gold;
       border-radius: 10px;
       border: 1px solid $gold;
-      &:focus{
+      &:focus {
         box-shadow: none;
       }
     }
-    .custom-control-label{
-      &::before{
+    .custom-control-label {
+      &::before {
         background-color: $gold;
       }
     }
-    button{
+    button {
       font-size: 14px;
       color: white;
       padding: 5px 35px;
       border-radius: 10px;
-      text-align: center ;
+      text-align: center;
       background: $font-brown;
       cursor: pointer;
       @include media-breakpoint-up(xl) {
-           font-size: 21px;
+        font-size: 21px;
       }
-      &:focus{
+      &:focus {
         outline: none;
       }
     }
-
   }
 }
+
 
 
 </style>
@@ -373,7 +368,8 @@ export default {
   data() {
     return {
     swiperImages: [{
-        src: '/static/pic/東林內頁2/東林-接案流程-01.png'
+        src: '/static/封面/聯絡我們.png',
+        src_mobile:'/static/封面/mobile/聯絡我們.png'
       }],
     sendObj:{title : "室內、室外防水抓漏工程"},
     valid:{},
