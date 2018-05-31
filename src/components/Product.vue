@@ -132,7 +132,7 @@
   border-color: black !important;
 }
 .text-category {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: bold;
   padding: 5px 10px;
   @include media-breakpoint-up(xl) {

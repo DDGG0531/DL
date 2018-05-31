@@ -120,7 +120,7 @@
       }
     }
     .topic-second {
-      font-size: 14px;
+      font-size: 13px;
       letter-spacing: calc(100 / 1000 * 11px);
       text-align: center;
       font-weight: bold;
