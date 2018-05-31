@@ -202,12 +202,12 @@
     letter-spacing: calc(200 / 1000 * 21px);
     @include media-breakpoint-up(xl) {
       font-size: 28px;
-      letter-spacing: calc(200/1000*28px);
+      letter-spacing: calc(200 / 1000 * 28px);
       margin-bottom: 100px;
     }
     &::before {
-      content: '';
-      border: .5px solid $gold;
+      content: "";
+      border: 0.5px solid $gold;
       position: absolute;
       width: calc(50% - 60px);
       top: 50%;
@@ -219,8 +219,8 @@
       }
     }
     &::after {
-      content: '';
-      border: .5px solid $gold;
+      content: "";
+      border: 0.5px solid $gold;
       position: absolute;
       width: calc(50% - 60px);
       top: 50%;
@@ -234,7 +234,7 @@
   }
   .sub-title {
     font-size: 20px;
-    letter-spacing: calc(100/1000*20px);
+    letter-spacing: calc(100 / 1000 * 20px);
     margin-bottom: 66px;
     text-align: center;
     font-weight: bold;
@@ -242,7 +242,7 @@
   .gold-hr {
     margin-top: 68px;
     margin-bottom: 20px;
-    border: .5px solid $gold;
+    border: 0.5px solid $gold;
     @include media-breakpoint-up(xl) {
       margin-top: 65px;
       margin-bottom: 126px;
@@ -273,12 +273,12 @@
         .text {
           height: 30px;
           font-size: 20px;
-          letter-spacing: calc(100/1000*20px);
+          letter-spacing: calc(100 / 1000 * 20px);
           line-height: 30px;
           vertical-align: middle;
           @include media-breakpoint-up(xl) {
             font-size: 20px;
-            letter-spacing: calc(100/1000*20px);
+            letter-spacing: calc(100 / 1000 * 20px);
           }
         }
         .img-wrapper {
@@ -291,7 +291,7 @@
     }
     .gmap-block {
       margin-bottom: 30px;
-      &>iframe {
+      & > iframe {
         max-width: 100%;
         width: 100%;
         height: 260px;
@@ -309,11 +309,11 @@
     label,
     legend {
       font-size: 15px;
-      letter-spacing: calc(100/1000*15px);
+      letter-spacing: calc(100 / 1000 * 15px);
       color: black;
       @include media-breakpoint-up(xl) {
         font-size: 21px;
-        letter-spacing: calc(100/1000*21px);
+        letter-spacing: calc(100 / 1000 * 21px);
       }
     }
     li {
@@ -356,83 +356,93 @@
     }
   }
 }
-
-
-
 </style>
 
 <script>
-import Swiper1 from './Swiper1'
+import Swiper1 from "./Swiper1";
 
 export default {
   data() {
     return {
-    swiperImages: [{
-        src: '/static/封面/聯絡我們.png',
-        src_mobile:'/static/封面/mobile/聯絡我們.png'
-      }],
-    sendObj:{title : "室內、室外防水抓漏工程"},
-    valid:{},
-    invalidShow:[],
-    }
+      swiperImages: [
+        {
+          src: "/static/封面/聯絡我們.png",
+          src_mobile: "/static/封面/mobile/聯絡我們.png"
+        }
+      ],
+      sendObj: { title: "室內、室外防水抓漏工程" },
+      valid: {},
+      invalidShow: []
+    };
   },
-  watch:{
-
-  },
+  watch: {},
   methods: {
-    sendData(){
-      let vm=this;
-      vm.axios({
+    sendData() {
+      let vm = this;
+      vm
+        .axios({
           method: "post",
           url: "http://ind.idea-infinite.com/api/v1/contact",
-          params: vm.sendObj,
+          params: vm.sendObj
         })
-        .then(function (response) {
+        .then(function(response) {
           console.log(response);
-          vm.valid=response.data;
-          vm.setValid();         
-        })
+          vm.valid = response.data;
+          vm.setValid();
+        });
     },
-    initValid(){
-      let vm=this;
-      vm.invalidShow=[];
-      for(let i=0;i<4;i++){
-        let obj={text:'',isvalid:false};
+    initValid() {
+      let vm = this;
+      vm.invalidShow = [];
+      for (let i = 0; i < 4; i++) {
+        let obj = { text: "", isvalid: false };
         vm.invalidShow.push(obj);
-        
       }
     },
-    setValid(){
-      let vm=this;
+    setValid() {
+      let vm = this;
       vm.initValid();
-      if(vm.valid.status==false){
+      if (vm.valid.status == false) {
         vm.valid.error.forEach(element => {
           // 填入每個輸入區塊的invalid文字與class;invalidShow
-          if(element.field=='user_name' && vm.invalidShow[0]['text']==''){ vm.invalidShow[0]['text']=element.message;vm.invalidShow[0]['isvalid']=true}
-          else if(element.field=='phone' && vm.invalidShow[1]['text']==''){ vm.invalidShow[1]['text']=element.message;vm.invalidShow[1]['isvalid']=true}
-          else if(element.field=='email' && vm.invalidShow[2]['text']==''){ vm.invalidShow[2]['text']=element.message;vm.invalidShow[2]['isvalid']=true}
-          else if(element.field=='content' && vm.invalidShow[3]['text']==''){ vm.invalidShow[3]['text']=element.message;vm.invalidShow[3]['isvalid']=true}
+          if (element.field == "user_name" && vm.invalidShow[0]["text"] == "") {
+            vm.invalidShow[0]["text"] = element.message;
+            vm.invalidShow[0]["isvalid"] = true;
+          } else if (
+            element.field == "phone" &&
+            vm.invalidShow[1]["text"] == ""
+          ) {
+            vm.invalidShow[1]["text"] = element.message;
+            vm.invalidShow[1]["isvalid"] = true;
+          } else if (
+            element.field == "email" &&
+            vm.invalidShow[2]["text"] == ""
+          ) {
+            vm.invalidShow[2]["text"] = element.message;
+            vm.invalidShow[2]["isvalid"] = true;
+          } else if (
+            element.field == "content" &&
+            vm.invalidShow[3]["text"] == ""
+          ) {
+            vm.invalidShow[3]["text"] = element.message;
+            vm.invalidShow[3]["isvalid"] = true;
+          }
         });
-      }
-      else{
-        vm.sendObj={title : "室內、室外防水抓漏工程"};
+      } else {
+        vm.sendObj = { title: "室內、室外防水抓漏工程" };
         alert(vm.valid.message);
-        
       }
     }
-    
   },
   mounted() {
-    let vm=this;
+    let vm = this;
     vm.initValid();
   },
-  created() {
-
-  },
+  created() {},
   components: {
-    Swiper1,
+    Swiper1
   }
-}
+};
 </script>
 
 

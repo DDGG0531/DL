@@ -12,29 +12,16 @@
 </style>
 
 <script>
-
 export default {
   data() {
-    return {
-     
-    }
+    return {};
   },
-  watch:{
-
-  },
-  methods: {
-    
-  },
-  mounted() {
-
-  },
-  created() {
-
-  },
-  components: {
-
-  }
-}
+  watch: {},
+  methods: {},
+  mounted() {},
+  created() {},
+  components: {}
+};
 </script>
 
 

@@ -94,50 +94,50 @@
 #ourService {
   padding-top: 77px;
   padding-bottom: 71px;
-    @include media-breakpoint-up(xl){
-       padding-top: 145px;
-  padding-bottom: 300px;   }
+  @include media-breakpoint-up(xl) {
+    padding-top: 145px;
+    padding-bottom: 300px;
+  }
   .topic {
     margin-bottom: 67px;
     font-size: 21px;
-    letter-spacing: calc(200/1000*21px);
+    letter-spacing: calc(200 / 1000 * 21px);
     font-weight: bold;
     color: $gold;
     text-align: center;
-            @include media-breakpoint-up(xl){
-       margin-bottom: 150px;
-           font-size: 28px;
-    letter-spacing: calc(200/1000*28px); }
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 150px;
+      font-size: 28px;
+      letter-spacing: calc(200 / 1000 * 28px);
+    }
   }
   #ourService-work {
-    .element:nth-child(3n+1){
-       @include media-breakpoint-up(xl){
-               padding-left: 15px;
-      .text-hover{
-        left: 15px;
+    .element:nth-child(3n + 1) {
+      @include media-breakpoint-up(xl) {
+        padding-left: 15px;
+        .text-hover {
+          left: 15px;
+        }
       }
- }
-
     }
-    .element:nth-child(3n){
-       @include media-breakpoint-up(xl){
-               padding-right: 15px;
-      .text-hover{
-        right: 15px;
+    .element:nth-child(3n) {
+      @include media-breakpoint-up(xl) {
+        padding-right: 15px;
+        .text-hover {
+          right: 15px;
+        }
       }
- }
-
     }
     .element {
       position: relative;
       padding-left: 7.5px;
       padding-right: 7.5px;
       margin-bottom: 15px;
-      .element-image{
+      .element-image {
         width: 100%;
         max-height: 480px;
       }
-      .element-icon{
+      .element-icon {
         max-width: 95px;
         margin-bottom: 15px;
       }
@@ -159,11 +159,12 @@
         }
         .after-side {
           display: none;
-          h1{
+          h1 {
             font-size: 23px;
-                          @include media-breakpoint-up(xl){
-     font-size: 28px; }
-          }  
+            @include media-breakpoint-up(xl) {
+              font-size: 28px;
+            }
+          }
         }
       }
       &:hover {
@@ -182,61 +183,63 @@
   }
 }
 // project 欄位
-#project{
+#project {
   background-color: $bg-green;
   padding-top: 75px;
   padding-bottom: 20px;
-  @include media-breakpoint-up(xl){
+  @include media-breakpoint-up(xl) {
     padding-top: 200px;
-  padding-bottom: 96px; }
-  .container{
+    padding-bottom: 96px;
+  }
+  .container {
     padding: 0;
-    @include media-breakpoint-up(xl){
-     padding: 0 15px ;
-     }
+    @include media-breakpoint-up(xl) {
+      padding: 0 15px;
+    }
   }
   .topic {
     margin-bottom: 60px;
-    letter-spacing: calc(200/1000*21px);
+    letter-spacing: calc(200 / 1000 * 21px);
     font-size: 21px;
     font-weight: bold;
     color: $gold;
     text-align: center;
-    @include media-breakpoint-up(xl){
-     margin-bottom: 200px;
-     letter-spacing: calc(200/1000*28px);
-    font-size: 28px;
-     }
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 200px;
+      letter-spacing: calc(200 / 1000 * 28px);
+      font-size: 28px;
+    }
   }
-  .next-btn{
+  .next-btn {
     color: rgb(91, 85, 83);
     font-style: italic;
     cursor: pointer;
     font-size: 20px;
     text-align: end;
-   @include media-breakpoint-up(xl){
-            font-size: 28px;}
-    
+    @include media-breakpoint-up(xl) {
+      font-size: 28px;
+    }
   }
 
-  #project-wrapper{
+  #project-wrapper {
     position: relative;
     height: 520px;
-margin-bottom: 0;
-      @include media-breakpoint-up(xl){
-        height: 542px;
-    margin-bottom: 40px; }
-      .next-btn-mb{
-    position: absolute;
-    bottom: 0;
-    right: 10%;
-    color: rgb(91, 85, 83);
-    font-style: italic;
-    cursor: pointer;
-    font-size: 20px;
-    text-align: end;
-  }
-    .text-block{
+    margin-bottom: 0;
+    @include media-breakpoint-up(xl) {
+      height: 542px;
+      margin-bottom: 40px;
+    }
+    .next-btn-mb {
+      position: absolute;
+      bottom: 0;
+      right: 10%;
+      color: rgb(91, 85, 83);
+      font-style: italic;
+      cursor: pointer;
+      font-size: 20px;
+      text-align: end;
+    }
+    .text-block {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
@@ -244,81 +247,85 @@ margin-bottom: 0;
       width: 85%;
       // height: 263px;
       z-index: 2;
-      @include media-breakpoint-up(xl){
-              padding-top: 135px;
-      padding-bottom: 66px;
+      @include media-breakpoint-up(xl) {
+        padding-top: 135px;
+        padding-bottom: 66px;
         transform: translateX(-100%);
-              bottom: 0;
-                    height: 100%;
-      top: 0;
-    width: 454px; }
-      .text-block-topic{
+        bottom: 0;
+        height: 100%;
+        top: 0;
+        width: 454px;
+      }
+      .text-block-topic {
         color: black;
         font-weight: bold;
         font-size: 21px;
         padding-left: 15px;
       }
-      .text-block-dark{
+      .text-block-dark {
         overflow: hidden;
         position: relative;
-        background-color: rgba(91, 85, 83, .9);
+        background-color: rgba(91, 85, 83, 0.9);
         max-height: 263px;
         padding: 10px 10px 30px;
-              @include media-breakpoint-up(xl){
-             padding: 25px;
-             max-height: 100%;
-            height: 100%;}
+        @include media-breakpoint-up(xl) {
+          padding: 25px;
+          max-height: 100%;
+          height: 100%;
+        }
 
-        .top-block{
-        margin-bottom: 0;
-        @include media-breakpoint-up(xl){
-            margin-bottom: 27px;}
-        .icon{
-          width: 22px;
+        .top-block {
+          margin-bottom: 0;
+          @include media-breakpoint-up(xl) {
+            margin-bottom: 27px;
+          }
+          .icon {
+            width: 22px;
+          }
+          .text {
+            display: inline-block;
+            color: white;
+            font-size: 16px;
+            margin-bottom: 0;
+            padding-left: 10px;
+            vertical-align: middle;
+          }
         }
-        .text {
-          display: inline-block;
+        .mid-block {
+          margin-bottom: 15px;
+          font-size: 18px;
           color: white;
-          font-size: 16px;
-          margin-bottom: 0;
-          padding-left: 10px;
-          vertical-align: middle;
+          padding: 0 15px;
         }
-      }
-      .mid-block {
-        margin-bottom: 15px;
-        font-size: 18px;
-        color: white;
-        padding: 0 15px;
-      }
-      .bottom-block {
-        color: white;
-        padding: 0 15px;
-        .text{
-          overflow: hidden;
-          font-size: 14px;
-          white-space: pre-line;
-          margin-bottom: 0;
-          height: 105px;
-           @include media-breakpoint-up(xl){
-            height: 125px;
+        .bottom-block {
+          color: white;
+          padding: 0 15px;
+          .text {
+            overflow: hidden;
+            font-size: 14px;
+            white-space: pre-line;
+            margin-bottom: 0;
+            height: 105px;
+            @include media-breakpoint-up(xl) {
+              height: 125px;
+            }
+          }
         }
+        .btn-block {
+          // text-align: end;
+          padding: 0 15px;
+          & > .font {
+            cursor: pointer;
+            color: $font-green;
+            font-size: 20px;
+            @include media-breakpoint-up(xl) {
+              font-size: 28px;
+            }
+          }
         }
-      }
-      .btn-block {
-        // text-align: end;
-        padding: 0 15px;
-        &>.font{
-          cursor: pointer;
-          color: $font-green;
-          font-size: 20px;
-          @include media-breakpoint-up(xl){
-            font-size: 28px;}
-        }
-      }
       }
     }
-    .img-block{
+    .img-block {
       position: absolute;
       right: 0;
       width: 100%;
@@ -328,89 +335,115 @@ margin-bottom: 0;
       bottom: 0;
       top: 0;
       z-index: 1;
-       @include media-breakpoint-up(xl){
-    width: 791px;
-     height: 542px; 
-     max-height: 542px;   }
+      @include media-breakpoint-up(xl) {
+        width: 791px;
+        height: 542px;
+        max-height: 542px;
+      }
     }
   }
 }
 // 白色間隔
-#white-divider{
+#white-divider {
   height: 274px;
   background-color: white;
-    @include media-breakpoint-up(xl){
-     height: 368px;    }
+  @include media-breakpoint-up(xl) {
+    height: 368px;
+  }
 }
-
-
-
-  
 </style>
 
 
 <script>
-import Vue from 'vue'
-import Parallax from './Parallax'
-import Swiper1 from './Swiper1'
-import Swiper2 from './Swiper2'
+import Vue from "vue";
+import Parallax from "./Parallax";
+import Swiper1 from "./Swiper1";
+import Swiper2 from "./Swiper2";
 
 export default {
   data() {
     return {
       // 輪播圖
-          swiperImages: [{
-        src: '/static/封面/首頁.png',
-        src_mobile:'/static/封面/mobile/首頁.png'
-      },
-      {
-        src: '/static/封面/首頁.png',
-        src_mobile:'/static/封面/mobile/首頁.png'
-      }],
+      swiperImages: [
+        {
+          src: "/static/封面/首頁.png",
+          src_mobile: "/static/封面/mobile/首頁.png"
+        },
+        {
+          src: "/static/封面/首頁.png",
+          src_mobile: "/static/封面/mobile/首頁.png"
+        }
+      ],
       // 分類
       categories: [
-        {src:'/static/pic/pic-02_1.png',icon:'/static/icon/icon-01@4x.png',title:'整建',text:'房間牆面或外牆的增建與改造'},
-        {src:'/static/pic/pic-03_1.png',icon:'/static/icon/icon-02@4x.png',title:'修繕',text:'房間牆面或外牆的增建與改造'},
-        {src:'/static/pic/pic-04_1.png',icon:'/static/icon/icon-03@4x.png',title:'石材',text:'房間牆面或外牆的增建與改造'},
-        {src:'/static/pic/pic-05_1.png',icon:'/static/icon/icon-04@4x.png',title:'磁磚',text:'房間牆面或外牆的增建與改造'},
-        {src:'/static/pic/pic-02_1.png',icon:'/static/icon/icon-01@4x.png',title:'電視牆/背景牆',text:'房間牆面或外牆的增建與改造'},
-        {src:'/static/pic/pic-03_1.png',icon:'/static/icon/icon-02@4x.png',title:'防水',text:'房間牆面或外牆的增建與改造'},
+        {
+          src: "/static/pic/pic-02_1.png",
+          icon: "/static/icon/icon-01@4x.png",
+          title: "整建",
+          text: "房間牆面或外牆的增建與改造"
+        },
+        {
+          src: "/static/pic/pic-03_1.png",
+          icon: "/static/icon/icon-02@4x.png",
+          title: "修繕",
+          text: "房間牆面或外牆的增建與改造"
+        },
+        {
+          src: "/static/pic/pic-04_1.png",
+          icon: "/static/icon/icon-03@4x.png",
+          title: "石材",
+          text: "房間牆面或外牆的增建與改造"
+        },
+        {
+          src: "/static/pic/pic-05_1.png",
+          icon: "/static/icon/icon-04@4x.png",
+          title: "磁磚",
+          text: "房間牆面或外牆的增建與改造"
+        },
+        {
+          src: "/static/pic/pic-02_1.png",
+          icon: "/static/icon/icon-01@4x.png",
+          title: "電視牆/背景牆",
+          text: "房間牆面或外牆的增建與改造"
+        },
+        {
+          src: "/static/pic/pic-03_1.png",
+          icon: "/static/icon/icon-02@4x.png",
+          title: "防水",
+          text: "房間牆面或外牆的增建與改造"
+        }
       ],
-      swiper2Item:{},
-      HomeCall:0,
-    }
+      swiper2Item: {},
+      HomeCall: 0
+    };
   },
-  watch: {
-
-  },
+  watch: {},
   methods: {
-    swiper2Func(item){
-      let vm= this;
-      vm.swiper2Item=item;
+    swiper2Func(item) {
+      let vm = this;
+      vm.swiper2Item = item;
     },
-    sendToSwiper2(){
-      let vm= this;
+    sendToSwiper2() {
+      let vm = this;
       // 最多六筆 0-5
-      if(vm.HomeCall==5){vm.HomeCall=0}
-      else{vm.HomeCall= vm.HomeCall+1}
-
+      if (vm.HomeCall == 5) {
+        vm.HomeCall = 0;
+      } else {
+        vm.HomeCall = vm.HomeCall + 1;
+      }
     }
-
   },
 
   mounted() {
     let vm = this;
   },
-  created() {
-
-  },
+  created() {},
   components: {
     Parallax,
     Swiper2,
     Swiper1
   }
-}
-
+};
 </script>
 
 

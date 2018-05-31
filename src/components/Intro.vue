@@ -25,7 +25,8 @@
 </template>
 
 
-<style lang="scss" scoped>@import "~bootstrap/scss/bootstrap";
+<style lang="scss" scoped>
+@import "~bootstrap/scss/bootstrap";
 @import "../assets/scss/all.scss";
 #intro {
   padding-top: 61px;
@@ -43,12 +44,12 @@
     letter-spacing: calc(200 / 1000 * 21px);
     @include media-breakpoint-up(xl) {
       font-size: 28px;
-      letter-spacing: calc(200/1000*28px);
+      letter-spacing: calc(200 / 1000 * 28px);
       margin-bottom: 100px;
     }
     &::before {
-      content: '';
-      border: .5px solid $gold;
+      content: "";
+      border: 0.5px solid $gold;
       position: absolute;
       width: calc(50% - 60px);
       top: 50%;
@@ -60,8 +61,8 @@
       }
     }
     &::after {
-      content: '';
-      border: .5px solid $gold;
+      content: "";
+      border: 0.5px solid $gold;
       position: absolute;
       width: calc(50% - 60px);
       top: 50%;
@@ -116,40 +117,32 @@
     height: 390px;
   }
 }
-
-
 </style>
 
 <script>
-import Swiper1 from './Swiper1'
-import Parallax from './Parallax'
+import Swiper1 from "./Swiper1";
+import Parallax from "./Parallax";
 
 export default {
   data() {
     return {
-    swiperImages: [{
-        src: '/static/封面/公司簡介.png',
-        src_mobile:'/static/封面/mobile/公司簡介.png'
-      }],
-    }
+      swiperImages: [
+        {
+          src: "/static/封面/公司簡介.png",
+          src_mobile: "/static/封面/mobile/公司簡介.png"
+        }
+      ]
+    };
   },
-  watch:{
-
-  },
-  methods: {
-    
-  },
-  mounted() {
-
-  },
-  created() {
-
-  },
+  watch: {},
+  methods: {},
+  mounted() {},
+  created() {},
   components: {
     Swiper1,
     Parallax
   }
-}
+};
 </script>
 
 

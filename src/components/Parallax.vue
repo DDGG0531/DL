@@ -13,62 +13,50 @@
 @import "../assets/scss/all.scss";
 
 // @include media-breakpoint-up(xl)
-#parallax-1{
+#parallax-1 {
   max-width: 100%;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 186px;
-  @include media-breakpoint-up(xl){
+  @include media-breakpoint-up(xl) {
     height: 670px;
   }
 }
-#parallax-2{
+#parallax-2 {
   max-width: 100%;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 186px;
-  @include media-breakpoint-up(xl){
+  @include media-breakpoint-up(xl) {
     height: 750px;
   }
 }
-.parallax-Home{
+.parallax-Home {
   height: 667px;
 }
-.parallax-Intro{
+.parallax-Intro {
   height: 667px;
 }
 </style>
 
 <script>
-
-
 export default {
-  props: ['parallaxImage','type1','type2'],
+  props: ["parallaxImage", "type1", "type2"],
   data() {
     return {
       // parallaxImage: '/static/pic/pic-06_1.png',
-    }
+    };
   },
-  watch:{
-
-  },
-  methods: {
-    
-  },
-  mounted() {
-
-  },
-  created() {
-
-  },
-  components: {
-
-  }
-}
+  watch: {},
+  methods: {},
+  mounted() {},
+  created() {},
+  components: {}
+};
 </script>
 
 

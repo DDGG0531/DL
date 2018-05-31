@@ -48,7 +48,7 @@
 // @include media-breakpoint-up(xl)
 #title-block {
   background-color: $bg-green;
-    @include media-breakpoint-up(xl) {
+  @include media-breakpoint-up(xl) {
     background-color: transparent;
   }
   padding-top: 110px;
@@ -57,11 +57,11 @@
     color: $gold;
     font-size: 21px;
     text-align: center;
-    letter-spacing: calc(200/1000*21px);
-        @include media-breakpoint-up(xl) {
-        font-size: 28px;
-    letter-spacing: calc(200/1000*28px);
-  }
+    letter-spacing: calc(200 / 1000 * 21px);
+    @include media-breakpoint-up(xl) {
+      font-size: 28px;
+      letter-spacing: calc(200 / 1000 * 28px);
+    }
   }
 }
 
@@ -86,9 +86,9 @@
   .color-block {
     background-color: $bg-green;
     padding-top: 0;
-        @include media-breakpoint-up(xl) {
-   padding-top: 200px;
-  }
+    @include media-breakpoint-up(xl) {
+      padding-top: 200px;
+    }
     .each {
       position: relative;
       width: 100%;
@@ -116,28 +116,28 @@
         z-index: 3;
         padding: 10px 10px 20px;
         filter: drop-shadow(12px 12px 10px rgba(0, 0, 0, 0.4));
-                @include media-breakpoint-up(xl) {
-        padding: 20px;
-        left: -75px;
-        top: 42px; 
-        width: 507px; 
-        height: 224px;  
-           }
+        @include media-breakpoint-up(xl) {
+          padding: 20px;
+          left: -75px;
+          top: 42px;
+          width: 507px;
+          height: 224px;
+        }
         .msg-wrapper {
           position: relative;
           margin-bottom: 0px;
           padding-top: 10px;
           @include media-breakpoint-up(xl) {
-                      padding-top: 20px;
-           }
+            padding-top: 20px;
+          }
           .title {
             color: $gold;
             font-size: 18px;
-            letter-spacing: calc(50/1000*18px);
-             @include media-breakpoint-up(xl) {
-            font-size: 32px;
-            letter-spacing: calc(50/1000*32px);
-           }
+            letter-spacing: calc(50 / 1000 * 18px);
+            @include media-breakpoint-up(xl) {
+              font-size: 32px;
+              letter-spacing: calc(50 / 1000 * 32px);
+            }
           }
           .gold-hr {
             border-color: $gold;
@@ -146,11 +146,11 @@
           }
           .text {
             font-size: 14px;
-            letter-spacing: calc(100/1000*14px);
-             @include media-breakpoint-up(xl) {
-                        font-size: 21px;
-            letter-spacing: calc(100/1000*21px);
-           }
+            letter-spacing: calc(100 / 1000 * 14px);
+            @include media-breakpoint-up(xl) {
+              font-size: 21px;
+              letter-spacing: calc(100 / 1000 * 21px);
+            }
           }
         }
         .sub-image {
@@ -160,9 +160,9 @@
           width: 70px;
           height: 70px;
           display: none;
-        @include media-breakpoint-up(xl) {
-display: block;
-           }
+          @include media-breakpoint-up(xl) {
+            display: block;
+          }
         }
       }
       .each-img {
@@ -173,71 +173,106 @@ display: block;
         width: 80%;
         filter: drop-shadow(12px 12px 8px rgba(0, 0, 0, 0.2));
         @include media-breakpoint-up(xl) {
-        right: 50px;
-        top: -67px;  
-        width: 65%;   
-           }
+          right: 50px;
+          top: -67px;
+          width: 65%;
+        }
       }
     }
     #description {
-
       color: $gold;
       text-align: center;
-font-size: 18px;
-                            letter-spacing: calc(50/1000*18px);
+      font-size: 18px;
+      letter-spacing: calc(50 / 1000 * 18px);
       padding-top: 120px;
       padding-bottom: 100px;
-              @include media-breakpoint-up(xl) {
-                      font-size: 32px;
-                            letter-spacing: calc(50/1000*32px);
+      @include media-breakpoint-up(xl) {
+        font-size: 32px;
+        letter-spacing: calc(50 / 1000 * 32px);
         padding-top: 110px;
-      padding-bottom: 110px;
-  }
+        padding-bottom: 110px;
+      }
     }
   }
 }
-
-
 </style>
 
 
 <script>
-import Swiper1 from './Swiper1'
+import Swiper1 from "./Swiper1";
 export default {
   data() {
     return {
-      swiperImages: [{
-        src: '/static/封面/服務項目.png',
-        src_mobile:'/static/封面/mobile/服務項目.png'
-      }],
+      swiperImages: [
+        {
+          src: "/static/封面/服務項目.png",
+          src_mobile: "/static/封面/mobile/服務項目.png"
+        }
+      ],
       windowWidth: 10,
       categories: [
-        {src:'/static/pic/pic-02_1.png',icon:'/static/icon/icon-01@4x.png',title:'整建工程',text:'房間牆面或外牆的增建與改造',s_src:'/static/pic/東林內頁/服務項目pic-02.png',s_icon:'/static/pic/東林內頁/服務項目icon-01@4x.png'},
-        {src:'/static/pic/pic-03_1.png',icon:'/static/icon/icon-02@4x.png',title:'修繕工程',text:'房間牆面或外牆的增建與改造',s_src:'/static/pic/東林內頁/服務項目pic-02.png',s_icon:'/static/pic/東林內頁/服務項目icon-02@4x.png'},
-        {src:'/static/pic/pic-04_1.png',icon:'/static/icon/icon-03@4x.png',title:'石材',text:'房間牆面或外牆的增建與改造',s_src:'/static/pic/東林內頁/服務項目pic-03.png',s_icon:'/static/pic/東林內頁/服務項目icon-03@4x.png'},
-        {src:'/static/pic/pic-05_1.png',icon:'/static/icon/icon-04@4x.png',title:'磁磚',text:'房間牆面或外牆的增建與改造',s_src:'/static/pic/東林內頁/服務項目pic-04.png',s_icon:'/static/pic/東林內頁/服務項目icon-04@4x.png'},
-        {src:'/static/pic/pic-02_1.png',icon:'/static/icon/icon-01@4x.png',title:'電視牆/背景牆',text:'房間牆面或外牆的增建與改造',s_src:'/static/pic/東林內頁/服務項目pic-02.png',s_icon:'/static/pic/東林內頁/服務項目icon-01@4x.png'},
-        {src:'/static/pic/pic-03_1.png',icon:'/static/icon/icon-02@4x.png',title:'防水',text:'房間牆面或外牆的增建與改造',s_src:'/static/pic/東林內頁/服務項目pic-02.png',s_icon:'/static/pic/東林內頁/服務項目icon-02@4x.png'},
+        {
+          src: "/static/pic/pic-02_1.png",
+          icon: "/static/icon/icon-01@4x.png",
+          title: "整建工程",
+          text: "房間牆面或外牆的增建與改造",
+          s_src: "/static/pic/東林內頁/服務項目pic-02.png",
+          s_icon: "/static/pic/東林內頁/服務項目icon-01@4x.png"
+        },
+        {
+          src: "/static/pic/pic-03_1.png",
+          icon: "/static/icon/icon-02@4x.png",
+          title: "修繕工程",
+          text: "房間牆面或外牆的增建與改造",
+          s_src: "/static/pic/東林內頁/服務項目pic-02.png",
+          s_icon: "/static/pic/東林內頁/服務項目icon-02@4x.png"
+        },
+        {
+          src: "/static/pic/pic-04_1.png",
+          icon: "/static/icon/icon-03@4x.png",
+          title: "石材",
+          text: "房間牆面或外牆的增建與改造",
+          s_src: "/static/pic/東林內頁/服務項目pic-03.png",
+          s_icon: "/static/pic/東林內頁/服務項目icon-03@4x.png"
+        },
+        {
+          src: "/static/pic/pic-05_1.png",
+          icon: "/static/icon/icon-04@4x.png",
+          title: "磁磚",
+          text: "房間牆面或外牆的增建與改造",
+          s_src: "/static/pic/東林內頁/服務項目pic-04.png",
+          s_icon: "/static/pic/東林內頁/服務項目icon-04@4x.png"
+        },
+        {
+          src: "/static/pic/pic-02_1.png",
+          icon: "/static/icon/icon-01@4x.png",
+          title: "電視牆/背景牆",
+          text: "房間牆面或外牆的增建與改造",
+          s_src: "/static/pic/東林內頁/服務項目pic-02.png",
+          s_icon: "/static/pic/東林內頁/服務項目icon-01@4x.png"
+        },
+        {
+          src: "/static/pic/pic-03_1.png",
+          icon: "/static/icon/icon-02@4x.png",
+          title: "防水",
+          text: "房間牆面或外牆的增建與改造",
+          s_src: "/static/pic/東林內頁/服務項目pic-02.png",
+          s_icon: "/static/pic/東林內頁/服務項目icon-02@4x.png"
+        }
       ]
-    }
+    };
   },
-  watch:{
-
-  },
-  methods: {
-    
-  },
+  watch: {},
+  methods: {},
   mounted() {
-    let vm=this;
-    vm.windowWidth=window.innerWidth;
+    let vm = this;
+    vm.windowWidth = window.innerWidth;
   },
-  created() {
-
-  },
+  created() {},
   components: {
     Swiper1
   }
-}
+};
 </script>
 
 

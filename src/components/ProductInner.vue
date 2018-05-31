@@ -17,7 +17,7 @@
       </nav>
       <div class="row">
         <!-- 左邊導覽 -->
-        <div class="col-xl-3">
+        <div class="col-xl-3 d-none d-xl-block">
           <div id="board">
             <h1 class="title">More</h1>
             <hr class="hr-brown">
@@ -27,13 +27,13 @@
           </div>
         </div>
         <!-- 右邊實作案例 -->
-        <div class="col-xl-9">
+        <div class="col-12 col-xl-9">
           <div id="case">
             <!-- 每個範例 -->
             <div class="each" v-for="(item) in product" :key="item.id">
               <!-- 上方文字+日期 -->
               <div class="each-title">
-                <h1 class="title">【實績案例】{{item.title}}</h1>
+                <h1 class="title">【實績案例】<br class="d-xl-none">{{item.title}}</h1>
                 <div class="date italic">{{item.created_date}}</div>
               </div>
               <!-- 中間圖片 -->
@@ -44,19 +44,19 @@
               <div class="each-description">
                 <!-- 上方圖片+字 -->
                 <div class="row top-block">
-                  <div class="col-auto">
+                  <div class="col-6 col-xl-auto">
                     <img src="/static/pic/東林修改2/東林icon-06@4x.png" class=" icon">
                     <p class="text">{{item.place}}</p>
                   </div>
-                  <div class="col-auto">
+                  <div class="col-6 col-xl-auto">
                     <img src="/static/pic/東林修改2/東林icon-07@4x.png" class=" icon">
                     <p class="text">{{item.price}}</p>
                   </div>
-                  <div class="col-auto">
+                  <div class="col-6 col-xl-auto">
                     <img src="/static/pic/東林修改2/東林icon-08@4x.png" class=" icon">
                     <p class="text">{{item.pattern}}</p>
                   </div>
-                  <div class="col-auto">
+                  <div class="col-6 col-xl-auto">
                     <img src="/static/pic/東林修改2/東林icon-09@4x.png" class=" icon">
                     <p class="text">{{item.sqft}}</p>
                   </div>
@@ -105,24 +105,24 @@
   min-height: 862px;
   .title {
     font-size: 24px;
-    letter-spacing: calc(200/1000*24px);
+    letter-spacing: calc(200 / 1000 * 24px);
     font-weight: bold;
     color: $bg-brown;
   }
   .hr-brown {
     border-top: 2px solid $bg-brown;
   }
-  .text{
+  .text {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
   ul {
     padding-left: 0;
-    list-style-position: inside; 
-    &>li {
+    list-style-position: inside;
+    & > li {
       cursor: pointer;
-      &:hover{
+      &:hover {
         color: $gold;
       }
     }
@@ -130,8 +130,12 @@
 }
 
 #product {
-  padding-top: 150px;
-  padding-bottom: 135px;
+  padding-top: 50px;
+  padding-bottom: 93px;
+  @include media-breakpoint-up(xl) {
+    padding-top: 150px;
+    padding-bottom: 135px;
+  }
 }
 
 #case {
@@ -141,23 +145,42 @@
       margin-bottom: 77px;
     }
     .each-title {
-      display: flex;
-      justify-content: space-between;
+      display: block;
+      @include media-breakpoint-up(xl) {
+        display: flex;
+        justify-content: space-between;
+      }
+
       .title {
         color: $gold;
-        font-size: 24px;
-        letter-spacing: calc(200/1000*24px);
+        overflow: hidden;
+        font-size: 21px;
+        letter-spacing: calc(200 / 1000 * 21px);
         font-weight: bold;
+        margin-bottom: 0;
+        @include media-breakpoint-up(xl) {
+          margin-bottom: 10px;
+          font-size: 24px;
+          letter-spacing: calc(200 / 1000 * 24px);
+        }
       }
       .date {
-        font-size: 24px;
+        font-size: 21px;
+        text-align: end;
+        margin-bottom: 10px;
+        @include media-breakpoint-up(xl) {
+          font-size: 24px;
+        }
       }
     }
     .each-image {
       margin-bottom: 10px;
-      &>img {
-        width: 825px;
-        height: 568px;
+      & > img {
+        width: 100%;
+        @include media-breakpoint-up(xl) {
+          width: 825px;
+          max-height: 568px;
+        }
       }
     }
     .each-description {
@@ -166,42 +189,63 @@
       padding: 25px;
       .top-block {
         margin-bottom: 27px;
+        & > .col-6 {
+          margin-bottom: 10px;
+        }
         .icon {
           width: 22px;
         }
         .text {
+          overflow: hidden;
           display: inline-block;
           color: white;
-          font-size: 21px;
+          font-size: 14px;
           margin-bottom: 0;
           padding-left: 10px;
           vertical-align: middle;
-
+          @include media-breakpoint-up(xl) {
+            font-size: 21px;
+          }
         }
       }
       .mid-block {
         margin-bottom: 15px;
-        font-size: 18px;
+        font-size: 14px;
         color: white;
-        padding: 0 15px;
+        padding: 0;
+        @include media-breakpoint-up(xl) {
+          padding: 0 15px;
+          margin-bottom: 15px;
+          font-size: 18px;
+        }
       }
       .bottom-block {
         color: white;
-        padding: 0 15px;
+        padding: 0;
+        @include media-breakpoint-up(xl) {
+          padding: 0 15px;
+        }
         .text {
-          font-size: 15px;
+          font-size: 14px;
           white-space: pre-line;
+          @include media-breakpoint-up(xl) {
+            font-size: 15px;
+          }
         }
       }
       .btn-block {
-        position: absolute;
-        right: 0;
-        bottom: 20px;
-        width: 90px;
-        height: 26px;
+        // position: absolute;
+        // right: 0;
+        // bottom: 20px;
+        // width: 90px;
+        // height: 26px;
+        text-align: end;
         color: $font-green;
-        font-size: 28px;
-        &>a {
+        font-size: 18px;
+        @include media-breakpoint-up(xl) {
+          font-size: 28px;
+        }
+        & > a {
           cursor: pointer;
         }
       }
@@ -209,103 +253,114 @@
   }
 }
 
-#gallary{
-  .image{
+#gallary {
+  .image {
     margin-bottom: 35px;
-    width: 825px;
-    height: 568px;
+    width: 100%;
+    @include media-breakpoint-up(xl) {
+      width: 825px;
+      height: 568px;
+    }
   }
 }
-
+.breadcrumb {
+  font-size: 16px;
+  @include media-breakpoint-up(xl) {
+    font-size: 25px;
+  }
+}
 </style>
 
 <script>
-import Swiper1 from './Swiper1'
+import Swiper1 from "./Swiper1";
 export default {
   data() {
     return {
-      id:1,
-      product:[],
-      limit:1,
-      getDataDone:false,
-      swiperImages: [{
-        src: '/static/封面/實績案例.png',
-        src_mobile:'/static/封面/mobile/實績案例.png'
-      }],
-      lastProducts: [], 
-    }
+      id: 1,
+      product: [],
+      limit: 1,
+      getDataDone: false,
+      swiperImages: [
+        {
+          src: "/static/封面/實績案例.png",
+          src_mobile: "/static/封面/mobile/實績案例.png"
+        }
+      ],
+      lastProducts: []
+    };
   },
-  watch:{
-
-  },
+  watch: {},
   beforeRouteUpdate(to, from, next) {
     let vm = this;
     // 這邊跟product邏輯不同，這邊routerchange會自動更改id
-    vm.id = to.params['id'];
+    vm.id = to.params["id"];
     //頁數變換撈資料
     vm.getData();
     // console.log(to.params);
 
-    next()
+    next();
   },
   methods: {
-    getData(){
-      let vm= this ;
-      vm.axios({
+    getData() {
+      let vm = this;
+      vm
+        .axios({
           method: "post",
-          url: "http://ind.idea-infinite.com/api/v1/product/"+vm.id,
+          url: "http://ind.idea-infinite.com/api/v1/product/" + vm.id
         })
-        .then(function (response) {
+        .then(function(response) {
           console.log(response);
           //清空product
           vm.product = [];
-          let root = 'http://' + response.data['image_domain'];
+          let root = "http://" + response.data["image_domain"];
           let realData = response.data.data;
           //+root
-          realData['main_image_path'] = root + realData['main_image_path'];
+          realData["main_image_path"] = root + realData["main_image_path"];
           vm.product.push(realData);
-          vm.product[0].gallary=[{src:'/static/pic/pic-01_1.png'},{src:'/static/pic/pic-02_1.png'},{src:'/static/pic/pic-03_1.png'}];
-          vm.getDataDone=true;
-        })
+          vm.product[0].gallary = [
+            { src: "/static/pic/pic-01_1.png" },
+            { src: "/static/pic/pic-01_1.png" },
+            { src: "/static/pic/pic-01_1.png" }
+          ];
+          vm.getDataDone = true;
+        });
     },
-    getLastData: function () {
+    getLastData: function() {
       let vm = this;
-      vm.axios({
+      vm
+        .axios({
           method: "post",
           url: "http://ind.idea-infinite.com/api/v1/products",
           params: {
             limit: 10,
-            offset: 0,
+            offset: 0
           }
         })
-        .then(function (response) {
+        .then(function(response) {
           //清空products
           vm.lastProducts = [];
-          let root = 'http://' + response.data['image_domain'];
+          let root = "http://" + response.data["image_domain"];
           let realData = response.data.data;
-          let productsCount = response.data['total'];
+          let productsCount = response.data["total"];
           realData.forEach(element => {
             //+root
-            element['cover_image'] = root + element['cover_image'];
+            element["cover_image"] = root + element["cover_image"];
             vm.lastProducts.push(element);
           });
-        })
-    },
-    
+        });
+    }
   },
-  mounted() {
-
-  },
+  mounted() {},
   created() {
-    let vm=this;
-    vm.id = vm.$route.params['id'];
+    let vm = this;
+    vm.id = vm.$route.params["id"];
     vm.getData();
     vm.getLastData();
   },
   components: {
     Swiper1
   }
-}
+};
 </script>
 
 

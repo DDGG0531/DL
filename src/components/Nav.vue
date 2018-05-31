@@ -43,40 +43,40 @@
 @import "../assets/scss/all.scss";
 
 // @include media-breakpoint-up(xl)
-#nav{
+#nav {
   background-color: $light-green;
-  .navbar-brand{
+  .navbar-brand {
     font-size: 36px;
     line-height: 36px;
     color: white;
-    letter-spacing: calc(200/1000*36px);
+    letter-spacing: calc(200 / 1000 * 36px);
     font-weight: bold;
   }
-  .navbar{
+  .navbar {
     padding: 10px;
-    @include media-breakpoint-up(lg){
+    @include media-breakpoint-up(lg) {
       padding: 0;
     }
-    
   }
-  .nav-item{
+  .nav-item {
     text-align: center;
   }
-  .nav-link{
+  .nav-link {
     cursor: pointer;
     font-size: 21px;
-    letter-spacing: calc(200/1000*21px);
-        @include media-breakpoint-up(lg){
-    font-size: 20px;
-    letter-spacing: calc(200/1000*20px);    }
+    letter-spacing: calc(200 / 1000 * 21px);
+    @include media-breakpoint-up(lg) {
+      font-size: 20px;
+      letter-spacing: calc(200 / 1000 * 20px);
+    }
     text-decoration: none;
     color: #fff;
     margin-left: 0px;
     padding: 20px;
     position: relative;
     &::before {
-      z-index:-1;
-      content: '';
+      z-index: -1;
+      content: "";
       position: absolute;
       top: 0;
       bottom: 0;
@@ -87,16 +87,16 @@
       transition: all 0.4s;
     }
     &:hover::before {
-	    background-color: transparent;
-        @include media-breakpoint-up(lg) {
-	    background-color: $dark-green;
-  }
+      background-color: transparent;
+      @include media-breakpoint-up(lg) {
+        background-color: $dark-green;
+      }
     }
   }
-  .nav-link.router-link-active{
+  .nav-link.router-link-active {
     &::before {
-      z-index:-1;
-      content: '';
+      z-index: -1;
+      content: "";
       position: absolute;
       top: 0;
       bottom: 0;
@@ -105,39 +105,25 @@
       transform: skew(-30deg);
       transition: all 0.4s;
       background-color: transparent;
-        @include media-breakpoint-up(lg) {
-	    background-color: $dark-green;
-  }
+      @include media-breakpoint-up(lg) {
+        background-color: $dark-green;
+      }
     }
   }
 }
 </style>
 
 <script>
-
-
 export default {
   data() {
-    return {
-     
-    }
+    return {};
   },
-  watch:{
-
-  },
-  methods: {
-    
-  },
-  mounted() {
-
-  },
-  created() {
-
-  },
-  components: {
-
-  }
-}
+  watch: {},
+  methods: {},
+  mounted() {},
+  created() {},
+  components: {}
+};
 </script>
 
 

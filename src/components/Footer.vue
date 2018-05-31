@@ -70,7 +70,6 @@
   }
 }
 
-
 #footer {
   background-color: $bg-green;
   padding-top: 80px;
@@ -81,13 +80,13 @@
   }
   .topic-xs {
     font-size: 24px;
-    letter-spacing: calc(200/1000*24px);
+    letter-spacing: calc(200 / 1000 * 24px);
     font-weight: bold;
     text-align: center;
     margin-bottom: 15px;
   }
   .gmap-block {
-    &>iframe {
+    & > iframe {
       max-width: 100%;
       width: 100%;
     }
@@ -108,12 +107,12 @@
       padding-left: 25px;
       padding-right: 0px;
     }
-    &>.row {
+    & > .row {
       margin: 0;
     }
     .topic {
       font-size: 29px;
-      letter-spacing: calc(200/1000*29px);
+      letter-spacing: calc(200 / 1000 * 29px);
       text-align: center;
       font-weight: bold;
       @include media-breakpoint-up(xl) {
@@ -122,12 +121,12 @@
     }
     .topic-second {
       font-size: 14px;
-      letter-spacing: calc(100/1000*11px);
+      letter-spacing: calc(100 / 1000 * 11px);
       text-align: center;
       font-weight: bold;
       @include media-breakpoint-up(xl) {
         font-size: 19px;
-        letter-spacing: calc(100/1000*19px);
+        letter-spacing: calc(100 / 1000 * 19px);
         text-align: left;
         font-weight: 600;
       }
@@ -142,12 +141,12 @@
       .text {
         height: 30px;
         font-size: 14px;
-        letter-spacing: calc(100/1000*14px);
+        letter-spacing: calc(100 / 1000 * 14px);
         line-height: 30px;
         vertical-align: middle;
         @include media-breakpoint-up(xl) {
           font-size: 20px;
-          letter-spacing: calc(100/1000*20px);
+          letter-spacing: calc(100 / 1000 * 20px);
         }
       }
       .img-wrapper {
@@ -158,36 +157,19 @@
     }
   }
 }
-
-
-
 </style>
 
 <script>
-
-
 export default {
   data() {
-    return {
-     
-    }
+    return {};
   },
-  watch:{
-
-  },
-  methods: {
-    
-  },
-  mounted() {
-
-  },
-  created() {
-
-  },
-  components: {
-
-  }
-}
+  watch: {},
+  methods: {},
+  mounted() {},
+  created() {},
+  components: {}
+};
 </script>
 
 

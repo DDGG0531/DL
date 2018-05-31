@@ -49,12 +49,12 @@
     letter-spacing: calc(200 / 1000 * 21px);
     @include media-breakpoint-up(xl) {
       font-size: 28px;
-      letter-spacing: calc(200/1000*28px);
+      letter-spacing: calc(200 / 1000 * 28px);
       margin-bottom: 100px;
     }
     &::before {
-      content: '';
-      border: .5px solid $gold;
+      content: "";
+      border: 0.5px solid $gold;
       position: absolute;
       width: calc(50% - 60px);
       top: 50%;
@@ -66,8 +66,8 @@
       }
     }
     &::after {
-      content: '';
-      border: .5px solid $gold;
+      content: "";
+      border: 0.5px solid $gold;
       position: absolute;
       width: calc(50% - 60px);
       top: 50%;
@@ -86,41 +86,33 @@
       margin-top: 65px;
       margin-bottom: 126px;
     }
-    border: .5px solid $gold;
+    border: 0.5px solid $gold;
   }
 }
-
-
 </style>
 
 <script>
-import Swiper1 from './Swiper1'
+import Swiper1 from "./Swiper1";
 
 export default {
   data() {
     return {
-    swiperImages: [{
-        src: '/static/封面/接案流程.png',
-        src_mobile:'/static/封面/mobile/接案流程.png'
-      }],
-    }
+      swiperImages: [
+        {
+          src: "/static/封面/接案流程.png",
+          src_mobile: "/static/封面/mobile/接案流程.png"
+        }
+      ]
+    };
   },
-  watch:{
-
-  },
-  methods: {
-    
-  },
-  mounted() {
-
-  },
-  created() {
-
-  },
+  watch: {},
+  methods: {},
+  mounted() {},
+  created() {},
   components: {
-    Swiper1,
+    Swiper1
   }
-}
+};
 </script>
 
 
