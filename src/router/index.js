@@ -14,42 +14,50 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: {name: 'Home'}
+      redirect: {name: 'Home'},
+      meta: {title:'首頁-東林工程行' }
     },
     {
       path: '/Home',
       name: 'Home',
-      component: Home
+      component: Home,
+      meta: {title:'首頁-東林工程行' }
     },
     {
       path: '/Intro',
       name: 'Intro',
-      component: Intro
+      component: Intro,
+      meta: {title:'公司簡介-東林工程行' }
     },
     {
       path: '/Service',
       name: 'Service',
-      component: Service
+      component: Service,
+      meta: {title:'服務項目-東林工程行' }
     },
     {
       path: '/Product/:category/:page',
       name: 'Product',
-      component: Product
+      component: Product,
+      meta: {title:'實績案例-東林工程行' }
     },
     {
       path: '/ProductInner/:id',
       name: 'ProductInner',
-      component: ProductInner
+      component: ProductInner,
+      meta: {title:'實績案例-東林工程行' }
     },
     {
       path: '/Pipe',
       name: 'Pipe',
-      component: Pipe
+      component: Pipe,
+      meta: {title:'接案流程-東林工程行' }
     },
     {
       path: '/Contact',
       name: 'Contact',
-      component: Contact
+      component: Contact,
+      meta: {title:'聯絡我們-東林工程行' }
     }
   ],
   scrollBehavior (to, from, savedPosition) {
