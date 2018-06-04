@@ -101,75 +101,6 @@
 @import "../assets/scss/all.scss";
 
 // @include media-breakpoint-up(xl)
-.expand{
-  width: 300px !important;
-}
-#contact-btn{
-  display: none;
-    @include media-breakpoint-up(xl) {
-      display: block;
-  }
-  position: fixed;
-  right: 0;
-  bottom: 50px;
-  z-index: 10;
-  width: 300px;
-  height: 100px;
-  padding: 20px 0 20px 65px;
-  color: white;
-  font-size: 20px;
-  letter-spacing: calc(150/1000*20px);
-  text-align: center;
-  background-image: url('/static/pic/東林修改/東林icon-05@4x.png');
-  background-position: left center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  a{
-    display: block;
-    &:hover{
-      color: $gold;
-    }
-  }
-}
-#contact-btn-mb{
-  display: block;
-    @include media-breakpoint-up(xl) {
-      display: none;
-  }
-  position: fixed;
-  right: 0;
-  bottom: 0px;
-  z-index: 10;
-  width: 75px;
-  height: 100px;
-  padding: 10px 0 10px 100px;
-  color: white;
-  font-size: 20px;
-  letter-spacing: calc(150/1000*20px);
-  text-align: center;
-  background-image: url('/static/pic/東林修改/東林icon-05@4x.png');
-  background-position: left center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all ease 1s;
-      .click-zone{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100px;
-    height: 100px;
-  }
-
-  a{
-    display: block;
-    overflow: hidden;
-    white-space:nowrap;
-    line-height: 40px;
-    &:hover{
-      color: $gold;
-    }
-  }
-}
 #board {
   margin-top: 40px;
   background-color: $bg-gray;
@@ -359,7 +290,7 @@ export default {
         }
       ],
       lastProducts: [],
-      isExpand:false,
+      isExpand: false
     };
   },
   watch: {},
