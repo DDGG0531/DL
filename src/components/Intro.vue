@@ -21,6 +21,9 @@
   <Parallax :parallaxImage="'/static/pic/東林內頁2/東林-公司簡介-04.jpg'" :type2="true"></Parallax>
   <!-- 插入 component Parallax end-->
   <div id="white-block"></div>
+    <!-- 插入 聯絡框 -->
+ <div id="contact-btn"><a href="tel:0422607982">04-22607982</a><a href="tel:0928412128">0928-412128</a></div>
+  <div id="contact-btn-mb" v-bind:class="{expand: isExpand}" ><div class="click-zone"  @click="isExpand=!isExpand"></div><a href="tel:0422607982">04-22607982</a><a href="tel:0928412128">0928-412128</a></div>
   </div>
 </template>
 
@@ -28,6 +31,75 @@
 <style lang="scss" scoped>
 @import "~bootstrap/scss/bootstrap";
 @import "../assets/scss/all.scss";
+.expand{
+  width: 300px !important;
+}
+#contact-btn{
+  display: none;
+    @include media-breakpoint-up(xl) {
+      display: block;
+  }
+  position: fixed;
+  right: 0;
+  bottom: 50px;
+  z-index: 10;
+  width: 300px;
+  height: 100px;
+  padding: 20px 0 20px 65px;
+  color: white;
+  font-size: 20px;
+  letter-spacing: calc(150/1000*20px);
+  text-align: center;
+  background-image: url('/static/pic/東林修改/東林icon-05@4x.png');
+  background-position: left center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  a{
+    display: block;
+    &:hover{
+      color: $gold;
+    }
+  }
+}
+#contact-btn-mb{
+  display: block;
+    @include media-breakpoint-up(xl) {
+      display: none;
+  }
+  position: fixed;
+  right: 0;
+  bottom: 0px;
+  z-index: 10;
+  width: 75px;
+  height: 100px;
+  padding: 10px 0 10px 100px;
+  color: white;
+  font-size: 20px;
+  letter-spacing: calc(150/1000*20px);
+  text-align: center;
+  background-image: url('/static/pic/東林修改/東林icon-05@4x.png');
+  background-position: left center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all ease 1s;
+      .click-zone{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+  }
+
+  a{
+    display: block;
+    overflow: hidden;
+    white-space:nowrap;
+    line-height: 40px;
+    &:hover{
+      color: $gold;
+    }
+  }
+}
 #intro {
   padding-top: 61px;
   padding-bottom: 0px;
@@ -131,7 +203,8 @@ export default {
           src: "/static/封面/公司簡介.png",
           src_mobile: "/static/封面/mobile/公司簡介.png"
         }
-      ]
+      ],
+      isExpand:false,
     };
   },
   watch: {},
