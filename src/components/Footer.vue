@@ -15,7 +15,7 @@
           <div class="col-12 col-xl-6 text-block">
             <!-- 聯絡資訊 -->
             <h1 class="topic d-none d-xl-block">東林工程行</h1>
-            <p class="topic-second">整修工程 | 翻修工程 | 石材 | 電視牆 | 背景牆 | 防水</p>
+            <p class="topic-second">整修工程 | 翻修工程 | 石材 | 磁磚 | 電視牆 | 防水</p>
             <hr class="hr">
             <div class="row align-items-center justify-content-center" >
               <!-- 每一行資訊+圖 -->
@@ -30,7 +30,7 @@
               <!-- 每一行資訊+圖 -->
               <div class="col-auto col-xl-12 element">
                 <div class="img-wrapper"><img src="/static/pic/東林修改/東林icon-02@4x.png" class="icon align-middle"></div>
-                <span class="text "><a href="mailto:hong81512@gmail.com" class="">hong81512@gmail.com</a></span>
+                <span class="text "><a href="mailto:hong.81512@gmail.com" class="">hong.81512@gmail.com</a></span>
               </div>
             </div>
             <div class="row align-items-center justify-content-center">

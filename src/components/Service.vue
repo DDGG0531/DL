@@ -23,10 +23,11 @@
               <!-- hr -->
               <hr class="gold-hr">
               <!-- 區塊內描述 -->
-              <div class="text">{{item.text}}</div>
+              <div class="text" v-html="item.text"></div>
             </div>
             <!-- 簡圖 -->
-              <img :src="item.s_icon" class="sub-image">
+            <div class="sub-image-wrapper"><img :src="item.s_icon" class="sub-image"></div>
+              
           </div>
           <!-- 圖片區塊 -->
           <img :src="item.s_src" class="each-img">
@@ -38,8 +39,8 @@
       </div>
     </section>
     <!-- 綠底區塊 end -->
-    <div id="contact-btn"><a href="tel:0422607982">04-22607982</a><a href="tel:0928412128">0928-412128</a></div>
-  <div id="contact-btn-mb" v-bind:class="{expand: isExpand}" ><div class="click-zone"  @click="isExpand=!isExpand"></div><a href="tel:0422607982">04-22607982</a><a href="tel:0928412128">0928-412128</a></div>
+    <div id="contact-btn"><a href="tel:0916787439">0916-787439</a><a href="tel:0928412128">0928-412128</a></div>
+  <div id="contact-btn-mb" v-bind:class="{expand: isExpand}" ><div class="click-zone"  @click="isExpand=!isExpand"></div><a href="tel:0916787439">0916-787439</a><a href="tel:0928412128">0928-412128</a></div>
   </div>
 </template>
 
@@ -109,7 +110,7 @@
       }
       .each-msg {
         position: absolute;
-        width: 70%;
+        width: 80%;
         // height: 90px;
         left: 15px;
         top: -36px;
@@ -118,12 +119,14 @@
         z-index: 3;
         padding: 10px 10px 20px;
         filter: drop-shadow(12px 12px 10px rgba(0, 0, 0, 0.4));
+         @include media-breakpoint-up(md) {
+          width: 300px;
+        }
         @include media-breakpoint-up(xl) {
           padding: 20px;
           left: -75px;
           top: 42px;
           width: 507px;
-          height: 224px;
         }
         .msg-wrapper {
           position: relative;
@@ -147,23 +150,33 @@
             margin-bottom: 10px;
           }
           .text {
-            font-size: 14px;
-            letter-spacing: calc(100 / 1000 * 14px);
+            font-size: 12px;
+            letter-spacing: calc(50 / 1000 * 12px);
             @include media-breakpoint-up(xl) {
               font-size: 21px;
               letter-spacing: calc(100 / 1000 * 21px);
             }
           }
         }
+        .sub-image-wrapper{
+          padding: 20px 0 10px;
+          text-align: end;
+          display: none;
+          @include media-breakpoint-up(xl) {
+            display: block;
+            
+          }
+        }
         .sub-image {
-          position: absolute;
-          bottom: 10px;
-          right: 20px;
+          // position: absolute;
+          // bottom: 10px;
+          // right: 20px;
           width: 70px;
           height: 70px;
           display: none;
           @include media-breakpoint-up(xl) {
-            display: block;
+            display: inline-block;
+            
           }
         }
       }
@@ -216,16 +229,16 @@ export default {
         {
           src: "/static/pic/pic-02_1.png",
           icon: "/static/icon/icon-01@4x.png",
-          title: "整建工程",
-          text: "房間牆面或外牆的增建與改造",
+          title: "整建",
+          text: "泥作翻修，整建，拆除，裝潢設計施工</br>整建工程的規劃設計客製</br>讓您舊屋彷彿浴火重生",
           s_src: "/static/pic/東林內頁/服務項目pic-02.png",
           s_icon: "/static/pic/東林內頁/服務項目icon-01@4x.png"
         },
         {
           src: "/static/pic/pic-03_1.png",
           icon: "/static/icon/icon-02@4x.png",
-          title: "修繕工程",
-          text: "房間牆面或外牆的增建與改造",
+          title: "修繕",
+          text: "專門經營房屋修繕、整建隔間、套房改建，</br>專業團隊設計規劃施作一次到位",
           s_src: "/static/pic/東林內頁/服務項目pic-02.png",
           s_icon: "/static/pic/東林內頁/服務項目icon-02@4x.png"
         },
@@ -233,7 +246,7 @@ export default {
           src: "/static/pic/pic-04_1.png",
           icon: "/static/icon/icon-03@4x.png",
           title: "石材",
-          text: "房間牆面或外牆的增建與改造",
+          text: "別墅、居家、廠辦大樓地坪、樓梯、牆面、</br>檯面的石材安裝、石材防護等工程</br>舉凡:景觀石材、室內設計裝潢、傢俱石材、</br>天然石材...</br>造型牆(景觀庭園灌漿牆、休閒室外屋牆等)",
           s_src: "/static/pic/東林內頁/服務項目pic-03.png",
           s_icon: "/static/pic/東林內頁/服務項目icon-03@4x.png"
         },
@@ -241,15 +254,15 @@ export default {
           src: "/static/pic/pic-05_1.png",
           icon: "/static/icon/icon-04@4x.png",
           title: "磁磚",
-          text: "房間牆面或外牆的增建與改造",
+          text: "嚴選義大利美利德進口磁磚,選用浴室磁磚、</br>木紋磚、文化石、拋光石英磚、馬賽克磁磚</br>及地磚、外牆磁磚…等</br>設計規劃施作一手承攬包辦",
           s_src: "/static/pic/東林內頁/服務項目pic-04.png",
           s_icon: "/static/pic/東林內頁/服務項目icon-04@4x.png"
         },
         {
           src: "/static/pic/pic-02_1.png",
           icon: "/static/icon/icon-01@4x.png",
-          title: "電視牆/背景牆",
-          text: "房間牆面或外牆的增建與改造",
+          title: "電視牆",
+          text: "電視牆背景牆各材質</br>(漆類、壁紙、木板、石材)通通包辦，</br>並提供豐富的型錄及全方位軟硬體整合，</br>包括電視牆版面設計，場域設計規劃，</br>無痛系統建置",
           s_src: "/static/pic/東林內頁/服務項目pic-02.png",
           s_icon: "/static/pic/東林內頁/服務項目icon-01@4x.png"
         },
@@ -257,7 +270,7 @@ export default {
           src: "/static/pic/pic-03_1.png",
           icon: "/static/icon/icon-02@4x.png",
           title: "防水",
-          text: "房間牆面或外牆的增建與改造",
+          text: "內外牆防水,屋頂防水隔熱,壁癌,廁所漏水,</br>浴室漏水,天花板漏水處理及鑑定",
           s_src: "/static/pic/東林內頁/服務項目pic-02.png",
           s_icon: "/static/pic/東林內頁/服務項目icon-02@4x.png"
         }

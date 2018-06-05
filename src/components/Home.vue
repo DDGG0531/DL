@@ -20,7 +20,7 @@
         <div class="after-side">
           <img :src="item.icon" class="element-icon">
           <h1>{{item.title}}</h1>
-          <p class="d-none d-xl-block">{{item.text}}</p>
+          <p class="d-none d-xl-block" v-html="item.text"></p>
         </div>
         </div> 
       </div>
@@ -83,8 +83,8 @@
   <Parallax :parallaxImage="'/static/pic/pic-12_1.png'" :type1="true"></Parallax>
   <!-- 插入 component Parallax end-->
   <!-- 插入 聯絡框 -->
-  <div id="contact-btn"><a href="tel:0422607982">04-22607982</a><a href="tel:0928412128">0928-412128</a></div>
-  <div id="contact-btn-mb" v-bind:class="{expand: isExpand}" ><div class="click-zone"  @click="isExpand=!isExpand"></div><a href="tel:0422607982">04-22607982</a><a href="tel:0928412128">0928-412128</a></div>
+  <div id="contact-btn"><a href="tel:0916787439">0916-787439</a><a href="tel:0928412128">0928-412128</a></div>
+  <div id="contact-btn-mb" v-bind:class="{expand: isExpand}" ><div class="click-zone"  @click="isExpand=!isExpand"></div><a href="tel:0916787439">0916-787439</a><a href="tel:0928412128">0928-412128</a></div>
 </div>
 
 </template>
@@ -384,37 +384,37 @@ export default {
           src: "/static/pic/pic-02_1.png",
           icon: "/static/icon/icon-01@4x.png",
           title: "整建",
-          text: "房間牆面或外牆的增建與改造"
+          text: "泥作翻修，整建，拆除，裝潢設計施工"
         },
         {
           src: "/static/pic/pic-03_1.png",
           icon: "/static/icon/icon-02@4x.png",
           title: "修繕",
-          text: "房間牆面或外牆的增建與改造"
+          text: "室內室外大小裝修修繕工程"
         },
         {
           src: "/static/pic/pic-04_1.png",
           icon: "/static/icon/icon-03@4x.png",
           title: "石材",
-          text: "房間牆面或外牆的增建與改造"
+          text: "別墅、居家、廠辦大樓地坪、樓梯、<br>牆面、檯面的石材安裝、石材防護<br>等工程"
         },
         {
           src: "/static/pic/pic-05_1.png",
           icon: "/static/icon/icon-04@4x.png",
           title: "磁磚",
-          text: "房間牆面或外牆的增建與改造"
+          text: "嚴選義大利進口磁磚, 室內外磁磚舖設"
         },
         {
           src: "/static/pic/pic-02_1.png",
           icon: "/static/icon/icon-01@4x.png",
-          title: "電視牆/背景牆",
-          text: "房間牆面或外牆的增建與改造"
+          title: "電視牆",
+          text: "電視牆背景牆各材質(漆類、壁紙、<br>木板、石材)施作"
         },
         {
           src: "/static/pic/pic-03_1.png",
           icon: "/static/icon/icon-02@4x.png",
           title: "防水",
-          text: "房間牆面或外牆的增建與改造"
+          text: "內外牆防水,屋頂防水隔熱,壁癌,<br>廁所漏水,浴室漏水,<br>天花板漏水處理及鑑定"
         }
       ],
       swiper2Item: {},

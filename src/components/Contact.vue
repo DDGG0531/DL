@@ -7,7 +7,7 @@
     <div class="container">
       <!-- 金色大字 -->
       <div id="gold-title">聯絡我們</div>
-      <div class="sub-title">整修工程 | 翻修工程 | 石材 | 電視牆 | 背景牆 | 防水</div>
+      <div class="sub-title">整修工程 | 翻修工程 | 石材 | 磁磚 | 電視牆 | 防水</div>
       <div class="narrow-div">
         <div class="row ">
           <div class="col-12 col-xl-6 block-1 d-none d-xl-block order-xl-1">
@@ -33,7 +33,7 @@
                   <img src="/static/pic/東林修改/東林icon-02@4x.png" class="icon align-middle">
                 </div>
                 <span class="text ">
-                  <a href="mailto:hong81512@gmail.com" class="">hong81512@gmail.com</a>
+                  <a href="mailto:hong.81512@gmail.com" class="">hong.81512@gmail.com</a>
                 </span>
               </div>
               </div>
@@ -172,8 +172,8 @@
     </div>
   </div>
     <!-- 插入 聯絡框 -->
- <div id="contact-btn"><a href="tel:0422607982">04-22607982</a><a href="tel:0928412128">0928-412128</a></div>
-  <div id="contact-btn-mb" v-bind:class="{expand: isExpand}" ><div class="click-zone"  @click="isExpand=!isExpand"></div><a href="tel:0422607982">04-22607982</a><a href="tel:0928412128">0928-412128</a></div>
+ <div id="contact-btn"><a href="tel:0916787439">0916-787439</a><a href="tel:0928412128">0928-412128</a></div>
+  <div id="contact-btn-mb" v-bind:class="{expand: isExpand}" ><div class="click-zone"  @click="isExpand=!isExpand"></div><a href="tel:0916787439">0916-787439</a><a href="tel:0928412128">0928-412128</a></div>
 </div>
 
 

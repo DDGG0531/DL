@@ -10,8 +10,22 @@
       <!-- 4格內容 -->
       <div class="row">
         <div class="col-12 col-xl-6 order-1 order-xl-1 each top"><img src="/static/pic/東林內頁2/東林-公司簡介-02.png"></div>
-        <div class="col-12 col-xl-6 order-2 order-xl-2 each top"><ul><li><span>緣起</span></li></ul>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat adipisci exercitationem delectus iure nihil magni quas corporis culpa asperiores, nesciunt ducimus excepturi ex aliquid, quo soluta vero, aspernatur ipsam cum beatae! Rem non, quo, cupiditate ratione harum aspernatur et consequatur, reiciendis laborum soluta odit quidem odio necessitatibus iure exercitationem vel.</div>
-        <div class="col-12 col-xl-6 order-4 order-xl-3 each bottom"><ul><li><span>服務內容</span></li></ul>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum deserunt inventore incidunt deleniti non quis necessitatibus vel eligendi id ullam itaque, vitae ab magni ducimus nemo consequatur impedit, voluptates possimus, aliquam veniam eum provident fugiat nesciunt? Numquam iste necessitatibus libero obcaecati iusto voluptatem, quidem quisquam ut pariatur fugiat in minima!</div>
+        <div class="col-12 col-xl-6 order-2 order-xl-2 each top"><ul><li><span>緣起</span></li></ul>
+          「不只是工程·．每一件都是作品」<br>
+          東林工程行成立於2017年，<br>
+          專營石材/磁磚等設計規劃及技術服務，<br>
+          目標為提供比起傳統工程行更多元的選擇，<br>
+          秉持著「責任」、「專業」、「超越」、「多元」四個品牌經營理念<br>
+          我們陣容堅強，以豐富的經驗、優秀的品質、高效率的服務<br>
+          展望未來能為每位客戶打造自己獨一無二的居家美學作品。
+</div>
+        <div class="col-12 col-xl-6 order-4 order-xl-3 each bottom"><ul><li><span>服務內容</span></li></ul>
+        房屋整修翻修修繕<br>
+        室內外石材磁磚規劃施工<br>
+        各式背景牆電視牆羅馬柱裝潢<br>
+        防水抓漏專家,外牆/屋頂/浴廁防水隔熱工程<br>
+        免費諮詢專線: <a style="d-inline-block" href="tel:0928412128">0928-412128</a>
+</div>
         <div class="col-12 col-xl-6 order-3 order-xl-4 each bottom"><img src="/static/pic/東林內頁2/東林-公司簡介-03.png"></div>
       </div>
     </div>
@@ -22,8 +36,8 @@
   <!-- 插入 component Parallax end-->
   <div id="white-block"></div>
     <!-- 插入 聯絡框 -->
- <div id="contact-btn"><a href="tel:0422607982">04-22607982</a><a href="tel:0928412128">0928-412128</a></div>
-  <div id="contact-btn-mb" v-bind:class="{expand: isExpand}" ><div class="click-zone"  @click="isExpand=!isExpand"></div><a href="tel:0422607982">04-22607982</a><a href="tel:0928412128">0928-412128</a></div>
+ <div id="contact-btn"><a href="tel:0916787439">0916-787439</a><a href="tel:0928412128">0928-412128</a></div>
+  <div id="contact-btn-mb" v-bind:class="{expand: isExpand}" ><div class="click-zone"  @click="isExpand=!isExpand"></div><a href="tel:0916787439">0916-787439</a><a href="tel:0928412128">0928-412128</a></div>
   </div>
 </template>
 
@@ -78,7 +92,10 @@
     }
   }
   .each {
-    font-size: 14px;
+    font-size: 13px;
+    @include media-breakpoint-up(md) {
+      font-size: 18px;
+    }
     @include media-breakpoint-up(xl) {
       font-size: 20px;
     }
