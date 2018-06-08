@@ -14,9 +14,9 @@
 
 // @include media-breakpoint-up(xl)
 #parallax-1 {
-  max-width: 100%;
-  background-attachment: fixed;
-  background-position: center;
+  // max-width: 100%;
+  background-attachment: fixed ;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 186px;
@@ -25,9 +25,9 @@
   }
 }
 #parallax-2 {
-  max-width: 100%;
-  background-attachment: fixed;
-  background-position: center;
+  // max-width: 100%;
+  background-attachment: fixed ;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 186px;

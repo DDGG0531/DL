@@ -17,7 +17,7 @@
                 <router-link :to="{ name: 'Intro'}" class="nav-link">公司簡介</router-link>
               </li>
               <li class="nav-item ">
-                <router-link :to="{ name: 'Service'}" class="nav-link">服務項目</router-link>
+                <router-link :to="{ name: 'Service',params: { id:'ii'}}" class="nav-link">服務項目</router-link>
               </li>
               <li class="nav-item ">
                 <router-link :to="{ name: 'Product', params: { category: 0, page: 1}}" class="nav-link"  >實績案例</router-link>

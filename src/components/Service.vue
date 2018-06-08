@@ -12,7 +12,7 @@
     <!-- 綠底區塊 -->
     <section id="main">
       <div class="container color-block">
-        <div class="each" v-for="(item) in categories" :key="item.id">
+        <div class="each" v-for="(item) in categories" :key="item.id" v-bind:id="item.id">
           <!-- 撐開但看不見的圖 -->
           <img src="/static/pic/東林內頁/服務項目pic-02.png" style="visibility: hidden;">
             <!-- 文字區塊 -->
@@ -186,11 +186,13 @@
         bottom: -20px;
         z-index: 2;
         width: 80%;
+        max-height: 90%;
         filter: drop-shadow(12px 12px 8px rgba(0, 0, 0, 0.2));
         @include media-breakpoint-up(xl) {
           right: 50px;
           top: -67px;
           width: 65%;
+          max-height: 508px;
         }
       }
     }
@@ -214,8 +216,12 @@
 
 
 <script>
+import Vue from "vue";
 import Swiper1 from "./Swiper1";
+import VueScrollTo from "vue-scrollto";
+Vue.use(VueScrollTo);
 export default {
+  props:["id"],
   data() {
     return {
       swiperImages: [
@@ -226,53 +232,53 @@ export default {
       ],
       windowWidth: 10,
       categories: [
-        {
+        {id:'i0',
           src: "/static/pic/pic-02_1.png",
           icon: "/static/icon/icon-01@4x.png",
           title: "整建",
           text: "泥作翻修，整建，拆除，裝潢設計施工</br>整建工程的規劃設計客製</br>讓您舊屋彷彿浴火重生",
-          s_src: "/static/pic/東林內頁/服務項目pic-02.png",
-          s_icon: "/static/pic/東林內頁/服務項目icon-01@4x.png"
+          s_src: "/static/pic/東林修改3/整建.png",
+          s_icon: "/static/icon/服務項目icon-01@4x.png"
         },
-        {
+        {id:'i1',
           src: "/static/pic/pic-03_1.png",
           icon: "/static/icon/icon-02@4x.png",
           title: "修繕",
           text: "專門經營房屋修繕、整建隔間、套房改建，</br>專業團隊設計規劃施作一次到位",
-          s_src: "/static/pic/東林內頁/服務項目pic-02.png",
-          s_icon: "/static/pic/東林內頁/服務項目icon-02@4x.png"
+          s_src: "/static/pic/東林修改3/修繕.png",
+          s_icon: "/static/icon/服務項目icon-04@4x.png"
         },
-        {
+        {id:'i2',
           src: "/static/pic/pic-04_1.png",
           icon: "/static/icon/icon-03@4x.png",
           title: "石材",
           text: "別墅、居家、廠辦大樓地坪、樓梯、牆面、</br>檯面的石材安裝、石材防護等工程</br>舉凡:景觀石材、室內設計裝潢、傢俱石材、</br>天然石材...</br>造型牆(景觀庭園灌漿牆、休閒室外屋牆等)",
-          s_src: "/static/pic/東林內頁/服務項目pic-03.png",
-          s_icon: "/static/pic/東林內頁/服務項目icon-03@4x.png"
+          s_src: "/static/pic/東林修改3/石材.png",
+          s_icon: "/static/icon/服務項目icon-03@4x.png"
         },
-        {
+        {id:'i3',
           src: "/static/pic/pic-05_1.png",
           icon: "/static/icon/icon-04@4x.png",
           title: "磁磚",
           text: "嚴選義大利美利德進口磁磚,選用浴室磁磚、</br>木紋磚、文化石、拋光石英磚、馬賽克磁磚</br>及地磚、外牆磁磚…等</br>設計規劃施作一手承攬包辦",
-          s_src: "/static/pic/東林內頁/服務項目pic-04.png",
-          s_icon: "/static/pic/東林內頁/服務項目icon-04@4x.png"
+          s_src: "/static/pic/東林修改3/磁磚.png",
+          s_icon: "/static/icon/服務項目icon磁磚@4x.png"
         },
-        {
+        {id:'i4',
           src: "/static/pic/pic-02_1.png",
           icon: "/static/icon/icon-01@4x.png",
           title: "電視牆",
           text: "電視牆背景牆各材質</br>(漆類、壁紙、木板、石材)通通包辦，</br>並提供豐富的型錄及全方位軟硬體整合，</br>包括電視牆版面設計，場域設計規劃，</br>無痛系統建置",
-          s_src: "/static/pic/東林內頁/服務項目pic-02.png",
-          s_icon: "/static/pic/東林內頁/服務項目icon-01@4x.png"
+          s_src: "/static/pic/東林修改3/電視牆.png",
+          s_icon: "/static/icon/服務項目icon電視牆@4x.png"
         },
-        {
+        {id:'i5',
           src: "/static/pic/pic-03_1.png",
           icon: "/static/icon/icon-02@4x.png",
           title: "防水",
           text: "內外牆防水,屋頂防水隔熱,壁癌,廁所漏水,</br>浴室漏水,天花板漏水處理及鑑定",
-          s_src: "/static/pic/東林內頁/服務項目pic-02.png",
-          s_icon: "/static/pic/東林內頁/服務項目icon-02@4x.png"
+          s_src: "/static/pic/東林修改3/防水.png",
+          s_icon: "/static/icon/服務項目icon-02@4x.png"
         }
       ],
       isExpand: false
@@ -283,6 +289,14 @@ export default {
   mounted() {
     let vm = this;
     vm.windowWidth = window.innerWidth;
+    let category=vm.$route.params["id"];
+    // console.log('hi'+category);
+    // console.log(this.id);
+    cancelScroll = this.$scrollTo(`#${category}`, 600,{offset: -200,});
+    if(category!='ii'){
+      cancelScroll()
+    }
+    
   },
   created() {},
   components: {

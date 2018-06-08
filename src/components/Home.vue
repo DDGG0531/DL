@@ -12,6 +12,7 @@
       
       <!-- 每一格圖片 正式 -->
       <div class="col-6 col-xl-4 element" v-for="item in categories" :key="item.id">
+        <router-link :to="{ name: 'Service' , params:{ id:item.id} }"  >
         <img :src="item.src" class="element-image">
         <div class="text-hover">
         <!-- 初始文字 -->
@@ -23,6 +24,9 @@
           <p class="d-none d-xl-block" v-html="item.text"></p>
         </div>
         </div> 
+
+        </router-link>
+
       </div>
     </div>
   </section>
@@ -68,7 +72,7 @@
     <!-- <div class="next-btn">
       <router-link  :to="{ name: 'ProductInner', params: { id: swiper2Item['id'] }}" class="pointer">NEXT></router-link>
     </div> -->
-    <div class="next-btn text-right d-none d-xl-block" @click="sendToSwiper2">Next</div>
+    <div class="next-btn text-right d-none d-xl-block" ><div @click="sendToSwiper2" class="d-inline-block pointer">Next</div></div>
     </div>
   </section>
    
@@ -92,7 +96,6 @@
 <style lang="scss" scoped>
 @import "~bootstrap/scss/bootstrap";
 @import "../assets/scss/all.scss";
-
 
 // ourService欄位
 #ourService {
@@ -139,10 +142,11 @@
       margin-bottom: 15px;
       .element-image {
         width: 100%;
-        max-height: 480px;
+        height: 100%;
       }
       .element-icon {
-        max-width: 95px;
+        width: 95px;
+        height: 90px;
         margin-bottom: 15px;
       }
       .text-hover {
@@ -174,7 +178,11 @@
       &:hover {
         .text-hover {
           height: 100%;
-          padding-top: 50%;
+          padding-top: 10%;
+          @include media-breakpoint-up(xl) {
+               padding-top: 30%;
+            }
+         
           .before-side {
             display: none;
           }
@@ -217,7 +225,6 @@
   .next-btn {
     color: rgb(91, 85, 83);
     font-style: italic;
-    cursor: pointer;
     font-size: 20px;
     text-align: end;
     @include media-breakpoint-up(xl) {
@@ -380,41 +387,43 @@ export default {
       ],
       // 分類
       categories: [
-        {
-          src: "/static/pic/pic-02_1.png",
+        { id:'i0',
+          src: "/static/pic/東林修改3/整建.png",
           icon: "/static/icon/icon-01@4x.png",
           title: "整建",
           text: "泥作翻修，整建，拆除，裝潢設計施工"
         },
-        {
-          src: "/static/pic/pic-03_1.png",
-          icon: "/static/icon/icon-02@4x.png",
+        { id:'i1',
+          src: "/static/pic/東林修改3/修繕.png",
+          icon: "/static/icon/icon-04@4x.png",
           title: "修繕",
           text: "室內室外大小裝修修繕工程"
         },
-        {
-          src: "/static/pic/pic-04_1.png",
+        { id:'i2',
+          src: "/static/pic/東林修改3/石材.png",
           icon: "/static/icon/icon-03@4x.png",
           title: "石材",
-          text: "別墅、居家、廠辦大樓地坪、樓梯、<br>牆面、檯面的石材安裝、石材防護<br>等工程"
+          text:
+            "別墅、居家、廠辦大樓地坪、樓梯、<br>牆面、檯面的石材安裝、石材防護"
         },
-        {
-          src: "/static/pic/pic-05_1.png",
-          icon: "/static/icon/icon-04@4x.png",
+        { id:'i3',
+          src: "/static/pic/東林修改3/磁磚.png",
+          icon: "/static/icon/磁磚icon.png",
           title: "磁磚",
           text: "嚴選義大利進口磁磚, 室內外磁磚舖設"
         },
-        {
-          src: "/static/pic/pic-02_1.png",
-          icon: "/static/icon/icon-01@4x.png",
+        { id:'i4',
+          src: "/static/pic/東林修改3/電視牆.png",
+          icon: "/static/icon/電視牆icon.png",
           title: "電視牆",
           text: "電視牆背景牆各材質(漆類、壁紙、<br>木板、石材)施作"
         },
-        {
-          src: "/static/pic/pic-03_1.png",
+        { id:'i5',
+          src: "/static/pic/東林修改3/防水.png",
           icon: "/static/icon/icon-02@4x.png",
           title: "防水",
-          text: "內外牆防水,屋頂防水隔熱,壁癌,<br>廁所漏水,浴室漏水,<br>天花板漏水處理及鑑定"
+          text:
+            "內外牆防水,屋頂防水隔熱,壁癌,<br>廁所漏水,浴室漏水"
         }
       ],
       swiper2Item: {},

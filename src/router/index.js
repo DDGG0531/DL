@@ -30,7 +30,7 @@ export default new Router({
       meta: {title:'公司簡介-東林工程行' }
     },
     {
-      path: '/Service',
+      path: '/Service/:id',
       name: 'Service',
       component: Service,
       meta: {title:'服務項目-東林工程行' }
