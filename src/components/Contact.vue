@@ -7,7 +7,7 @@
     <div class="container">
       <!-- 金色大字 -->
       <div id="gold-title">聯絡我們</div>
-      <div class="sub-title">整修工程 | 翻修工程 | 石材 | 磁磚 | 電視牆 | 防水</div>
+      <div class="sub-title">整建工程 | 翻修工程 | 石材 | 磁磚 | 電視牆 | 防水</div>
       <div class="narrow-div">
         <div class="row ">
           <div class="col-12 col-xl-6 block-1 d-none d-xl-block order-xl-1">
