@@ -20,6 +20,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 186px;
+  width: 100%;
   @include media-breakpoint-up(xl) {
     height: 670px;
   }
@@ -31,6 +32,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 186px;
+  width: 100%;
   @include media-breakpoint-up(xl) {
     height: 750px;
   }

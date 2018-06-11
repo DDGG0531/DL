@@ -69,10 +69,10 @@
                 </div>
               </div>
               <!-- hr gold -->
-              <hr class="hr-gold">
+              <hr class="hr-gold" v-if="product[0].gallary!=null">
             </div>
             <!-- 內頁 圖庫 -->
-            <div v-if="getDataDone">
+            <div v-if="getDataDone" >
               <div v-for="(item) in product[0].gallary" :key="item.id" id="gallary">
                 <img :src="item['src']" class="image">
               </div>
@@ -89,8 +89,8 @@
     <!-- 內容 end -->
   </div>
     <!-- 插入 聯絡框 -->
- <div id="contact-btn"><a href="tel:0916787439">0916-787439</a><a href="tel:0928412128">0928-412128</a></div>
-  <div id="contact-btn-mb" v-bind:class="{expand: isExpand}" ><div class="click-zone"  @click="isExpand=!isExpand"></div><a href="tel:0916787439">0916-787439</a><a href="tel:0928412128">0928-412128</a></div>
+ <div id="contact-btn"><a href="tel:0916787430">0916-787430</a><a href="tel:0928412128">0928-412128</a></div>
+  <div id="contact-btn-mb" v-bind:class="{expand: isExpand}" ><div class="click-zone"  @click="isExpand=!isExpand"></div><a href="tel:0916787430">0916-787430</a><a href="tel:0928412128">0928-412128</a></div>
 </div>
 
 </template>
@@ -321,11 +321,11 @@ export default {
           //+root
           realData["main_image_path"] = root + realData["main_image_path"];
           vm.product.push(realData);
-          vm.product[0].gallary = [
-            { src: "/static/pic/pic-01_1.png" },
-            { src: "/static/pic/pic-01_1.png" },
-            { src: "/static/pic/pic-01_1.png" }
-          ];
+          // vm.product[0].gallary = [
+          //   { src: "/static/pic/pic-01_1.png" },
+          //   { src: "/static/pic/pic-01_1.png" },
+          //   { src: "/static/pic/pic-01_1.png" }
+          // ];
           vm.getDataDone = true;
         });
     },

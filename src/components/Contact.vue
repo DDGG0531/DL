@@ -43,7 +43,7 @@
                   <img src="/static/pic/東林修改/東林icon-03@4x.png" class="icon align-middle">
                 </div>
                 <span class="text ">
-                  <a href="tel:0422607982" class="">04-22607982</a>
+                  <a href="tel:0916787430" class="">張先生 0916-787430</a>
                 </span>
               </div>
               </div>
@@ -53,7 +53,7 @@
                   <img src="/static/pic/東林修改/東林icon-04@4x.png" class="icon align-middle">
                 </div>
                 <span class="text ">
-                  <a href="tel:0928412128" class="">0928-412128</a>
+                  <a href="tel:0928412128" class="">劉先生 0928-412128</a>
                 </span>
               </div>
               </div>
@@ -172,8 +172,8 @@
     </div>
   </div>
     <!-- 插入 聯絡框 -->
- <div id="contact-btn"><a href="tel:0916787439">0916-787439</a><a href="tel:0928412128">0928-412128</a></div>
-  <div id="contact-btn-mb" v-bind:class="{expand: isExpand}" ><div class="click-zone"  @click="isExpand=!isExpand"></div><a href="tel:0916787439">0916-787439</a><a href="tel:0928412128">0928-412128</a></div>
+ <div id="contact-btn"><a href="tel:0916787430">0916-787430</a><a href="tel:0928412128">0928-412128</a></div>
+  <div id="contact-btn-mb" v-bind:class="{expand: isExpand}" ><div class="click-zone"  @click="isExpand=!isExpand"></div><a href="tel:0916787430">0916-787430</a><a href="tel:0928412128">0928-412128</a></div>
 </div>
 
 

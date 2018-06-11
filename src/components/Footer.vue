@@ -15,7 +15,7 @@
           <div class="col-12 col-xl-6 text-block">
             <!-- 聯絡資訊 -->
             <h1 class="topic d-none d-xl-block">東林工程行</h1>
-            <p class="topic-second">整修工程 | 翻修工程 | 石材 | 磁磚 | 電視牆 | 防水</p>
+            <p class="topic-second">整建工程 | 翻修工程 | 石材 | 磁磚 | 電視牆 | 防水</p>
             <hr class="hr">
             <div class="row align-items-center justify-content-center" >
               <!-- 每一行資訊+圖 -->
@@ -37,14 +37,14 @@
               <!-- 每一行資訊+圖 -->
               <div class="col-auto col-xl-12 element">
                 <div class="img-wrapper"><img src="/static/pic/東林修改/東林icon-03@4x.png" class="icon align-middle"></div>
-                <span class="text "><a href="tel:0422607982" class="">04-22607982</a></span>
+                <span class="text "><a href="tel:0916787430" class="">張先生 0916-787430</a></span>
               </div>
             </div>
             <div class="row align-items-center justify-content-center">
               <!-- 每一行資訊+圖 -->
               <div class="col-auto col-xl-12 element">
                 <div class="img-wrapper"><img src="/static/pic/東林修改/東林icon-04@4x.png" class="icon align-middle"></div>
-                <span class="text "><a href="tel:0928412128" class="">0928-412128</a></span>
+                <span class="text "><a href="tel:0928412128" class="">劉先生 0928-412128</a></span>
               </div>
             </div>
             <!-- 聯絡資訊 end-->

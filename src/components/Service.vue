@@ -39,8 +39,8 @@
       </div>
     </section>
     <!-- 綠底區塊 end -->
-    <div id="contact-btn"><a href="tel:0916787439">0916-787439</a><a href="tel:0928412128">0928-412128</a></div>
-  <div id="contact-btn-mb" v-bind:class="{expand: isExpand}" ><div class="click-zone"  @click="isExpand=!isExpand"></div><a href="tel:0916787439">0916-787439</a><a href="tel:0928412128">0928-412128</a></div>
+    <div id="contact-btn"><a href="tel:09167874390">0916-7874390</a><a href="tel:0928412128">0928-412128</a></div>
+  <div id="contact-btn-mb" v-bind:class="{expand: isExpand}" ><div class="click-zone"  @click="isExpand=!isExpand"></div><a href="tel:0916787430">0916-787430</a><a href="tel:0928412128">0928-412128</a></div>
   </div>
 </template>
 

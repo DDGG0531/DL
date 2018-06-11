@@ -87,8 +87,8 @@
   <Parallax :parallaxImage="'/static/pic/pic-12_1.png'" :type1="true"></Parallax>
   <!-- 插入 component Parallax end-->
   <!-- 插入 聯絡框 -->
-  <div id="contact-btn"><a href="tel:0916787439">0916-787439</a><a href="tel:0928412128">0928-412128</a></div>
-  <div id="contact-btn-mb" v-bind:class="{expand: isExpand}" ><div class="click-zone"  @click="isExpand=!isExpand"></div><a href="tel:0916787439">0916-787439</a><a href="tel:0928412128">0928-412128</a></div>
+  <div id="contact-btn"><a href="tel:0916787430">0916-787430</a><a href="tel:0928412128">0928-412128</a></div>
+  <div id="contact-btn-mb" v-bind:class="{expand: isExpand}" ><div class="click-zone"  @click="isExpand=!isExpand"></div><a href="tel:0916787430">0916-787430</a><a href="tel:0928412128">0928-412128</a></div>
 </div>
 
 </template>
@@ -381,9 +381,13 @@ export default {
           src_mobile: "/static/封面/mobile/首頁.png"
         },
         {
-          src: "/static/封面/首頁.png",
-          src_mobile: "/static/封面/mobile/首頁.png"
-        }
+          src: "/static/封面/首頁2.png",
+          src_mobile: "/static/封面/mobile/首頁2.png"
+        },
+        {
+          src: "/static/封面/首頁3.png",
+          src_mobile: "/static/封面/mobile/首頁3.png"
+        },
       ],
       // 分類
       categories: [
