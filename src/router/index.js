@@ -15,13 +15,13 @@ export default new Router({
     {
       path: '/',
       redirect: {name: 'Home'},
-      meta: {title:'首頁-東林工程行' }
+      meta: {title:'東林工程行 - 石材/磁磚設計規劃，整建修繕工程' }
     },
     {
       path: '/Home',
       name: 'Home',
       component: Home,
-      meta: {title:'首頁-東林工程行' }
+      meta: {title:'東林工程行 - 石材/磁磚設計規劃，整建修繕工程' }
     },
     {
       path: '/Intro',
