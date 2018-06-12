@@ -265,7 +265,7 @@
         bottom: 0;
         height: 100%;
         top: 0;
-        width: 454px;
+        width: 500px;
       }
       .text-block-topic {
         color: black;
