@@ -65,16 +65,17 @@
                 <p class="mid-block">施作內容</p>
                 <!-- ul文字 -->
                 <div class="bottom-block">
-                  <p class="text">{{item.detail}}</p>
+                  <div v-html="detail" class="text"></div>
+                  <!-- <p class="text" ></p> -->
                 </div>
               </div>
               <!-- hr gold -->
-              <hr class="hr-gold" v-if="product[0].gallary!=null">
+              <hr class="hr-gold" v-if="product[0].images!=null">
             </div>
             <!-- 內頁 圖庫 -->
-            <div v-if="getDataDone" >
-              <div v-for="(item) in product[0].gallary" :key="item.id" id="gallary">
-                <img :src="item['src']" class="image">
+            <div v-if="getDataDone" id="gallary">
+              <div v-for="(item) in product[0].images" :key="item.id" >
+                <img :src="item" class="image">
               </div>
             </div>
 
@@ -283,6 +284,7 @@ export default {
       product: [],
       limit: 1,
       getDataDone: false,
+      detail:'',
       swiperImages: [
         {
           src: "/static/封面/實績案例.png",
@@ -320,13 +322,16 @@ export default {
           let realData = response.data.data;
           //+root
           realData["main_image_path"] = root + realData["main_image_path"];
+          // realData["images"].forEach(element => {
+          //   element=root+element;
+          // });
+          for(let i=0;i<realData.images.length;i++){
+            console.log(i);
+            realData.images[i]=root+realData.images[i];
+          }
           vm.product.push(realData);
-          // vm.product[0].gallary = [
-          //   { src: "/static/pic/pic-01_1.png" },
-          //   { src: "/static/pic/pic-01_1.png" },
-          //   { src: "/static/pic/pic-01_1.png" }
-          // ];
           vm.getDataDone = true;
+          vm.detail=vm.product[0].detail;
         });
     },
     getLastData: function() {
