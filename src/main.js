@@ -7,6 +7,7 @@ import  'bootstrap'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import 'babel-polyfill'
 Vue.use(VueAxios, axios, VueAwesomeSwiper);
 Vue.config.productionTip = false
 
