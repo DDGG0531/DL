@@ -12,18 +12,18 @@
     <!-- 綠底區塊 -->
     <section id="main">
       <div class="container color-block">
-        <div class="each pointer" @click="imgUp=!imgUp" v-for="(item) in categories" :key="item.id" v-bind:id="item.id" >
+        <div class="each pointer-xs" @click="imgUp=!imgUp" v-for="(item) in categories" :key="item.id" v-bind:id="item.id" >
           <!-- 撐開但看不見的圖 -->
           <img src="/static/pic/東林內頁/服務項目pic-02.png" style="visibility: hidden;">
             <!-- 文字區塊 -->
-          <div class="each-msg tran" :class="{'op-0':imgUp}">
+          <div class="each-msg " >
             <div class="msg-wrapper">
               <!-- 區塊內標題 -->
-              <div class="title">{{item.title}} <i class="fas fa-exchange-alt ml-auto"></i></div>
+              <div class="title">{{item.title}} <i class="fas fa-exchange-alt ml-auto  d-xl-none"></i></div>
               <!-- hr -->
-              <hr class="gold-hr">
+              <hr class="gold-hr d-xl-block" :class="{'d-none':imgUp}">
               <!-- 區塊內描述 -->
-              <div class="text " v-html="item.text" ></div>
+              <div class="text tran d-xl-block" v-html="item.text" :class="{'d-none':imgUp}"></div>
             </div>
             <!-- 簡圖 -->
             <div class="sub-image-wrapper"><img :src="item.s_icon" class="sub-image"></div>
@@ -57,6 +57,14 @@
 }
 .op-0{
   opacity: 0;
+}
+.pointer-xs{
+  @include media-breakpoint-up(xs) {
+    cursor: pointer;
+  }
+  @include media-breakpoint-up(xl) {
+    cursor: default;
+  }
 }
 #title-block {
   background-color: $bg-green;
@@ -293,7 +301,7 @@ export default {
         }
       ],
       isExpand: false,
-      imgUp:false,
+      imgUp: true,
     };
   },
   watch: {},
