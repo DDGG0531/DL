@@ -12,25 +12,25 @@
     <!-- 綠底區塊 -->
     <section id="main">
       <div class="container color-block">
-        <div class="each" v-for="(item) in categories" :key="item.id" v-bind:id="item.id">
+        <div class="each pointer" @click="imgUp=!imgUp" v-for="(item) in categories" :key="item.id" v-bind:id="item.id" >
           <!-- 撐開但看不見的圖 -->
           <img src="/static/pic/東林內頁/服務項目pic-02.png" style="visibility: hidden;">
             <!-- 文字區塊 -->
-          <div class="each-msg">
+          <div class="each-msg tran" :class="{'op-0':imgUp}">
             <div class="msg-wrapper">
               <!-- 區塊內標題 -->
-              <div class="title">{{item.title}}</div>
+              <div class="title">{{item.title}} <i class="fas fa-exchange-alt ml-auto"></i></div>
               <!-- hr -->
               <hr class="gold-hr">
               <!-- 區塊內描述 -->
-              <div class="text" v-html="item.text"></div>
+              <div class="text " v-html="item.text" ></div>
             </div>
             <!-- 簡圖 -->
             <div class="sub-image-wrapper"><img :src="item.s_icon" class="sub-image"></div>
               
           </div>
           <!-- 圖片區塊 -->
-          <img :src="item.s_src" class="each-img">
+          <img :src="item.s_src" class="each-img " >
 
           
         </div>
@@ -49,6 +49,15 @@
 @import "~bootstrap/scss/bootstrap";
 @import "../assets/scss/all.scss";
 // @include media-breakpoint-up(xl)
+.imgUp{
+  z-index: 99 !important;
+}
+.tran{
+  transition: 1s ease;
+}
+.op-0{
+  opacity: 0;
+}
 #title-block {
   background-color: $bg-green;
   @include media-breakpoint-up(xl) {
@@ -139,6 +148,8 @@
             color: $gold;
             font-size: 18px;
             letter-spacing: calc(50 / 1000 * 18px);
+            display: flex;
+            align-items: center;
             @include media-breakpoint-up(xl) {
               font-size: 32px;
               letter-spacing: calc(50 / 1000 * 32px);
@@ -281,7 +292,8 @@ export default {
           s_icon: "/static/icon/服務項目icon-02@4x.png"
         }
       ],
-      isExpand: false
+      isExpand: false,
+      imgUp:false,
     };
   },
   watch: {},
