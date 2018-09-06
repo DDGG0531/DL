@@ -412,7 +412,7 @@ export default {
       vm
         .axios({
           method: "post",
-          url: "http://ind.idea-infinite.com/api/v1/products",
+          url: "https://ind.idea-infinite.com/api/v1/products",
           params: {
             limit: vm.limit,
             offset: (vm.thisPage - 1) * vm.limit,
@@ -424,7 +424,7 @@ export default {
           console.log(response);
           //清空products
           vm.products = [];
-          let root = "http://" + response.data["image_domain"];
+          let root = "https://" + response.data["image_domain"];
           let realData = response.data.data;
           let productsCount = response.data["total"];
           vm.productsCount = productsCount;
@@ -441,7 +441,7 @@ export default {
       vm
         .axios({
           method: "post",
-          url: "http://ind.idea-infinite.com/api/v1/products",
+          url: "https://ind.idea-infinite.com/api/v1/products",
           params: {
             limit: 10,
             offset: 0
@@ -450,7 +450,7 @@ export default {
         .then(function(response) {
           //清空products
           vm.lastProducts = [];
-          let root = "http://" + response.data["image_domain"];
+          let root = "https://" + response.data["image_domain"];
           let realData = response.data.data;
           let productsCount = response.data["total"];
           realData.forEach(element => {
@@ -465,7 +465,7 @@ export default {
       vm
         .axios({
           method: "post",
-          url: "http://ind.idea-infinite.com/api/v1/categories"
+          url: "https://ind.idea-infinite.com/api/v1/categories"
         })
         .then(function(response) {
           console.log(response);

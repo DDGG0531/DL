@@ -74,7 +74,7 @@ export default {
       vm
         .axios({
           method: "post",
-          url: "http://ind.idea-infinite.com/api/v1/products",
+          url: "https://ind.idea-infinite.com/api/v1/products",
           params: {
             limit: 6,
             offset: 0,
@@ -84,7 +84,7 @@ export default {
         .then(function(response) {
           //清空products
           vm.swiperData = [];
-          let root = "http://" + response.data["image_domain"];
+          let root = "https://" + response.data["image_domain"];
           let realData = response.data.data;
           realData.forEach(element => {
             //+root

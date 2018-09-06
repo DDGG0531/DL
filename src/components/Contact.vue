@@ -386,7 +386,7 @@ export default {
       vm
         .axios({
           method: "post",
-          url: "http://ind.idea-infinite.com/api/v1/contact",
+          url: "https://ind.idea-infinite.com/api/v1/contact",
           params: vm.sendObj
         })
         .then(function(response) {
